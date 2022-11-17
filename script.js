@@ -1,0 +1,1 @@
+// javascript dokumentet för hela filen
