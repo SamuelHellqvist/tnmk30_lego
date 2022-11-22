@@ -1,7 +1,19 @@
 /* css dokumentet för hela websidan */
+
+
+/*Variabler för färger*/
+
+
 *{
     margin: 0;
     padding: 0;
+    --darkBlue: rgb(135, 167, 240);
+    --blueAccent: rgb(141, 203, 250);
+    --baseBlue: rgb(141, 214, 231);
+    --tourqoise: rgb(141, 251, 242);
+    --green: rgb(136, 242, 204);
+    --textgrey: #6a6a6a;
+    
 }
 
 
@@ -13,14 +25,21 @@ body {
     width: 100%;
     overflow: hidden;
     justify-content: space-between;
+    background: rgb(141,214,231);
+    background: linear-gradient(0deg, rgba(141,214,231,1) 35%, rgba(141,203,250,1) 100%);
 }
 
-
+section{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
 header {
     display: flex;
     flex-direction: row;
-    background-color: rgb(136, 242, 204);
+    background-color: var(--green);
     height: 10%;
+    justify-content: space-between;
 }
 
 .left{
@@ -35,15 +54,16 @@ header {
 
 
 /* center button bättre */
+#header_section2{
+    justify-content: center;
+}
 #how_to_use_btn {
-    align-self: center;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
+    align-self: center;  
 }
 
 .search_section{
     align-self: center;
+    flex-grow: 4;
 }
 
 #search_bar{
@@ -52,4 +72,40 @@ header {
     transform: translate(-50%);
     width: 25vw;
 
+}
+
+input{
+    font-size: 2rem;
+    border-radius: 2rem;
+    padding: 0.5%;
+    padding-left: 1%;
+    color: var(--textgrey);
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--green);
+    height: 10%;
+    justify-content: center;
+    justify-content: space-around;
+
+}
+
+.footer_btn{
+    align-self: center;
+}
+
+button{
+    background-color: var(--darkBlue);
+    border: solid var(--darkBlue);
+    color: black;
+    font-size: 2rem;
+    padding: 0.5%;
+    border-radius: 2rem;
+}
+
+button:hover{
+    cursor: pointer;
+    border: solid var(--tourqoise);
 }

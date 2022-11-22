@@ -16,12 +16,12 @@
         <img class="left" src="images/image.jpg" alt="logo">
         <h1 class ="left"> Name </h1>
 
-        <button id="how_to_use_btn">How to use</button>
-
-        <form class="right" action="">
+          <form class="right" action="">
                 <input type="text">
             
                 <input type="submit">
         </form>
+        
+        <button id="how_to_use_btn">How to use</button>
 
     </header>
