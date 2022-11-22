@@ -1,4 +1,3 @@
-<!-- php-dokumentet för webbsidans "homepage" -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,12 +18,10 @@
 
         <button id="how_to_use_btn">How to use</button>
 
-    </header>
-    <div class="title_image">
-        <img class="left" src="images/image.jpg" alt="logo">
-    </div>
-    <?php 
+        <form class="right" action="">
+                <input type="text">
+            
+                <input type="submit">
+        </form>
 
-    ?>
-</body>
-</html>
+    </header>

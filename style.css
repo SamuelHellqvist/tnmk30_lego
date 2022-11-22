@@ -1,4 +1,9 @@
 /* css dokumentet för hela websidan */
+*{
+    margin: 0;
+    padding: 0;
+}
+
 
 body {
     box-sizing: border-box;
@@ -15,8 +20,14 @@ header {
     height: 10%;
 }
 
-.left {
-    float: left;
+.left{
+    justify-content: flex-start;
+}
+
+.right{
+    margin-left: auto;
+    align-self: center;
+    margin-right: 2%;
 }
 
 
