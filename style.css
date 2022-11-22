@@ -29,5 +29,8 @@ header {
 }
 
 .title_image{
-    justify-content: center;
+    align-self: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
 }

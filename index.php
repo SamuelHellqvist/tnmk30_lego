@@ -23,5 +23,8 @@
     <div class="title_image">
         <img class="left" src="images/image.jpg" alt="logo">
     </div>
+    <?php 
+<
+    ?>
 </body>
 </html>
