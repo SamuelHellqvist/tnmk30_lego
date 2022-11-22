@@ -20,8 +20,11 @@
         <button id="how_to_use_btn">How to use</button>
 
     </header>
-    <div class="title_image">
+    <div class="search_section">
         <img class="left" src="images/image.jpg" alt="logo">
+        <form>
+        <input type="text" id="search_bar">
+        </form> 
     </div>
     <?php 
 

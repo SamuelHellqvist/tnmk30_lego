@@ -6,10 +6,13 @@
 
 
 body {
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
     height: 100vh;
     width: 100%;
     overflow: hidden;
+    justify-content: space-between;
 }
 
 
@@ -39,9 +42,14 @@ header {
     transform: translate(-50%);
 }
 
-.title_image{
+.search_section{
     align-self: center;
+}
+
+#search_bar{
     position: absolute;
     left: 50%;
     transform: translate(-50%);
+    width: 25vw;
+
 }
