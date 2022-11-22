@@ -1,1 +1,29 @@
 /* css dokumentet för hela websidan */
+
+body {
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+header {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(136, 242, 204);
+    height: 10%;
+}
+
+.left {
+    float: left;
+}
+
+
+/* center button bättre */
+#how_to_use_btn {
+    align-self: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}

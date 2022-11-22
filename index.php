@@ -11,6 +11,15 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    <!-- header -->
+    <header> 
+
+        <img class="left" src="images/image.jpg" alt="logo">
+        <h1 class ="left"> Name </h1>
+
+        <button id="how_to_use_btn">How to use</button>
+
+    </header>
 
 </body>
 </html>
