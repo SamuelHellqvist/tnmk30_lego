@@ -20,6 +20,8 @@
         <button id="how_to_use_btn">How to use</button>
 
     </header>
-
+    <div class="title_image">
+        <img class="left" src="images/image.jpg" alt="logo">
+    </div>
 </body>
 </html>

@@ -27,3 +27,7 @@ header {
     left: 50%;
     transform: translate(-50%);
 }
+
+.title_image{
+    justify-content: center;
+}
