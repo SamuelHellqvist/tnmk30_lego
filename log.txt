@@ -1,1 +1,6 @@
 /Logbok för arbetet/
+
+22/11
+vi har fixat och sattigt up github
+css har påbörjats
+en index sida och en search sida har skapats
