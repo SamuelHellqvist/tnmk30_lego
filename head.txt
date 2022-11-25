@@ -14,7 +14,7 @@
     <header> 
 
         <img class="left" src="images/image.jpg" alt="logo">
-        <h1 class ="left"> Name </h1>
+        
 
           <form class="right" action="">
                 <input type="text">

@@ -132,8 +132,18 @@ button:hover{
     margin: 5%;
     border: solid black;
     background-color: var(--tourqoise);
+    height: 20vw;
+    position: relative;
+    max-height: 200px;
+    
 }
 
+
+.brickinfo #imgbox {
+    height: 100%;
+    position: absolute;
+    right: 0;
+}
 
 .brickinfo img{
     border-left: solid black;
