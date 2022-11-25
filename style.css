@@ -16,7 +16,7 @@
     
 }
 
-
+/*All content på sidan*/
 body {
     display: flex;
     flex-direction: column;
@@ -29,11 +29,7 @@ body {
     background: linear-gradient(0deg, rgba(141,214,231,1) 35%, rgba(141,203,250,1) 100%);
 }
 
-section{
-    display: flex;
-    flex-direction: row;
-    flex-grow: 1;
-}
+/* Allt i header*/
 header {
     display: flex;
     flex-direction: row;
@@ -42,40 +38,51 @@ header {
     justify-content: space-between;
 }
 
+/*Objekt i header*/
+section{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+/* Skicka till vänster */
 .left{
     justify-content: flex-start;
 }
 
+/* Skicka till höger */
 .right{
     margin-left: auto;
     align-self: center;
     margin-right: 2%;
 }
 
-
-/* center button bättre */
+/* Knapp i center "How to use" */
 #header_section2{
     justify-content: center;
 }
+
+/* Centrar knapp vertikalt */
 #how_to_use_btn {
     align-self: center;  
 }
 
+/* Objekt i mitten på startsidan */
 .search_section{
     align-self: center;
     flex-grow: 4;
 }
 
+/* Sökrutan på huvudsidan */
 #search_bar{
     position: absolute;
     left: 50%;
     transform: translate(-50%);
     width: 25vw;
-
 }
 
 input{
-    font-size: 2rem;
+    font-size: 1rem;
     border-radius: 2rem;
     padding: 0.5%;
     padding-left: 1%;

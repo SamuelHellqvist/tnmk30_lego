@@ -22,6 +22,6 @@
                 <input type="submit">
         </form>
         
-        <button id="how_to_use_btn">How to use</button>
+        <button class="" id="how_to_use_btn">How to use</button>
 
     </header>
