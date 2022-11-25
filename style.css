@@ -1,12 +1,11 @@
 /* css dokumentet för hela websidan */
 
 
-/*Variabler för färger*/
-
-
 *{
     margin: 0;
     padding: 0;
+
+    /*Variabler för färger*/
     --darkBlue: rgb(135, 167, 240);
     --blueAccent: rgb(141, 203, 250);
     --baseBlue: rgb(141, 214, 231);
