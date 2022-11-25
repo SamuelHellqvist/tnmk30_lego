@@ -17,31 +17,45 @@
 
 /*All content på sidan*/
 body {
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
     height: 100vh;
     width: 100%;
-    overflow: hidden;
-    justify-content: space-between;
+    overflow-x: hidden;
+    
     background: rgb(141,214,231);
     background: linear-gradient(0deg, rgba(141,214,231,1) 35%, rgba(141,203,250,1) 100%);
 }
 
 /* Allt i header*/
 header {
-    display: flex;
-    flex-direction: row;
-    background-color: var(--green);
     height: 10%;
-    justify-content: space-between;
+
+    background-color: var(--green);
 }
 
-/*Objekt i header*/
-section{
+/* Allt i footer */
+footer{
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    bottom: 0;
     display: flex;
-    flex-direction: row;
-    flex-grow: 1;
+    justify-content: space-around;
+    
+    background-color: var(--green);
+}
+
+/* Centrar knapp vertikalt i header*/
+header button {
+    margin: auto;
+}
+
+/* Ändrar knappar i footer */
+footer button{
+    align-self: center;
+}
+
+header img{
+    height: 100%;
 }
 
 /* Skicka till vänster */
@@ -54,16 +68,6 @@ section{
     margin-left: auto;
     align-self: center;
     margin-right: 2%;
-}
-
-/* Knapp i center "How to use" */
-#header_section2{
-    justify-content: center;
-}
-
-/* Centrar knapp vertikalt */
-#how_to_use_btn {
-    align-self: center;  
 }
 
 /* Objekt i mitten på startsidan */
@@ -80,7 +84,7 @@ section{
     width: 25vw;
 }
 
-/*  */
+/* Ruta för text */
 input{
     font-size: 1rem;
     border-radius: 2rem;
@@ -89,20 +93,7 @@ input{
     color: var(--textgrey);
 }
 
-footer{
-    display: flex;
-    flex-direction: row;
-    background-color: var(--green);
-    height: 10%;
-    justify-content: center;
-    justify-content: space-around;
-
-}
-
-.footer_btn{
-    align-self: center;
-}
-
+/* Alla knappar */
 button{
     background-color: var(--darkBlue);
     border: solid var(--darkBlue);
@@ -112,6 +103,7 @@ button{
     border-radius: 2rem;
 }
 
+/* När alla knappar svävas över */
 button:hover{
     cursor: pointer;
     border: solid var(--tourqoise);
