@@ -15,12 +15,13 @@
     <header> 
         <img id="logo_header" src="images/image.jpg" alt="logo">
         
+        
         <div><button>How to use</button></div>
 
     </header>
 
     <div class="search_section">
-        <img src="images/image.jpg" alt="logo">
+        <img id="search_image" src="images/image.jpg" alt="logo">
         <form>
         <input type="text" id="search_bar" placeholder="Find your inner piece...">
         </form> 
