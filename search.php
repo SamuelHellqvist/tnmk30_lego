@@ -34,7 +34,9 @@ while($row = mysqli_fetch_array($contents)){
                     $brickId
                 </p>
             </section>
+            <div id='imgbox'>
             <img src='images/image.jpg'>
+            </div>
         </article>
         \n
         "
