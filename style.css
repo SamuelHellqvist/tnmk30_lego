@@ -142,9 +142,11 @@ button:hover{
 .brickinfo img{
     border-left: solid black;
     justify-self: end;
+    height: 100%;
 }
 
 .brickinfo section{
     text-align: center;
-    justify-content: center;
+    padding: 10%;
+
 }
