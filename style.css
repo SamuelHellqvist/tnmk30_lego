@@ -87,8 +87,6 @@ header img{
     align-items: center;
     justify-content: center;
     position: relative;
-    
-
 }
 
 #search_image {
@@ -128,6 +126,7 @@ button{
 /* När alla knappar svävas över */
 button:hover{
     cursor: pointer;
+    color: white;
     border: solid var(--tourqoise);
 }
 
