@@ -124,3 +124,23 @@ button:hover{
     cursor: pointer;
     border: solid var(--tourqoise);
 }
+
+.brickinfo{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    margin: 5%;
+    border: solid black;
+    background-color: var(--tourqoise);
+}
+
+
+.brickinfo img{
+    border-left: solid black;
+    justify-self: end;
+}
+
+.brickinfo section{
+    text-align: center;
+    justify-content: center;
+}
