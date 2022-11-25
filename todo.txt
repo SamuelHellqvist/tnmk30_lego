@@ -1,5 +1,5 @@
 /To do list/
 
-testar från samuels dator
+Rensa upp lite i css och html. Till exempel behövs inte css properties för alla knappars olika 
+klasser/id när man skulle kunna ändra i button css
 
-testar från Kristians dator
