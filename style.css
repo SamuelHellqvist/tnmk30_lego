@@ -54,7 +54,9 @@ footer{
 
 /* Centrar knapp vertikalt i header*/
 header button {
-    width: 10vw;
+    white-space: nowrap;
+    padding: 5%;
+
 }
 
 /* Ändrar knappar i footer */
