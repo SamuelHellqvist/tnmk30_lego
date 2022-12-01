@@ -62,6 +62,7 @@ header button {
 /* Ändrar knappar i footer */
 footer button{
     align-self: center;
+    white-space: nowrap;
 }
 
 header img{
@@ -111,6 +112,37 @@ input{
     color: var(--textgrey);
 }
 
+/* Alla popups */
+.popup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#myPopup{ 
+    display: none;
+    width: 70vw;
+    border-radius: 2rem;
+    background-color: white;
+    z-index: 1;
+    position: absolute;
+    top: 10vw;
+    justify-self: center;
+    padding: 2.5%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#myPopup img{
+    height: 10vw;
+    width: 10vw;
+}
+
+
+.popup .show {
+    display: block;
+}
+
+
 /* Alla knappar */
 button{
     background-color: var(--darkBlue);
@@ -120,8 +152,12 @@ button{
     padding: 0.5%;
     border-radius: 2rem;
     height: 6vh;
-
 }
+
+#about {
+    padding: 5%;
+}
+
 
 /* När alla knappar svävas över */
 button:hover{
@@ -159,5 +195,4 @@ button:hover{
 .brickinfo section{
     text-align: center;
     padding: 10%;
-
 }

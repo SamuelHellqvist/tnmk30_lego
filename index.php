@@ -16,7 +16,33 @@
         <img id="logo_header" src="images/image.jpg" alt="logo">
         
         
-        <div><button>How to use</button></div>
+        <div class="popup" onclick="popupFunction()"> <button>How to Use</button>
+            <span class="popuptext" id="myPopup">
+
+            <h1>How to use</h1>
+            <p> 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Suspendisse a orci consequat, euismod lacus eget, imperdiet 
+            enim. Ut maximus malesuada arcu vel tempor. Proin finibus 
+            ultricies iaculis. Donec sit amet metus et justo blandit 
+            luctus sed id urna.<img src="images/image.jpg"> Nulla cursus sem quis mi lacinia iaculis. 
+            Sed eu aliquam libero. Pellentesque nisl odio, ullamcorper 
+            eu nunc ac, semper hendrerit lacus. Donec sed mauris posuere, 
+            posuere nisi eget, vulputate quam.
+            </p>
+            <br>
+            <p>
+            Nam lacinia, ante at suscipit aliquet, urna lacus consectetur 
+            velit, id vulputate ipsum arcu eu ligula. Nulla facilisi. Proin 
+            iaculis nisl tellus, ut bibendum lectus ultricies vitae. Nullam 
+            scelerisque mauris neque, eget viverra mi gravida sed. 
+            Pellentesque nec mi cursus, suscipit ante non, rutrum augue. 
+            Vestibulum id euismod leo. Suspendisse nec ligula a dolor faucibus iaculis. Cras luctus lectus in neque placerat, non laoreet risus eleifend. Integer et volutpat diam. Aenean ornare porttitor augue, eu bibendum dui posuere volutpat.
+            </p>
+            </span>
+        </div>
+
+      
 
     </header>
 
@@ -28,8 +54,22 @@
     </div>
     
     <footer>
-        <button id="about">about</button>
-        <button id="cookies">cookies</button>
+    <div class="popup" onclick="popupFunction()"> <button id="about" >About us</button>
+            <span class="popuptext" id="myPopup">
+            <h1>About us</h1>
+            <p>TEXtasdfghjkl</p>
+            <br>
+            <p>
+            Nam lacinia, ante at suscipit aliquet, urna lacus consectetur 
+            velit, id vulputate ipsum arcu eu ligula. Nulla facilisi. Proin 
+            iaculis nisl tellus, ut bibendum lectus ultricies vitae. Nullam 
+            scelerisque mauris neque, eget viverra mi gravida sed. 
+            Pellentesque nec mi cursus, suscipit ante non, rutrum augue. 
+            Vestibulum id euismod leo. Suspendisse nec ligula a dolor faucibus iaculis. Cras luctus lectus in neque placerat, non laoreet risus eleifend. Integer et volutpat diam. Aenean ornare porttitor augue, eu bibendum dui posuere volutpat.
+            </p>
+            </span>
+    </div>
+        <button>Cookies</button>
     </footer>
 </body>
 </html>
