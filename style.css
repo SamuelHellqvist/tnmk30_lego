@@ -200,3 +200,22 @@ button:hover{
     text-align: center;
     padding: 10%;
 }
+
+
+/* from w3schools */
+#topBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 1%; /* Place the button at the bottom of the page */
+    right: 0%; /*Place the button to the right*/
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: lightblue; /* Set a background color */
+    color: black; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    font-size: 1.5rem;
+    display: none;
+    padding: 0.5%  1% 0.5% 1%;
+    border-radius: 20rem;
+  }
