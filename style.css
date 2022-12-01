@@ -119,11 +119,11 @@ input{
     align-items: center;
 }
 
-#myPopup{ 
+.popuptext{ 
     display: none;
     width: 70vw;
     border-radius: 2rem;
-    background-color: white;
+    background-color: rgb(37, 179, 235);
     z-index: 1;
     position: absolute;
     top: 10vw;
@@ -155,6 +155,10 @@ button{
 }
 
 #about {
+    padding: 5%;
+}
+
+#cookies {
     padding: 5%;
 }
 

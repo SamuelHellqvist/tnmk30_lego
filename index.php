@@ -16,8 +16,8 @@
         <img id="logo_header" src="images/image.jpg" alt="logo">
         
         
-        <div class="popup" onclick="popupFunction()"> <button>How to Use</button>
-            <span class="popuptext" id="myPopup">
+        <div class="popup" onclick="popupFunction(howToUsePopup)"> <button>How to Use</button>
+            <span class="popuptext" id="howToUsePopup">
 
             <h1>How to use</h1>
             <p> 
@@ -40,6 +40,26 @@
             Vestibulum id euismod leo. Suspendisse nec ligula a dolor faucibus iaculis. Cras luctus lectus in neque placerat, non laoreet risus eleifend. Integer et volutpat diam. Aenean ornare porttitor augue, eu bibendum dui posuere volutpat.
             </p>
             </span>
+            <span class="popuptext" id="aboutUsPopup">
+            <h1>About us</h1>
+            <p>TEXtasdfghjkl</p>
+            <br>
+            <p>
+            Nam lacinia, ante at suscipit aliquet, urna lacus consectetur 
+            velit, id vulputate ipsum arcu eu ligula. Nulla facilisi. Proin 
+            iaculis nisl tellus, ut bibendum lectus ultricies vitae. Nullam 
+            scelerisque mauris neque, eget viverra mi gravida sed. 
+            Pellentesque nec mi cursus, suscipit ante non, rutrum augue. 
+            Vestibulum id euismod leo. Suspendisse nec ligula a dolor faucibus iaculis. Cras luctus lectus in neque placerat, non laoreet risus eleifend. Integer et volutpat diam. Aenean ornare porttitor augue, eu bibendum dui posuere volutpat.
+            </p>
+            </span>
+            <span class="popuptext" id="cookiesPopup">
+            <h1>Cookies</h1>
+            <br>
+            <p>
+            Yeet
+            </p>
+            </span>
         </div>
 
       
@@ -54,22 +74,14 @@
     </div>
     
     <footer>
-    <div class="popup" onclick="popupFunction()"> <button id="about" >About us</button>
-            <span class="popuptext" id="myPopup">
-            <h1>About us</h1>
-            <p>TEXtasdfghjkl</p>
-            <br>
-            <p>
-            Nam lacinia, ante at suscipit aliquet, urna lacus consectetur 
-            velit, id vulputate ipsum arcu eu ligula. Nulla facilisi. Proin 
-            iaculis nisl tellus, ut bibendum lectus ultricies vitae. Nullam 
-            scelerisque mauris neque, eget viverra mi gravida sed. 
-            Pellentesque nec mi cursus, suscipit ante non, rutrum augue. 
-            Vestibulum id euismod leo. Suspendisse nec ligula a dolor faucibus iaculis. Cras luctus lectus in neque placerat, non laoreet risus eleifend. Integer et volutpat diam. Aenean ornare porttitor augue, eu bibendum dui posuere volutpat.
-            </p>
-            </span>
+    <div class="popup" onclick="popupFunction(aboutUsPopup)"> 
+    <button id="about" >About us</button>
+    
     </div>
-        <button>Cookies</button>
+    <div class="popup" onclick="popupFunction(cookiesPopup)"> 
+    <button id="cookies" >Cookies</button>
+            
+    </div>    
     </footer>
 </body>
 </html>
