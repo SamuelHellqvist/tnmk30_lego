@@ -16,7 +16,8 @@
         <img id="logo_header" src="images/image.jpg" alt="logo">
         
         
-        <div class="popup" onclick="popupFunction(howToUsePopup)"> <button>How to Use</button>
+        <div class="popup" onclick="popupFunction(howToUsePopup)"> 
+        <button>How to Use</button>
             <span class="popuptext" id="howToUsePopup">
 
             <h1>How to use</h1>
@@ -25,11 +26,12 @@
             Suspendisse a orci consequat, euismod lacus eget, imperdiet 
             enim. Ut maximus malesuada arcu vel tempor. Proin finibus 
             ultricies iaculis. Donec sit amet metus et justo blandit 
-            luctus sed id urna.<img src="images/image.jpg"> Nulla cursus sem quis mi lacinia iaculis. 
+            luctus sed id urna. Nulla cursus sem quis mi lacinia iaculis. 
             Sed eu aliquam libero. Pellentesque nisl odio, ullamcorper 
             eu nunc ac, semper hendrerit lacus. Donec sed mauris posuere, 
             posuere nisi eget, vulputate quam.
             </p>
+            <img src="images/image.jpg">
             <br>
             <p>
             Nam lacinia, ante at suscipit aliquet, urna lacus consectetur 

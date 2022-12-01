@@ -17,6 +17,7 @@ function popupFunction(id){
         howToUsePopup.style.display = "none";
         aboutUsPopup.style.display = "none";
     }
+
     if (popup.style.display === "block") {
         popup.style.display = "none";
       } else {
