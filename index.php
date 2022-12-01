@@ -1,5 +1,4 @@
 <!-- php-dokumentet för webbsidans "homepage" -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,12 +14,12 @@
     <header> 
         <img id="logo_header" src="images/image.jpg" alt="logo">
         
-        
         <div class="popup" onclick="popupFunction(howToUsePopup)"> 
         <button>How to Use</button>
-            <span class="popuptext" id="howToUsePopup">
+        </div>
 
-            <h1>How to use</h1>
+        <span class="popuptext" id="howToUsePopup">
+            <h1>How to use</h1><button>Close</button>
             <p> 
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
             Suspendisse a orci consequat, euismod lacus eget, imperdiet 
@@ -42,6 +41,7 @@
             Vestibulum id euismod leo. Suspendisse nec ligula a dolor faucibus iaculis. Cras luctus lectus in neque placerat, non laoreet risus eleifend. Integer et volutpat diam. Aenean ornare porttitor augue, eu bibendum dui posuere volutpat.
             </p>
             </span>
+
             <span class="popuptext" id="aboutUsPopup">
             <h1>About us</h1>
             <p>TEXtasdfghjkl</p>
@@ -55,6 +55,7 @@
             Vestibulum id euismod leo. Suspendisse nec ligula a dolor faucibus iaculis. Cras luctus lectus in neque placerat, non laoreet risus eleifend. Integer et volutpat diam. Aenean ornare porttitor augue, eu bibendum dui posuere volutpat.
             </p>
             </span>
+
             <span class="popuptext" id="cookiesPopup">
             <h1>Cookies</h1>
             <br>
@@ -62,10 +63,6 @@
             Yeet
             </p>
             </span>
-        </div>
-
-      
-
     </header>
 
     <div class="search_section">
