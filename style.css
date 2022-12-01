@@ -62,6 +62,7 @@ header button {
 /* Ändrar knappar i footer */
 footer button{
     align-self: center;
+    white-space: nowrap;
 }
 
 header img{
@@ -111,6 +112,37 @@ input{
     color: var(--textgrey);
 }
 
+/* Alla popups */
+.popup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popuptext{ 
+    display: none;
+    width: 70vw;
+    border-radius: 2rem;
+    background-color: rgb(37, 179, 235);
+    z-index: 1;
+    position: absolute;
+    top: 10vw;
+    justify-self: center;
+    padding: 2.5%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#myPopup img{
+    height: 10vw;
+    width: 10vw;
+}
+
+
+.popup .show {
+    display: block;
+}
+
+
 /* Alla knappar */
 button{
     background-color: var(--darkBlue);
@@ -120,8 +152,16 @@ button{
     padding: 0.5%;
     border-radius: 2rem;
     height: 6vh;
-
 }
+
+#about {
+    padding: 5%;
+}
+
+#cookies {
+    padding: 5%;
+}
+
 
 /* När alla knappar svävas över */
 button:hover{
@@ -159,5 +199,23 @@ button:hover{
 .brickinfo section{
     text-align: center;
     padding: 10%;
-
 }
+
+
+/* from w3schools */
+#topBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 1%; /* Place the button at the bottom of the page */
+    right: 0%; /*Place the button to the right*/
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: lightblue; /* Set a background color */
+    color: black; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    font-size: 1.5rem;
+    display: none;
+    padding: 0.5%  1% 0.5% 1%;
+    border-radius: 20rem;
+  }

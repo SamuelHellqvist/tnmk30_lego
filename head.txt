@@ -25,3 +25,4 @@
         <button class="" id="how_to_use_btn">How to use</button>
 
     </header>
+    <button id="topBtn" title="go to top">Top</button>
