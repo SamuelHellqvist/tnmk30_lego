@@ -75,6 +75,7 @@ while($row = mysqli_fetch_array($contents)){
 }
 
 ?>
+<button id="topBtn" title="go to top">Top</button>
 
 </body>
 
