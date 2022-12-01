@@ -16,8 +16,8 @@
         <img class="left" src="images/image.jpg" alt="logo">
         
 
-          <form class="right" action="">
-                <input type="text">
+          <form class="right" action="search.php" method="get">
+                <input type="text" name="searchResult">
             
                 <input type="submit">
         </form>
@@ -25,3 +25,4 @@
         <button class="" id="how_to_use_btn">How to use</button>
 
     </header>
+    <button id="topBtn" title="go to top">Top</button>
