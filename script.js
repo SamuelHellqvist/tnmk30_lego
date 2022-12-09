@@ -25,6 +25,13 @@ function popupFunction(id){
       }
 }
 
+function closePopup(id){
+  document.getElementById(id.id).style.display = "none";
+}
+
+
+
+
 
 
 
