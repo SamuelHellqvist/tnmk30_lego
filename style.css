@@ -159,6 +159,19 @@ button{
 #cookies {
     padding: 5%;
 }
+/*close knapp i popup*/
+#closeBtn {
+float: right;
+border-radius: 50%;
+text-align: center;
+padding: 0.1;
+width: 3rem;
+height: 3rem;
+padding: 0;
+background-color: tomato;
+transform: rotate(45deg);
+
+}
 
 
 /* När alla knappar svävas över */
