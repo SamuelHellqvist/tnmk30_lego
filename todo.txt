@@ -1,5 +1,26 @@
 /To do list/
 
-Rensa upp lite i css och html. Till exempel behövs inte css properties för alla knappars olika 
-klasser/id när man skulle kunna ändra i button css
+Main 
+----
+Innehåll på alla popups
+Sizelimit på kanppar
+Fixa bilder, Legobitar på sidorna på startsidan
+Gradient bakgrund
+Ta bort loggan på startsidan då den red an är mitt i bilden
+Söknapp, bild
 
+Resultatsida
+------------
+Footer ska läggas till längs ner
+Bestämma max antal visade resultat på en sida, ha en "nästa sida knapp"
+Centrera knapparna
+Gradient bakgrund 
+Breadcrumbs
+
+Färgsida
+--------
+Skapa QUERY, visa i en lista
+
+Setsida
+-------
+Skapa QUERY, visa i en lista
