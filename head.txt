@@ -20,6 +20,7 @@
         </div>
 
          <span class="popuptext" id="howToUsePopup">
+         <button onclick="closePopup(howToUsePopup)" id="closeBtn">+</button>
             <?php include("howToUse.txt"); ?>
         </span>
 
