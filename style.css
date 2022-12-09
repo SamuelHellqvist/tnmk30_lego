@@ -25,9 +25,14 @@ body {
     background: linear-gradient(0deg, rgba(141,214,231,1) 35%, rgba(141,203,250,1) 100%);
 }
 
+.heightlessBody{
+    background: rgb(141,214,231);
+}
+
 /* Allt i header*/
 header {
     height: 10%;
+    max-height: calc(100vh/10);
     background-color: var(--green);
     display: flex;
     flex-direction: row;
