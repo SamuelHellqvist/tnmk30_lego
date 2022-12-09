@@ -12,7 +12,7 @@
 <body>
     <!-- header -->
     <header> 
-        <img id="logo_header" src="images/image.jpg" alt="logo">
+    <a href="index.php"><img id="logo_header" src="images/image.jpg" alt="logo"></a>
         
         <div class="popup" onclick="popupFunction(howToUsePopup)"> 
         <button>How to Use</button>
