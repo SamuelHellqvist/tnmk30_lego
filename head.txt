@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
-<body>
+<body class="heightlessBody">
     <!-- header -->
     <header> 
 
@@ -32,7 +32,7 @@
             <?php include("cookies.txt"); ?>
         </span>
         
-        <form class="headform" action="search.php" method="post">
+        <form class="headform" action="search.php" method="get">
             <input type="text" name="searchResult">
             
             <input type="submit">
