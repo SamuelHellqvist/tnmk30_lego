@@ -123,8 +123,8 @@ input{
     display: none;
     width: 70vw;
     border-radius: 2rem;
-    background-color: rgb(37, 179, 235);
     z-index: 1;
+    background-color: white;
     position: absolute;
     top: 10vw;
     justify-self: center;
