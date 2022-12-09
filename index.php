@@ -17,17 +17,18 @@
         <div class="popup" onclick="popupFunction(howToUsePopup)"> 
         <button>How to Use</button>
         </div>
-
         <span class="popuptext" id="howToUsePopup">
-        <button id="closeBtn">Close</button>
+            <button onclick="closePopup(howToUsePopup)" id="closeBtn">Close</button>
             <?php include("howToUse.txt"); ?>
         </span>
 
         <span class="popuptext" id="aboutUsPopup">
+            <button onclick="closePopup(aboutUsPopup)" id="closeBtn">Close</button>
             <?php include("aboutUs.txt"); ?>
         </span>
 
         <span class="popuptext" id="cookiesPopup">
+            <button onclick="closePopup(cookiesPopup)" id="closeBtn">Close</button>
             <?php include("cookies.txt"); ?>
         </span>
 
