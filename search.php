@@ -2,10 +2,6 @@
     include 'head.txt';
 ?>
 
-<form action="search.php" >
-
-</form>
-
 <?php
 $connection = mysqli_connect("mysql.itn.liu.se","lego","","lego");
 
@@ -16,6 +12,7 @@ if (!$connection){
 $searchResult = $_POST['searchResult'];
 echo $searchResult;
 
+//Make sure spaces are removed on search term and in partname from server
 $searchKey = 
 "SELECT DISTINCT inventory.ColorID, inventory.ItemtypeID, inventory.ItemID, 
 images.has_gif, images.has_jpg, parts.Partname
@@ -55,15 +52,14 @@ while($row = mysqli_fetch_array($contents)){
     print(
         "<article class='brickinfo'>
             <section>
-                <h1>$brickName</h1>
+                <a href='chosenBrick.php'><h1>$brickName</h1></a>
                 <p>
                     $brickId
                     $colorID
-                    
                 </p>
             </section>
             <div id='imgbox'>
-            <img src=$imglink>
+            <a href='chosenBrick.php'><img src=$imglink alt=$brickName></a>
             </div>
         </article>
         \n
