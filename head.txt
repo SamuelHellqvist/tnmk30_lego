@@ -15,11 +15,23 @@
 
         <img class="left" src="images/image.jpg" alt="logo">
         
-        <div class="popup" onclick="popupFunction(howToUsePopup)"> 
-            <button>How to Use</button>
+        <div class="howToSearched" class="popup" onclick="popupFunction(howToUsePopup)"> 
+        <button>How to Use</button>
         </div>
+
+         <span class="popuptext" id="howToUsePopup">
+            <?php include("howToUse.txt"); ?>
+        </span>
+
+        <span class="popuptext" id="aboutUsPopup">
+            <?php include("aboutUs.txt"); ?>
+        </span>
+
+        <span class="popuptext" id="cookiesPopup">
+            <?php include("cookies.txt"); ?>
+        </span>
         
-        <form class="right" action="search.php" method="get">
+        <form class="headform" action="search.php" method="post">
             <input type="text" name="searchResult">
             
             <input type="submit">

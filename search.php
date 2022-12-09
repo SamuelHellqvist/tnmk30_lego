@@ -9,8 +9,10 @@ if (!$connection){
     die('MySQL connection error');
 }
 
-$searchResult = $_POST['searchResult'];
+$searchResult = $_GET['searchResult'];
 echo $searchResult;
+
+
 
 //Make sure spaces are removed on search term and in partname from server
 $searchKey = 
@@ -48,18 +50,19 @@ while($row = mysqli_fetch_array($contents)){
     $imglink = "http://www.itn.liu.se/~stegu76/img.bricklink.com/$filename";
 
     if($brickId !== $check){
-
+    $hej = '1';
     print(
         "<article class='brickinfo'>
             <section>
-                <a href='chosenBrick.php'><h1>$brickName</h1></a>
+                <a href='chosenBrick.php?part=$brickId'><h1>$brickName</h1></a>
                 <p>
                     $brickId
                     $colorID
                 </p>
+                
             </section>
             <div id='imgbox'>
-            <a href='chosenBrick.php'><img src=$imglink alt=$brickName></a>
+            <a href='chosenBrick.php?part=$brickId'><img src=$imglink alt=$brickName></a>
             </div>
         </article>
         \n

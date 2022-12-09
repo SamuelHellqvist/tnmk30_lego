@@ -34,6 +34,7 @@ header {
     align-items: center;
     justify-content: center;
     position: relative;
+    min-height: 50px;
 }
 
 #logo_header {
@@ -75,10 +76,20 @@ header img{
 }
 
 /* Skicka till höger */
-.right{
+.headform{
     margin-left: auto;
     align-self: center;
     margin-right: 2%;
+    display: flex;
+    padding: 2%;
+}
+
+.headform input{
+    padding: 5%;
+}
+
+.howToSearched{
+position: relative;
 }
 
 /* Objekt i mitten på startsidan */
