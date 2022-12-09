@@ -9,7 +9,7 @@ if (!$connection){
     die('MySQL connection error');
 }
 
-$searchResult = $_GET['searchResult'];
+$searchResult = $_POST['searchResult'];
 echo $searchResult;
 
 //Make sure spaces are removed on search term and in partname from server
