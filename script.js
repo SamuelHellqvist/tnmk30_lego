@@ -18,12 +18,15 @@ function popupFunction(id){
         aboutUsPopup.style.display = "none";
     }
 
-    if (popup.style.display === "block") {
+    if (popup.style.display === "block" || id=='closeBtn') {
         popup.style.display = "none";
       } else {
         popup.style.display = "block";
       }
 }
+
+
+
 
 
 

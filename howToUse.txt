@@ -1,4 +1,4 @@
-<h1>How to use</h1><button>Close</button>
+<h1>How to use</h1>
             <p> 
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
             Suspendisse a orci consequat, euismod lacus eget, imperdiet 

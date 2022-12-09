@@ -19,6 +19,7 @@
         </div>
 
         <span class="popuptext" id="howToUsePopup">
+        <button id="closeBtn">Close</button>
             <?php include("howToUse.txt"); ?>
         </span>
 
@@ -29,7 +30,7 @@
         <span class="popuptext" id="cookiesPopup">
             <?php include("cookies.txt"); ?>
         </span>
-        
+
     </header>
 
     <?php
