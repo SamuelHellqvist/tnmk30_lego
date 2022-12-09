@@ -1,3 +1,8 @@
+Main page:
 http://www.student.itn.liu.se/~emmda989/Legoprojekt/github/tnmk30_lego/
 
+Search page:
 http://www.student.itn.liu.se/~kriho388/tnmk30/lego/tnmk30_lego/search.php
+
+Searched for "brick 1 x 2 x 5":
+http://www.student.itn.liu.se/~kriho388/tnmk30/lego/tnmk30_lego/search.php?searchResult=brick+1+x+2+x+5 
