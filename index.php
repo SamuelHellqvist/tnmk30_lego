@@ -19,57 +19,30 @@
         </div>
 
         <span class="popuptext" id="howToUsePopup">
-            <h1>How to use</h1><button>Close</button>
-            <p> 
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Suspendisse a orci consequat, euismod lacus eget, imperdiet 
-            enim. Ut maximus malesuada arcu vel tempor. Proin finibus 
-            ultricies iaculis. Donec sit amet metus et justo blandit 
-            luctus sed id urna. Nulla cursus sem quis mi lacinia iaculis. 
-            Sed eu aliquam libero. Pellentesque nisl odio, ullamcorper 
-            eu nunc ac, semper hendrerit lacus. Donec sed mauris posuere, 
-            posuere nisi eget, vulputate quam.
-            </p>
-            <img src="images/image.jpg">
-            <br>
-            <p>
-            Nam lacinia, ante at suscipit aliquet, urna lacus consectetur 
-            velit, id vulputate ipsum arcu eu ligula. Nulla facilisi. Proin 
-            iaculis nisl tellus, ut bibendum lectus ultricies vitae. Nullam 
-            scelerisque mauris neque, eget viverra mi gravida sed. 
-            Pellentesque nec mi cursus, suscipit ante non, rutrum augue. 
-            Vestibulum id euismod leo. Suspendisse nec ligula a dolor faucibus iaculis. Cras luctus lectus in neque placerat, non laoreet risus eleifend. Integer et volutpat diam. Aenean ornare porttitor augue, eu bibendum dui posuere volutpat.
-            </p>
-            </span>
+            <?php include("howToUse.txt"); ?>
+        </span>
 
-            <span class="popuptext" id="aboutUsPopup">
-            <h1>About us</h1>
-            <p>TEXtasdfghjkl</p>
-            <br>
-            <p>
-            Nam lacinia, ante at suscipit aliquet, urna lacus consectetur 
-            velit, id vulputate ipsum arcu eu ligula. Nulla facilisi. Proin 
-            iaculis nisl tellus, ut bibendum lectus ultricies vitae. Nullam 
-            scelerisque mauris neque, eget viverra mi gravida sed. 
-            Pellentesque nec mi cursus, suscipit ante non, rutrum augue. 
-            Vestibulum id euismod leo. Suspendisse nec ligula a dolor faucibus iaculis. Cras luctus lectus in neque placerat, non laoreet risus eleifend. Integer et volutpat diam. Aenean ornare porttitor augue, eu bibendum dui posuere volutpat.
-            </p>
-            </span>
+        <span class="popuptext" id="aboutUsPopup">
+            <?php include("aboutUs.txt"); ?>
+        </span>
 
-            <span class="popuptext" id="cookiesPopup">
-            <h1>Cookies</h1>
-            <br>
-            <p>
-            Yeet
-            </p>
-            </span>
+        <span class="popuptext" id="cookiesPopup">
+            <?php include("cookies.txt"); ?>
+        </span>
+        
     </header>
+
+    <?php
+    session_start();
+    $search
+    ?>
 
     <div class="search_section">
         <img id="search_image" src="images/image.jpg" alt="logo">
-        <form action="search.php" method="get" >
-        <input type="text" id="search_bar" placeholder="Find your inner piece...">
+        <form action="search.php?searchResult=" method="post" >
+        <input type="text" name="searchResult" id="search_bar" placeholder="Find your inner piece...">
         </form> 
+
     </div>
     
     <footer>
@@ -84,3 +57,6 @@
     </footer>
 </body>
 </html>
+<?php
+    session_unset();
+?>

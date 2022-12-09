@@ -2,8 +2,8 @@
     include 'head.txt';
 ?>
 
-<form action="search.php">
-    
+<form action="search.php" >
+
 </form>
 
 <?php
@@ -13,7 +13,7 @@ if (!$connection){
     die('MySQL connection error');
 }
 
-$searchResult = $_GET['searchResult'];
+$searchResult = $_POST['searchResult'];
 echo $searchResult;
 
 $searchKey = 

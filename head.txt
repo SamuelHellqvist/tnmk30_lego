@@ -16,7 +16,7 @@
         <img class="left" src="images/image.jpg" alt="logo">
         
 
-          <form class="right" action="search.php" method="get">
+          <form class="right" action="search.php" method="post">
                 <input type="text" name="searchResult">
             
                 <input type="submit">
