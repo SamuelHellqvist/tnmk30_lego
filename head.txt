@@ -15,13 +15,16 @@
 
         <img class="left" src="images/image.jpg" alt="logo">
         
-
-          <form class="right" action="search.php" method="get">
-                <input type="text" name="searchResult">
+        <div class="popup" onclick="popupFunction(howToUsePopup)"> 
+            <button>How to Use</button>
+        </div>
+        
+        <form class="right" action="search.php" method="get">
+            <input type="text" name="searchResult">
             
-                <input type="submit">
+            <input type="submit">
         </form>
         
-        <button class="" id="how_to_use_btn">How to use</button>
+       
 
     </header>

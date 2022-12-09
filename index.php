@@ -68,7 +68,7 @@
     <div class="search_section">
         <img id="search_image" src="images/image.jpg" alt="logo">
         <form action="search.php" method="get" >
-        <input type="text" id="search_bar" placeholder="Find your inner piece...">
+            <input type="text" id="search_bar" placeholder="Find your inner piece...">
         </form> 
     </div>
     

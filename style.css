@@ -199,6 +199,13 @@ button:hover{
     padding: 10%;
 }
 
+.brickinfo section a{
+    color: black;
+}
+
+.brickinfo section a:link{
+    text-decoration: none;
+}
 
 /* from w3schools */
 #topBtn {
