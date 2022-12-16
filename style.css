@@ -92,8 +92,15 @@ footer button{
     padding: 0.75rem;
 }
 
+<<<<<<< Updated upstream
 .howToSearched{
 position: relative;
+=======
+/* center button bättre */
+#how_to_use_btn {
+    margin-right: auto;
+    margin-left: auto;
+>>>>>>> Stashed changes
 }
 
 /* Objekt i mitten på startsidan */
