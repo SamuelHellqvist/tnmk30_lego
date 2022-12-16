@@ -13,7 +13,7 @@ Resultatsida
 ------------
 Footer ska läggas till längs ner
 Bestämma max antal visade resultat på en sida, ha en "nästa sida knapp"
-Centrera knapparna
+X    Centrera knapparna
 Gradient bakgrund 
 Breadcrumbs
 
