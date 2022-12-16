@@ -15,7 +15,10 @@
     <a href="index.php"><img id="logo_header" src="images/image.jpg" alt="logo"></a>
         
         <div class="popup" onclick="popupFunction(howToUsePopup)"> 
-        <button>How to Use</button>
+        <button id="how_to_use_btn">How to Use</button>
+        <button id="how_to_use_btn_min">?</button>
+
+        <!-- <button id="?_btn">?</button> -->
         </div>
         <span class="popuptext" id="howToUsePopup">
             <button onclick="closePopup(howToUsePopup)" id="closeBtn">+</button>
@@ -40,10 +43,10 @@
 
     <div class="search_section">
         <img id="search_image" src="images/image.jpg" alt="logo">
-        <form action="search.php" method="get" >
-        <input type="text" name="searchResult" id="search_bar" placeholder="Find your inner piece...">
-        <input type="image" class="searchBtn" src="images/magnifyingGlass.png" alt="Magnifying Glass">
-        </form> 
+            <form action="search.php" method="get" >
+            <input type="text" name="searchResult" id="search_bar" placeholder="Find your inner piece...">
+            <input type="image" class="searchBtn" src="images/magnifyingGlass.png" alt="Magnifying Glass">
+            </form> 
     </div>
 
     

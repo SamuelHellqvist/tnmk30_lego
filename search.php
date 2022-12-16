@@ -8,12 +8,17 @@ $connection = mysqli_connect("mysql.itn.liu.se","lego","","lego");
 if (!$connection){
     die('MySQL connection error');
 }
+// $searchResult = $_GET['searchResult'];
 
-$searchResult = $_GET['searchResult'];
-echo "currently displaying results for: ";
+//form validation, blir inte körbar kod utan html format
+$searchResult = htmlspecialchars($_GET['searchResult']);
+//ta bort alla whitespaces
+// $searchResult = str_replace(' ', '', $searchResult);
+echo "Currently displaying results for: ";
 echo $searchResult;
 
 
+/*<?php echo "Text"; ?>*/
 
 //Make sure spaces are removed on search term and in partname from server
 $searchKey = 

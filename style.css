@@ -90,13 +90,7 @@ footer button{
 }
 
 .headform input{
-    padding: 0rem;
-}
-
-/* center button bättre */
-#how_to_use_btn {
-    margin-right: auto;
-    margin-left: auto;
+    padding: 0.5rem;
 }
 
 /* Objekt i mitten på startsidan */
@@ -119,7 +113,7 @@ footer button{
 }
 
 .cookiesImg{
-height: 20rem;
+    height: 20rem;
 }
 
 
@@ -130,6 +124,15 @@ height: 20rem;
     border-width: 2px;
     padding: 0.75rem;
 }
+
+form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
 /* Sökruta på search sidan*/
 #resultSearchbar{
     border: solid black;
@@ -186,6 +189,18 @@ button{
     min-height: 3rem;
 }
 
+#how_to_use_btn {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#how_to_use_btn_min{
+    display: none;
+    border-radius: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
 #about {
     padding: 5%;
 }
@@ -195,26 +210,27 @@ button{
 }
 /*close knapp i popup*/
 #closeBtn {
-float: right;
-border-radius: 50%;
-text-align: center;
-width: 3rem;
-height: 3rem;
-padding: 0;
-font-size: 2rem;
-background-color: tomato;
-border: solid tomato;
-transform: rotate(45deg);
-
+    float: right;
+    border-radius: 50%;
+    text-align: center;
+    width: 3rem;
+    height: 3rem;
+    padding: 0;
+    font-size: 2rem;
+    background-color: tomato;
+    border: solid tomato;
+    transform: rotate(45deg);
 }
 
 .searchBtn{
-    height: 2rem;
-    width: 2rem;
+    height: 2.5rem;
+    width: 2.5rem;
     background-color: white;
     border: solid black;
     border-width: 2px;
+    border-radius: 50%;
 }
+
 
 /* När alla knappar svävas över */
 button:hover{
@@ -302,3 +318,15 @@ button:hover{
     padding: 5%;
     margin: 5%;
 }
+
+
+@media only screen and (max-width: 900px) {
+    #how_to_use_btn{
+        display: none;
+        background-color: blueviolet;
+    }
+    #how_to_use_btn_min{
+        display: block;
+    }
+}
+

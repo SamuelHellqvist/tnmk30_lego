@@ -16,7 +16,9 @@
         <a href="index.php"><img class="left" id="logo_header" src="images/image.jpg" alt="logo"></a>
         
         <div class="howToSearched" class="popup" onclick="popupFunction(howToUsePopup)"> 
-        <button>How to Use</button>
+        <button id="how_to_use_btn">How to Use</button>
+        <button id="how_to_use_btn_min">?</button>
+
         </div>
 
          <span class="popuptext" id="howToUsePopup">
