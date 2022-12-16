@@ -29,22 +29,13 @@ function closePopup(id){
   document.getElementById(id.id).style.display = "none";
 }
 
-
-
-
-
-
-
-/*Samuels lilla script*/
-
-/* This scirpt originates from w3schools */
+/*NOTE This scirpt originates from w3schools.com NOTE*/
 let topbutton = document.getElementById("topBtn");
 
-// When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+  if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
     topbutton.style.display = "block";
   } else {
     topbutton.style.display = "none";

@@ -10,6 +10,7 @@ if (!$connection){
 }
 
 $searchResult = $_GET['searchResult'];
+echo "currently displaying results for: ";
 echo $searchResult;
 
 
