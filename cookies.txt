@@ -1,5 +1,4 @@
-<h1>Cookies</h1>
-            <br>
-            <p>
-recept 
-            </p>
+<h1><u>Cookies</u></h1>
+<p><img src="/images/Cookie1.jpg" alt="Cookie 1" /></p>
+<p><img src="/images/Cookie2.jpg" alt="Cookie 2" /></p>
+<p><img src="/images/Cookie2.jpg" alt="Cookie 3" /></p>
