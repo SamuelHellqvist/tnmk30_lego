@@ -90,7 +90,7 @@ footer button{
 }
 
 .headform input{
-    padding: 0.75rem;
+    padding: 0rem;
 }
 
 /* center button bättre */
@@ -107,6 +107,7 @@ footer button{
     justify-content: center;
     position: relative;
     white-space: nowrap;
+    padding: 1rem;
 }
 
 
@@ -208,9 +209,8 @@ transform: rotate(45deg);
 }
 
 .searchBtn{
-    height: 2.75rem;
-    width: 2.75rem;
-    padding:1%;
+    height: 2rem;
+    width: 2rem;
     background-color: white;
     border: solid black;
     border-width: 2px;
@@ -231,7 +231,6 @@ button:hover{
 }
 
 
-
 .brickinfo{
     display: grid;
     grid-template-rows: 1fr;
@@ -245,7 +244,6 @@ button:hover{
     border-radius: 1rem;
     
 }
-
 
 .brickinfo #imgbox {
     height: 100%;

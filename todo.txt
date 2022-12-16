@@ -3,7 +3,7 @@
 Main 
 ----
 Innehåll på alla popups
-Sizelimit på kanppar
+X    Sizelimit på kanppar
 Fixa bilder, Legobitar på sidorna på startsidan
 Gradient bakgrund
 Ta bort loggan på startsidan då den red an är mitt i bilden
