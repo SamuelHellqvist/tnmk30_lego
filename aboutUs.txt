@@ -1,11 +1,8 @@
-<h1>About us</h1>
-            <p>TEXtasdfghjkl</p>
-            <br>
-            <p>
-            Nam lacinia, ante at suscipit aliquet, urna lacus consectetur 
-            velit, id vulputate ipsum arcu eu ligula. Nulla facilisi. Proin 
-            iaculis nisl tellus, ut bibendum lectus ultricies vitae. Nullam 
-            scelerisque mauris neque, eget viverra mi gravida sed. 
-            Pellentesque nec mi cursus, suscipit ante non, rutrum augue. 
-            Vestibulum id euismod leo. Suspendisse nec ligula a dolor faucibus iaculis. Cras luctus lectus in neque placerat, non laoreet risus eleifend. Integer et volutpat diam. Aenean ornare porttitor augue, eu bibendum dui posuere volutpat.
-            </p>
+<h1><strong><u>About us</u></strong></h1>
+<p>We are project group 3 and this is our webside to solve the task we were given:</p>
+<p>"Design and implement a web-based interface to search for information in an existing database. The website must be complete with navigation, overview, search and structured presentation."</p>
+<p>&nbsp;</p>
+<p>There were multiple project tasks which allowed for varied difficulty, our group chose:</p>
+<p><strong>PROJECT TASK 3</strong><br />"Create an interface where you can specify a list of different pieces and see which sets contain one or more of these pieces, sorted by how many pieces are included.</p>
+<p>Enter a list of bits in a form, or enter a sequence of search terms that accumulate and gradually narrow down the search until the right one is found.</p>
+<p>Intended user: collectors and sellers who bought a mixed pile of pieces without instructions, and want to sort out as many complete sets as possible from the pile. This is done by first identifying unusual pieces and seeing which batches they can conceivably come from.</p>
