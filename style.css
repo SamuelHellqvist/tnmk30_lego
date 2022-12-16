@@ -17,16 +17,12 @@
 
 /*All content på sidan*/
 body {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     overflow-x: hidden;
     
     background: rgb(141,214,231);
     background: linear-gradient(0deg, rgba(141,214,231,1) 35%, rgba(141,203,250,1) 100%);
-}
-
-.heightlessBody{
-    background: rgb(141,214,231);
 }
 
 /* Allt i header*/
