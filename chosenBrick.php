@@ -10,9 +10,10 @@ if(isset($_GET["part"])){
     $parts = $_GET["part"];
     echo($parts);
 }
+
+
 ?>
 
-<section class="container">
 
 <?php
 $connection = mysqli_connect("mysql.itn.liu.se","lego","","lego");
@@ -31,7 +32,7 @@ AND inventory.ItemID=parts.PartID
 AND colors.ColorID LIKE inventory.ColorID
 AND images.ItemtypeID=inventory.ItemtypeID
 AND images.ItemID=inventory.ItemID
-AND images.ColorID=colors.ColorID ORDER BY colors.Colorname"; 
+AND images.ColorID=colors.ColorID ORDER BY colors.Colorname";
 
 
 
@@ -40,7 +41,8 @@ $contents = mysqli_query($connection, $searchKey);
 
 while($row = mysqli_fetch_array($contents)){
 
-    $color = $row['Colorname'];
+    $colorName = $row['Colorname'];
+    $color = $row['ColorID'];
     $gif = $row['has_gif'];
     $jpg = $row['has_jpg'];
 
@@ -53,19 +55,28 @@ while($row = mysqli_fetch_array($contents)){
 
     $imglink = "http://www.itn.liu.se/~stegu76/img.bricklink.com/$filename";
     
-        print("
-
-        <div class='setinfo'>
-        <a href='setList.php?part=$parts color=$color'><h2>$color</h2></a>
-        <a href='setList.php?part=$parts color=$color'><img src=$imglink alt=$brickName></a>
-        </div>
+    if($color !== $check){
         
+        print("
+        <article class='brickinfo'>
+        <section>
+            <a href='setList.php?part=$parts&color=$color'><h1>$colorName</h1></a>
+            
+            
+        </section>
+        <div id='imgbox'>
+        <a href='setList.php?part=$parts&color=$color'><img src=$imglink alt=$brickName></a>
+        </div>
+    </article>
+    \n
+    
+
         ");
+    }
+    $check = $color;
 }
 
 ?>
-
-</section>
 
 </body>
 </html>

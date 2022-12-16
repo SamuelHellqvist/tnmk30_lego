@@ -51,7 +51,6 @@ while($row = mysqli_fetch_array($contents)){
     $imglink = "http://www.itn.liu.se/~stegu76/img.bricklink.com/$filename";
 
     if($brickId !== $check){
-    $hej = '1';
     print(
         "<article class='brickinfo'>
             <section>

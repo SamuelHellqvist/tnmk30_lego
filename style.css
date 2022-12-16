@@ -293,12 +293,9 @@ button:hover{
 }
 
 .container{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
 }
 
-.setinfo{
+.colorInfo{
     background-color: var(--green);
-    padding: 5%;
-    margin: 5%;
 }
