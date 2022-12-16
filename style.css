@@ -88,10 +88,12 @@ footer button{
     margin-right: 2%;
     display: flex;
     padding: 2%;
+    right:0;
+    position: absolute;
 }
 
 .headform input{
-    padding: 5%;
+    padding: 0.75rem;
 }
 
 .howToSearched{
@@ -118,6 +120,14 @@ position: relative;
 /* Sökrutan på huvudsidan */
 #search_bar{
     width: 25vw;
+    border: solid black;
+    border-width: 2px;
+    padding: 0.75rem;
+}
+/* Sökruta på search sidan*/
+#resultSearchbar{
+    border: solid black;
+    border-width: 2px;
 }
 
 /* Ruta för text */
@@ -191,13 +201,29 @@ transform: rotate(45deg);
 
 }
 
+#resultSearchBtn{
+    
+}
 
+#searchBtn{
+    padding: 1%;
+    background-color: white;
+    border: solid black;
+    border-width: 2px;
+}
 /* När alla knappar svävas över */
 button:hover{
     cursor: pointer;
     color: white;
     border: solid var(--tourqoise);
 }
+
+/*När searchBtn svävas över*/
+#searchBtn:hover{
+    background-color: blueviolet;
+    color: black;
+}
+
 
 
 .brickinfo{

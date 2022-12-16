@@ -42,8 +42,12 @@
         <img id="search_image" src="images/image.jpg" alt="logo">
         <form action="search.php" method="get" >
         <input type="text" name="searchResult" id="search_bar" placeholder="Find your inner piece...">
+        <input type="Submit" id="searchBtn" value="🔍">
         </form> 
     </div>
+
+    
+
     
     <footer>
     <div class="popup" onclick="popupFunction(aboutUsPopup)"> 

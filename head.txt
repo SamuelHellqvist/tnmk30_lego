@@ -32,10 +32,10 @@
             <?php include("cookies.txt"); ?>
         </span>
         
-        <form class="headform" action="search.php" method="get">
-            <input type="text" name="searchResult">
+        <form class="headform"  action="search.php" method="get">
+            <input type="text" name="searchResult" id="resultSearchbar">
             
-            <input type="submit">
+            <input type="submit" id="resultSearchBtn" value="🔍">
         </form>
         
        
