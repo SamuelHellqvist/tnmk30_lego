@@ -35,7 +35,7 @@
         <form class="headform"  action="search.php" method="get">
             <input type="text" name="searchResult" id="resultSearchbar">
             
-            <input type="submit" id="resultSearchBtn" value="🔍">
+            <input type="submit" class="searchBtn" value="🔍">
         </form>
         
        
