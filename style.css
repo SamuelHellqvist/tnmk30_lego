@@ -27,8 +27,8 @@ body {
 
 /* Allt i header*/
 header {
-    height: 10%;
-    max-height: calc(100vh/10);
+    height: 10vh;
+    max-height: calc(10vh);    
     background-color: var(--green);
     display: flex;
     flex-direction: row;
@@ -52,6 +52,7 @@ footer{
     display: flex;
     justify-content: space-around;
     background-color: var(--green);
+    min-height: 50px;
 }
 
 /* Centrar knapp vertikalt i header*/
@@ -92,8 +93,10 @@ footer button{
     padding: 0.75rem;
 }
 
-.howToSearched{
-position: relative;
+/* center button bättre */
+#how_to_use_btn {
+    margin-right: auto;
+    margin-left: auto;
 }
 
 /* Objekt i mitten på startsidan */
@@ -103,6 +106,7 @@ position: relative;
     align-items: center;
     justify-content: center;
     position: relative;
+    white-space: nowrap;
 }
 
 #search_image {
@@ -173,6 +177,7 @@ button{
     padding: 0.5%;
     border-radius: 2rem;
     height: 6vh;
+    min-height: 3rem;
 }
 
 #about {
@@ -197,16 +202,15 @@ transform: rotate(45deg);
 
 }
 
-#resultSearchBtn{
-    
-}
-
-#searchBtn{
-    padding: 1%;
+.searchBtn{
+    height: 2.75rem;
+    width: 2.75rem;
+    padding:1%;
     background-color: white;
     border: solid black;
     border-width: 2px;
 }
+
 /* När alla knappar svävas över */
 button:hover{
     cursor: pointer;
@@ -215,8 +219,9 @@ button:hover{
 }
 
 /*När searchBtn svävas över*/
-#searchBtn:hover{
-    background-color: blueviolet;
+.searchBtn:hover{
+    background-color: white;
+    border-color: var(--tourqoise);
     color: black;
 }
 
