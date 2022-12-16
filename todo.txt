@@ -2,24 +2,27 @@
 
 Main 
 ----
-X    Innehåll på alla popups
-X    Sizelimit på kanppar
 Fixa bilder, Legobitar på sidorna på startsidan
-Gradient bakgrund
-X    Söknapp, bild
+Fixa validation
+Font?
+Tillbaks till huvudida info
+Skala om cookies
 
 Resultatsida
 ------------
 Footer ska läggas till längs ner
 Bestämma max antal visade resultat på en sida, ha en "nästa sida knapp"
-X    Centrera knapparna
-Gradient bakgrund 
 Breadcrumbs
+skala text
+Filter för ordning av resultat
+Titlar vad som visas
 
 Färgsida
 --------
-Skapa QUERY, visa i en lista
+Hoppa över om inga färgval finns
+Basbild för bit
 
 Setsida
 -------
-Skapa QUERY, visa i en lista
+mer info om mängden bitar, annan info
+Filter för antal bitar i färg/antal totalt
