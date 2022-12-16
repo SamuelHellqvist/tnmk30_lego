@@ -289,6 +289,8 @@ button:hover{
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-.test {
-    background-color: aqua;
+.setinfo{
+    background-color: var(--green);
+    padding: 5%;
+    margin: 5%;
 }
