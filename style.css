@@ -109,12 +109,17 @@ footer button{
     white-space: nowrap;
 }
 
+
+/*Bilder*/
 #search_image {
     width: 20%;
     height: 20%;
     padding: 5vh 5vh 5vh 5vh;
 }
 
+.cookiesImg{
+height: 20rem;
+}
 
 
 /* Sökrutan på huvudsidan */

@@ -1,4 +1,2 @@
 <h1><u>Cookies</u></h1>
-<p><img src="/images/Cookie1.jpg" alt="Cookie 1" /></p>
-<p><img src="/images/Cookie2.jpg" alt="Cookie 2" /></p>
-<p><img src="/images/Cookie2.jpg" alt="Cookie 3" /></p>
+<p><img src="images/Cookie1.jpg" alt="Cookie 1" class="cookiesImg" /> <img src="images/Cookie2.jpg" alt="Cookie 2" class="cookiesImg" /> <img src="images/Cookie3.jpg" alt="Cookie 3" class="cookiesImg" /></p>
