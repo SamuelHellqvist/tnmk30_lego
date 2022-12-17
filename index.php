@@ -47,7 +47,7 @@
             <input type="text" name="searchResult" id="search_bar" placeholder="Find your inner piece...">
 
             <input type="image" id="searchBtn" onmouseover="this.src='images/magnifyingGlassHover.png'" 
-             alt="magnifying glass" onmouseout="this.src='images/magnifyingGlass.png'">
+             alt="magnifying glass" onmouseout="this.src='images/magnifyingGlass.png'" src="images/magnifyingGlass.png">
             <!-- <input type="image" id="searchBtnHover" src="images/magnifyingGlassHover.png" alt="Magnifying Glass hover"> -->
             </form> 
     </div>

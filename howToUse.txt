@@ -1,9 +1,9 @@
 <h1><strong><u>How to Use</u></strong></h1>
 <p>Input what part you are looking for into the search bar:</p>
-<p><img src="images/input.PNG" alt="Empty searchbar"></p>
+<p><img src="images/input.PNG" class="howToUseImg" alt="Empty searchbar"></p>
 <p>&nbsp;</p>
 <p>For example: You are looking for all parts that matches with the term "brick 3 x 6"</p>
 <p>&nbsp;</p>
-<p><img src="images/example.PNG" alt="Example search: &ldquo;brick 3 x 6&rdquo;"></p>
+<p><img src="images/example.PNG" class="howToUseImg" alt="Example search: &ldquo;brick 3 x 6&rdquo;"></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>

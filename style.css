@@ -104,7 +104,9 @@ footer button{
     white-space: nowrap;
     padding: 1rem;
 }
-
+.howToUseImg{
+max-width: 65vw;
+}
 
 /*Bilder*/
 #search_image {
@@ -114,7 +116,7 @@ footer button{
 }
 
 .cookiesImg{
-    height: 20rem;
+    height: 20vh;
 }
 
 
@@ -122,6 +124,11 @@ footer button{
 #resultSearchbar{
     border: solid black;
     border-width: 2px;
+    height: 3vh;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-right: 0;
+    box-shadow:  5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Ruta för text */
@@ -138,6 +145,7 @@ input{
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .popuptext{ 
@@ -151,16 +159,8 @@ input{
     justify-self: center;
     padding: 2%;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-shadow:  5px 5px 5px rgba(0, 0, 0, 0.2);
 }
-
-#myPopup img{
-    height: 10vw;
-    width: 10vw;
-}
-
-
-
-
 
 /* Alla knappar */
 button{
@@ -172,6 +172,7 @@ button{
     border-radius: 2rem;
     height: 6vh;
     min-height: 3rem;
+    box-shadow:  5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 #how_to_use_btn {
@@ -184,6 +185,8 @@ button{
     border-radius: 50%;
     width: 3rem;
     height: 3rem;
+    margin-left: 6vw;
+    margin-right: 5vw;
 }
 
 #about {
@@ -212,12 +215,13 @@ button{
 #search_bar{
     height: 3vh;
     width: 25vw;
-    border: solid black;
+    border: solid rgb(0, 0, 0);
     border-width: 2px;
     /* padding: 0.75rem; */
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
     border-right: 0;
+    box-shadow:  5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 form{
@@ -238,6 +242,7 @@ form{
     border-left: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    box-shadow:  5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -246,7 +251,8 @@ button:hover{
     cursor: pointer;
     color: white;
     border: solid var(--tourqoise);
-}
+    box-shadow:none; 
+    }
 
 /*När searchBtn svävas över*/
 
@@ -287,6 +293,7 @@ button:hover{
     height: fit-content;
     border-radius: 1rem;
     min-height: 100px;
+    box-shadow:  5px 5px 5px rgba(0, 0, 0, 0.2);
     
 }
 
@@ -373,8 +380,9 @@ button:hover{
         width: 10vh;
         height: 10vh;
     }
-
-
+    .popuptext{
+    margin:12%;
+    }
  
 }
 

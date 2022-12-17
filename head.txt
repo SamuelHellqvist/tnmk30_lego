@@ -26,7 +26,7 @@
             
             
         <input type="image" id="searchBtn" onmouseover="this.src='images/magnifyingGlassHover.png'" 
-             alt="magnifying glass" onmouseout="this.src='images/magnifyingGlass.png'">
+             alt="magnifying glass" onmouseout="this.src='images/magnifyingGlass.png'" src="images/magnifyingGlass.png">
         </form>
         
         

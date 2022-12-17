@@ -6,7 +6,6 @@ Fixa bilder, Legobitar på sidorna på startsidan
 Fixa validation
 Font?
 Tillbaks till huvudida info
-Skala om cookies
 
 Resultatsida
 ------------
@@ -26,3 +25,18 @@ Setsida
 -------
 mer info om mängden bitar, annan info
 Filter för antal bitar i färg/antal totalt
+
+
+
+
+
+
+
+
+
+
+
+Fråga handledare
+----------------
+om valideringen är korrekt
+ta bort mellanslag i sökning?
