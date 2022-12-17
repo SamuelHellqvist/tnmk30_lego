@@ -1,0 +1,10 @@
+<footer class="longPageFooter">
+    <div class="popup" onclick="popupFunction(aboutUsPopup)"> 
+    <button id="about" >About us</button>
+    
+    </div>
+    <div class="popup" onclick="popupFunction(cookiesPopup)"> 
+    <button id="cookies" >Cookies</button>
+            
+    </div>    
+</footer>

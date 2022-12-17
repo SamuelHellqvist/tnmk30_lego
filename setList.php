@@ -1,17 +1,12 @@
 <?php 
 include 'head.txt';
-echo $searchResult;
-?>
 
-<?php
 if(isset($_GET["part"])){
     $parts = $_GET["part"];
-    echo($parts);
 }
 
 if(isset($_GET["color"])){
     $color = $_GET["color"];
-    echo($color);
 }
 
 $connection = mysqli_connect("mysql.itn.liu.se","lego","","lego");
@@ -20,10 +15,19 @@ if (!$connection){
     die('MySQL connection error');
 }
 
-/*$searchKey = "SELECT DISTINCT inventory.SetID, colors.Colorname 
-FROM inventory, colors 
-WHERE ItemID = $parts 
-AND colors.ColorID = $color";*/
+$findName = "SELECT parts.Partname, colors.Colorname FROM parts, colors WHERE parts.PartID = $parts AND colors.ColorID = $color";
+$nameContent = mysqli_query($connection, $findName);
+
+$nameRow = mysqli_fetch_array($nameContent);
+
+$brickName = $nameRow['Partname'];
+$colorName = $nameRow['Colorname'];
+
+
+print("<h1 class='titleText'>'$colorName $brickName' can be found in these sets</h1>");
+
+
+
 
 $searchKey = "SELECT inventory.ColorID, inventory.ItemtypeID, inventory.ItemID, 
 images.has_gif, images.has_jpg, parts.Partname, colors.Colorname, colors.ColorID,
@@ -73,6 +77,11 @@ while($row = mysqli_fetch_array($contents)){
     
         );
 }
+
+//include 'footer.txt';
 ?>
+
+<button id="topBtn" title="go to top">Top</button>
+
 </body>
 </html>
