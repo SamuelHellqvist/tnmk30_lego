@@ -38,7 +38,8 @@
             <input type="text" name="searchResult" id="resultSearchbar">
             
             
-        <input type="image" class="searchBtn" src="images/magnifyingGlass.png" alt="Magnifying Glass">
+        <input type="image" id="searchBtn" onmouseover="this.src='images/magnifyingGlassHover.png'" 
+             alt="magnifying glass" onmouseout="this.src='images/magnifyingGlass.png'">
         </form>
         
        

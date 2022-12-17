@@ -87,6 +87,7 @@ footer button{
     padding: 2%;
     right:0;
     position: absolute;
+    height: 3vh;
 }
 
 .headform input{
@@ -114,22 +115,6 @@ footer button{
 
 .cookiesImg{
     height: 20rem;
-}
-
-
-/* Sökrutan på huvudsidan */
-#search_bar{
-    width: 25vw;
-    border: solid black;
-    border-width: 2px;
-    padding: 0.75rem;
-}
-
-form{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
 }
 
 
@@ -197,8 +182,8 @@ button{
 #how_to_use_btn_min{
     display: none;
     border-radius: 50%;
-    height: 2.5rem;
-    width: 2.5rem;
+    width: 3rem;
+    height: 3rem;
 }
 
 #about {
@@ -222,13 +207,37 @@ button{
     transform: rotate(45deg);
 }
 
-.searchBtn{
-    height: 2.5rem;
-    width: 2.5rem;
+
+/* Sökrutan på huvudsidan */
+#search_bar{
+    height: 3vh;
+    width: 25vw;
+    border: solid black;
+    border-width: 2px;
+    /* padding: 0.75rem; */
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-right: 0;
+}
+
+form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#searchBtn{
+    height: 3vh;
+    width: 2rem;
     background-color: white;
     border: solid black;
     border-width: 2px;
     border-radius: 50%;
+    border-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
 
@@ -240,11 +249,20 @@ button:hover{
 }
 
 /*När searchBtn svävas över*/
-.searchBtn:hover{
+
+#searchBtnHover{
+    display: none;
+    height: 3vh;
+    width: 2rem;
     background-color: white;
-    border-color: var(--tourqoise);
-    color: black;
+    border: solid black;
+    border-width: 2px;
+    border-radius: 50%;
+    border-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
+
 
 
 .brickinfo{
@@ -319,13 +337,29 @@ button:hover{
 }
 
 
-@media only screen and (max-width: 900px) {
+
+
+@media only screen and (max-width: 850px) {
     #how_to_use_btn{
         display: none;
-        background-color: blueviolet;
     }
     #how_to_use_btn_min{
         display: block;
+        left: 20%;
     }
+    header{
+        justify-content: space-between;
+    }
+    .headform{
+        position: relative;
+    }
+    #logo_header{
+        position: relative; 
+        width: 10vh;
+        height: 10vh;
+    }
+
+
+ 
 }
 
