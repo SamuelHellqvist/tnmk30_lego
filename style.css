@@ -215,7 +215,7 @@ button{
 #search_bar{
     height: 3vh;
     width: 25vw;
-    border: solid black;
+    border: solid rgb(0, 0, 0);
     border-width: 2px;
     /* padding: 0.75rem; */
     border-bottom-right-radius: 0;
@@ -364,6 +364,9 @@ button:hover{
         position: relative; 
         width: 10vh;
         height: 10vh;
+    }
+    .popuptext{
+    margin:12%;
     }
  
 }
