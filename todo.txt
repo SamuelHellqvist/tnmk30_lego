@@ -26,3 +26,17 @@ Setsida
 -------
 mer info om mängden bitar, annan info
 Filter för antal bitar i färg/antal totalt
+
+
+
+
+
+
+
+
+
+
+
+Fråga handledare
+----------------
+Hur man ska centrera popupen i min
