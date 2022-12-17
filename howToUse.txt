@@ -1,4 +1,4 @@
-<h1><strong><u>How to Use</u></strong></h1>
+<h2><strong><u>How to Use</u></strong></h2>
 <p>Input what part you are looking for into the search bar:</p>
 <p><img src="images/input.PNG" class="howToUseImg" alt="Empty searchbar"></p>
 <p>&nbsp;</p>

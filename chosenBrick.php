@@ -66,16 +66,16 @@ while($row = mysqli_fetch_array($contents)){
     if($color !== $check){
         
         print("
-        <article class='brickinfo'>
+        <div class='brickinfo'>
         <section>
-            <a href='setList.php?part=$parts&color=$color'><h1>$colorName</h1></a>
+            <a href='setList.php?part=$parts&color=$color'><h2>$colorName</h2></a>
             <p>ColorID: $color $colorNametest</p>
             
         </section>
-        <div id='imgbox'>
-        <a href='setList.php?part=$parts&color=$color'><img src=$imglink alt=$brickName></a>
+        <div class='imgbox'>
+        <a href='setList.php?part=$parts&color=$color'><img src=$imglink alt=$parts></a>
         </div>
-    </article>
+    </div>
     \n
     
 

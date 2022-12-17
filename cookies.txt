@@ -1,3 +1,3 @@
-<h1><u>Cookies</u></h1>
+<h2><u>Cookies</u></h2>
 <p>We don't have'em</p>
-<p><img src="images/Cookie1.jpg" alt="Cookie 1" class="cookiesImg" /> <img src="images/Cookie2.jpg" alt="Cookie 2" class="cookiesImg" /> <img src="images/Cookie3.jpg" alt="Cookie 3" class="cookiesImg" /></p>
+<p><img src="images/Cookie1.jpg" alt="Cookie 1" class="cookiesImg"> <img src="images/Cookie2.jpg" alt="Cookie 2" class="cookiesImg"> <img src="images/Cookie3.jpg" alt="Cookie 3" class="cookiesImg"></p>

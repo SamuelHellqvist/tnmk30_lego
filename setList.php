@@ -131,15 +131,15 @@ else{
         $imglink = "http://www.itn.liu.se/~stegu76/img.bricklink.com/$filename";
 
             print(
-                "<article class='brickinfo'>
+                "<div class='brickinfo'>
                     <section>
-                        <h1>$setName</h1>
+                        <h2>$setName</h2>
                         <p>SetID: $setID</p>
                     </section>
-                    <div id='imgbox'>
-                    <a><img src=$imglink onerror='this.onerror=null; this.src=$alt'></a>
+                    <div class='imgbox'>
+                    <a><img src=$imglink onerror='this.onerror=null; this.src=$alt' alt='$setID'></a>
                     </div>
-                </article>
+                </div>
                 \n
                 "
         

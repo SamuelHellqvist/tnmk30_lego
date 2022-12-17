@@ -59,18 +59,18 @@ while($row = mysqli_fetch_array($contents)){
 
     if($brickId !== $check){
     print(
-        "<article class='brickinfo'>
+        "<div class='brickinfo'>
             <section>
-                <a href='chosenBrick.php?part=$brickId'><h1>$brickName</h1></a>
+                <a href='chosenBrick.php?part=$brickId'><h2>$brickName</h2></a>
                 <p>
                    PartID: $brickId
                 </p>
                 
             </section>
-            <div id='imgbox'>
-            <a href='chosenBrick.php?part=$brickId'><img src=$imglink alt=$brickName></a>
+            <div class='imgbox'>
+            <a href='chosenBrick.php?part=$brickId'><img src=$imglink alt='$brickId'></a>
             </div>
-        </article>
+        </div>
         \n
         "
 

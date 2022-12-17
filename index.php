@@ -20,20 +20,20 @@
 
         <!-- <button id="?_btn">?</button> -->
         </div>
-        <span class="popuptext" id="howToUsePopup">
-            <button onclick="closePopup(howToUsePopup)" id="closeBtn">+</button>
+        <article class="popuptext" id="howToUsePopup">
+            <button onclick="closePopup(howToUsePopup)" class="closeBtn">+</button>
             <?php include("howToUse.txt"); ?>
-        </span>
+        </article>
 
-        <span class="popuptext" id="aboutUsPopup">
-            <button onclick="closePopup(aboutUsPopup)" id="closeBtn">+</button>
+        <article class="popuptext" id="aboutUsPopup">
+            <button onclick="closePopup(aboutUsPopup)" class="closeBtn">+</button>
             <?php include("aboutUs.txt"); ?>
-        </span>
+        </article>
 
-        <span class="popuptext" id="cookiesPopup">
-            <button onclick="closePopup(cookiesPopup)" id="closeBtn">+</button>
+        <article class="popuptext" id="cookiesPopup">
+            <button onclick="closePopup(cookiesPopup)" class="closeBtn">+</button>
             <?php include("cookies.txt"); ?>
-        </span>
+        </article>
 
     </header>
 

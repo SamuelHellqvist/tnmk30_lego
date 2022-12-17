@@ -197,7 +197,7 @@ button{
     padding: 5%;
 }
 /*close knapp i popup*/
-#closeBtn {
+.closeBtn {
     float: right;
     border-radius: 50%;
     text-align: center;
@@ -297,7 +297,7 @@ button:hover{
     
 }
 
-.brickinfo #imgbox {
+.brickinfo .imgbox {
     height: 100%;
     position: absolute;
     right: 0;
