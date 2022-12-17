@@ -20,19 +20,6 @@
         <button id="how_to_use_btn_min">?</button>
 
         </div>
-
-         <span class="popuptext" id="howToUsePopup">
-         <button onclick="closePopup(howToUsePopup)" id="closeBtn">+</button>
-            <?php include("howToUse.txt"); ?>
-        </span>
-
-        <span class="popuptext" id="aboutUsPopup">
-            <?php include("aboutUs.txt"); ?>
-        </span>
-
-        <span class="popuptext" id="cookiesPopup">
-            <?php include("cookies.txt"); ?>
-        </span>
         
         <form class="headform"  action="search.php" method="get">
             <input type="text" name="searchResult" id="resultSearchbar">
@@ -41,6 +28,23 @@
         <input type="image" class="searchBtn" src="images/magnifyingGlass.png" alt="Magnifying Glass">
         </form>
         
+        
+        <span class="popuptext" id="howToUsePopup">
+            <button onclick="closePopup(howToUsePopup)" id="closeBtn">+</button>
+            <?php include("howToUse.txt"); ?>
+        </span>
+
+        <span class="popuptext" id="aboutUsPopup">
+            <button onclick="closePopup(aboutUsPopup)" id="closeBtn">+</button>
+            <?php include("aboutUs.txt"); ?>
+        </span>
+
+        <span class="popuptext" id="cookiesPopup">
+            <button onclick="closePopup(cookiesPopup)" id="closeBtn">+</button>
+            <?php include("cookies.txt"); ?>
+        </span>
        
 
     </header>
+
+        

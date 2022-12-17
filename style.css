@@ -47,12 +47,17 @@ header {
 footer{
     width: 100%;
     height: 10%;
-    position: absolute;
+    position: absolute; 
     bottom: 0;
     display: flex;
     justify-content: space-around;
     background-color: var(--green);
     min-height: 50px;
+}
+
+.longPageFooter{
+    position: relative;
+    height: calc(100vh/10);
 }
 
 /* Centrar knapp vertikalt i header*/
@@ -174,9 +179,6 @@ input{
 }
 
 
-
-
-
 /* Alla knappar */
 button{
     background-color: var(--darkBlue);
@@ -246,6 +248,16 @@ button:hover{
     color: black;
 }
 
+
+.titleText{
+    text-align: center;
+    font-size: calc(10px + 8vh);
+}
+
+.subTitleText{
+    text-align: center;
+    font-size: calc(5px + 2vh);
+}
 
 .brickinfo{
     display: grid;

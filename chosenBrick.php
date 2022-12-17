@@ -1,28 +1,26 @@
 <?php 
 include 'head.txt';
-echo $searchResult;
-?>
 
-<p>hej</p>
-
-<?php
 if(isset($_GET["part"])){
     $parts = $_GET["part"];
-    echo($parts);
 }
 
-
-?>
-
-
-<?php
 $connection = mysqli_connect("mysql.itn.liu.se","lego","","lego");
 
 if (!$connection){
     die('MySQL connection error');
 }
 
-$check = -1;
+$findBrick = "SELECT parts.Partname FROM parts WHERE parts.PartID = $parts";
+
+$brickContent = mysqli_query($connection, $findBrick);
+
+$row = mysqli_fetch_array($brickContent);
+$brickName = $row['Partname'];
+
+print("<h1 class='titleText'>Choose color for '$brickName'</h1>");
+
+
 
 $searchKey = "SELECT DISTINCT inventory.ColorID, inventory.ItemtypeID, inventory.ItemID, 
 images.has_gif, images.has_jpg, parts.Partname, colors.Colorname
@@ -34,10 +32,9 @@ AND images.ItemtypeID=inventory.ItemtypeID
 AND images.ItemID=inventory.ItemID
 AND images.ColorID=colors.ColorID ORDER BY colors.Colorname";
 
-
-
 $contents = mysqli_query($connection, $searchKey);
 
+$check = -1;
 
 while($row = mysqli_fetch_array($contents)){
 
@@ -76,7 +73,10 @@ while($row = mysqli_fetch_array($contents)){
     $check = $color;
 }
 
+//include 'footer.txt';
 ?>
+
+<button id="topBtn" title="go to top">Top</button>
 
 </body>
 </html>

@@ -14,8 +14,10 @@ if (!$connection){
 $searchResult = htmlspecialchars($_GET['searchResult']);
 //ta bort alla whitespaces
 // $searchResult = str_replace(' ', '', $searchResult);
-echo "Currently displaying results for: ";
-echo $searchResult;
+
+print("<h1 class='titleText'>Choose type of brick</h1>");
+
+print("<p class='subTitleText'>Currently displaying search results for: $searchResult</p>");
 
 
 /*<?php echo "Text"; ?>*/
