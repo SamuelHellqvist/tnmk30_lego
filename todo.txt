@@ -4,21 +4,18 @@ Main
 ----
 Fixa bilder, Legobitar på sidorna på startsidan
 Fixa validation
-Font?
-Tillbaks till huvudida info
+Lägg till att man kan få veta att man kan kopiera länkar från urlen
 
 Resultatsida
 ------------
--Footer ska läggas till längs ner
 Bestämma max antal visade resultat på en sida, ha en "nästa sida knapp"
 Breadcrumbs
-skala text
 Filter för ordning av resultat
-Titlar vad som visas
+Visa bilder kommer inte upp, borde åtgärdas. de tror att de är gifs när de är jpg och vice versa
+felmeddelande om inga sökresultat finns + rekomendation om sökning
 
 Färgsida
 --------
-Hoppa över om inga färgval finns
 Basbild för bit
 
 Setsida
