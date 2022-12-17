@@ -18,6 +18,7 @@ $brickContent = mysqli_query($connection, $findBrick);
 $row = mysqli_fetch_array($brickContent);
 $brickName = $row['Partname'];
 
+
 print("<h1 class='titleText'>Choose color for '$brickName'</h1>");
 
 
@@ -32,9 +33,19 @@ AND images.ItemtypeID=inventory.ItemtypeID
 AND images.ItemID=inventory.ItemID
 AND images.ColorID=colors.ColorID ORDER BY colors.Colorname";
 
+
 $contents = mysqli_query($connection, $searchKey);
 
+$test= mysqli_fetch_array($contents);
+
+$colorNametest = $test['Colorname'];
+
 $check = -1;
+
+if($colorNametest === null){
+    echo("test");
+    header("Location: setList.php?part=$parts&color=-1");
+}
 
 while($row = mysqli_fetch_array($contents)){
 
@@ -58,7 +69,7 @@ while($row = mysqli_fetch_array($contents)){
         <article class='brickinfo'>
         <section>
             <a href='setList.php?part=$parts&color=$color'><h1>$colorName</h1></a>
-            
+            <p>ColorID: $color $colorNametest</p>
             
         </section>
         <div id='imgbox'>

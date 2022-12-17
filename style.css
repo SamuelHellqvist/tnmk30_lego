@@ -263,7 +263,16 @@ button:hover{
     border-bottom-left-radius: 0;
 }
 
+.titleText{
+    padding-top: 3vh;
+    text-align: center;
+    font-size: calc(20px + 5vh);
+}
 
+.subTitleText{
+    text-align: center;
+    font-size: calc(5px + 2vh);
+}
 
 .brickinfo{
     display: grid;
@@ -274,8 +283,10 @@ button:hover{
     background-color: var(--tourqoise);
     height: 20vw;
     position: relative;
-    max-height: 200px;
+    
+    height: fit-content;
     border-radius: 1rem;
+    min-height: 100px;
     
 }
 
@@ -283,18 +294,22 @@ button:hover{
     height: 100%;
     position: absolute;
     right: 0;
+    
 }
 
 .brickinfo img{
     border-left: solid black;
     justify-self: end;
     height: 100%;
+    max-width: 200px;
+    
     border-radius: 0rem 0.7rem 0.7rem 0rem;
 }
 
 .brickinfo section{
     text-align: center;
-    padding: 10%;
+    padding: 5%;
+    font-size: calc(15px + 2vh);
 }
 
 .brickinfo section a{

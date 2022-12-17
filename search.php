@@ -63,8 +63,7 @@ while($row = mysqli_fetch_array($contents)){
             <section>
                 <a href='chosenBrick.php?part=$brickId'><h1>$brickName</h1></a>
                 <p>
-                    $brickId
-                    $colorID
+                   PartID: $brickId
                 </p>
                 
             </section>
