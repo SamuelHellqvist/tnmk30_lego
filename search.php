@@ -33,13 +33,18 @@ AND colors.ColorID=inventory.ColorID
 AND images.ItemtypeID=inventory.ItemtypeID
 AND images.ItemID=inventory.ItemID
 AND images.ColorID=colors.ColorID
-"; 
+";
+
 
 $contents = mysqli_query($connection, $searchKey);
 
 $check = -1;
 
+$count = 0;
+
 while($row = mysqli_fetch_array($contents)){
+
+    $count++;
     $color = $row['Colorname'];
     $colorID = $row['ColorID'];
     $brickName = $row['Partname'];
@@ -77,6 +82,26 @@ while($row = mysqli_fetch_array($contents)){
     );
     $check = $brickId;
     }
+}
+if($count === 0){
+    print("
+        <div class='noResults'>
+            <h2>Your search '$searchResult' did not match any of the bricks in our database</h2>
+            <p>Sorry buddie :( </p>
+            <p>Suggestions to find results:</p>
+            <ul>
+                <li>Make sure that all words are spelled correctly</li>
+                <li>Try different words all together</li>
+            </ul>
+            <p>Suggested searches:</p>
+            <ul>
+                <li>Brick 2 x 2</li>
+                <li>Baseplate</li>
+                <li>Hinge brick</li>
+            </ul>
+        </div>
+    
+    ");
 }
 
 ?>

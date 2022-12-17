@@ -251,8 +251,12 @@ button:hover{
     cursor: pointer;
     color: white;
     border: solid var(--tourqoise);
-    box-shadow:none; 
     }
+
+button:active{
+    transition: ease-in-out 0.3s;
+    box-shadow: none;
+}
 
 /*När searchBtn svävas över*/
 
@@ -384,5 +388,14 @@ button:hover{
     margin:12%;
     }
  
+}
+
+.noResults{
+    font-size: larger;
+    padding: 10%;
+}
+.noResults p{
+    padding-top: 1%;
+    
 }
 
