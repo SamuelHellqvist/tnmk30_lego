@@ -182,6 +182,7 @@ button{
 #how_to_use_btn {
     margin-right: auto;
     margin-left: auto;
+    font-weight: bold;
 }
 
 #how_to_use_btn_min{
@@ -191,14 +192,17 @@ button{
     height: 3rem;
     margin-left: 6vw;
     margin-right: 5vw;
+    font-weight: bold;
 }
 
 #about {
     padding: 5%;
+    font-weight: bold;
 }
 
 #cookies {
     padding: 5%;
+    font-weight: bold;
 }
 
 /*close knapp i popup*/
@@ -261,19 +265,23 @@ button:active{
     bottom: 1%; /* Place the button at the bottom of the page */
     right: 1.5%;
     z-index: 99; /* Make sure it does not overlap */
-    background-color: var(--tourqoise); /* Set a background color */
+    background-color: tomato; /* Set a background color */
     color: black; /* Text color */
     cursor: pointer; /* Add a mouse pointer on hover */
     font-size: 1.5rem;
     display: none;
     padding: 0.5%  1% 0.5% 1%;
     border-radius: 20rem;
-    border: solid black;
+    border: solid tomato;
+    font-weight: bold;
   }
 
 #topBtn:hover{
-    border: solid var(--textgrey);
+    border: solid var(--tourqoise);
+    color: white;
 }
+
+
 
 
 /* --- Forms --- */
