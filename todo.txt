@@ -14,6 +14,7 @@ Filter för ordning av resultat
 Visa bilder kommer inte upp, borde åtgärdas. de tror att de är gifs när de är jpg och vice versa
 felmeddelande om inga sökresultat finns + rekomendation om sökning
 Referera rätt "From W3Schools"?
+Fixa hovereffekt för resultatrutorna (containers)
 
 Färgsida
 --------
