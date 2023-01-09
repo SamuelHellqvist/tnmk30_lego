@@ -4,6 +4,7 @@ Main
 ----
 Fixa validation
 Lägg till att man kan få veta att man kan kopiera länkar från urlen
+Skriva kommentarer. yas slay
 
 Resultatsida
 ------------
@@ -12,6 +13,7 @@ Breadcrumbs
 Filter för ordning av resultat
 Visa bilder kommer inte upp, borde åtgärdas. de tror att de är gifs när de är jpg och vice versa
 felmeddelande om inga sökresultat finns + rekomendation om sökning
+Referera rätt "From W3Schools"?
 
 Färgsida
 --------

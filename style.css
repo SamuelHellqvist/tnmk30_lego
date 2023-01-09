@@ -1,5 +1,4 @@
-/* css dokumentet för hela websidan */
-
+/* --- css dokumentet för hela websidan --- */
 
 *{
     margin: 0;
@@ -13,21 +12,18 @@
     --green: rgb(136, 242, 204);
     --textgrey: #6a6a6a;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    
 }
 
-/*All content på sidan*/
+
+/* --- All content på sidan --- */
 body {
     min-height: 100vh;
     width: 100%;
     overflow-x: hidden;
-    
     background: rgb(141,214,231);
     background: linear-gradient(0deg, rgba(141,214,231,1) 35%, rgba(141,203,250,1) 100%);
 }
 
-
-/* Allt i header*/
 header {
     height: 10vh;
     max-height: calc(10vh);    
@@ -40,17 +36,6 @@ header {
     min-height: 50px;
 }
 
-#logo_header {
-    /* min-height: 40px;
-    min-width: 40px; */
-    position: absolute;
-    left: 0;
-    height: 80%;
-    padding: 0.75vw;
-    top:0%;
-}
-
-/* Allt i footer */
 footer{
     width: 100%;
     height: 10%;
@@ -60,40 +45,6 @@ footer{
     justify-content: space-around;
     background-color: var(--green);
     min-height: 50px;
-}
-
-/* Centrar knapp vertikalt i header*/
-header button {
-    white-space: nowrap;
-    padding: 5%;
-
-}
-
-/* Ändrar knappar i footer */
-footer button{
-    align-self: center;
-    white-space: nowrap;
-}
-
-/* Skicka till vänster */
-.left{
-    justify-content: flex-start;
-}
-
-/* Skicka till höger */
-.headform{
-    margin-left: auto;
-    align-self: center;
-    margin-right: 2%;
-    display: flex;
-    padding: 2%;
-    right:0;
-    position: absolute;
-    height: 3vh;
-}
-
-.headform input{
-    padding: 0.5rem;
 }
 
 /* Objekt i mitten på startsidan */
@@ -106,11 +57,26 @@ footer button{
     white-space: nowrap;
     padding: 1rem;
 }
-.howToUseImg{
-max-width: 65vw;
+
+/* Skicka header loggan till vänster */
+.left{
+    justify-content: flex-start;
 }
 
-/*Bilder*/
+
+/* --- Bilder --- */
+.howToUseImg{
+    max-width: 65vw;
+    }
+    
+#logo_header {
+    position: absolute;
+    left: 0;
+    height: 80%;
+    padding: 0.75vw;
+    top:0%;
+}
+
 #search_image {
     width: 25vw;
     min-width: 300px;
@@ -133,6 +99,20 @@ max-width: 65vw;
     height: 100%;
 }
 
+.brickinfo .imgbox {
+    height: 100%;
+    position: absolute;
+    right: 0;
+}
+
+.brickinfo img{
+    border-left: solid black;
+    justify-self: end;
+    height: 100%;
+    max-width: 200px;
+    border-radius: 0rem 0.7rem 0.7rem 0rem;
+}
+
 /* Sökruta på search sidan*/
 #resultSearchbar{
     border: solid black;
@@ -153,12 +133,11 @@ input{
     color: var(--textgrey);
 }
 
-/* Alla popups */
+/* --- Alla popups --- */
 .popup{
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .popuptext{ 
@@ -174,7 +153,20 @@ input{
     box-shadow:  5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Alla knappar */
+
+/* --- Alla knappar --- */
+/* Centrar knapp vertikalt i header*/
+header button {
+    white-space: nowrap;
+    padding: 5%;
+}
+
+/* Ändrar knappar i footer */
+footer button{
+    align-self: center;
+    white-space: nowrap;
+}
+
 button{
     background-color: var(--darkBlue);
     border: solid var(--darkBlue);
@@ -208,6 +200,7 @@ button{
 #cookies {
     padding: 5%;
 }
+
 /*close knapp i popup*/
 .closeBtn {
     float: right;
@@ -222,28 +215,6 @@ button{
     transform: rotate(45deg);
 }
 
-
-/* Sökrutan på huvudsidan */
-#search_bar{
-    min-width: 300px;
-    height: 3vh;
-    width: 25vw;
-    border: solid rgb(0, 0, 0);
-    border-width: 2px;
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
-    border-right: 0;
-    box-shadow:  5px 5px 5px rgba(0, 0, 0, 0.2);
-}
-
-form{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-
 #searchBtn{
     height: 3vh;
     width: 2rem;
@@ -256,7 +227,6 @@ form{
     border-bottom-left-radius: 0;
     box-shadow:  5px 5px 5px rgba(0, 0, 0, 0.2);
 }
-
 
 /* När alla knappar svävas över */
 button:hover{
@@ -271,7 +241,6 @@ button:active{
 }
 
 /*När searchBtn svävas över*/
-
 #searchBtnHover{
     display: none;
     height: 3vh;
@@ -285,65 +254,7 @@ button:active{
     border-bottom-left-radius: 0;
 }
 
-.titleText{
-    padding-top: 3vh;
-    text-align: center;
-    font-size: calc(20px + 5vh);
-}
-
-.subTitleText{
-    text-align: center;
-    font-size: calc(5px + 2vh);
-}
-
-.brickinfo{
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
-    margin: 5%;
-    border: solid black;
-    background-color: var(--tourqoise);
-    height: 20vw;
-    position: relative;
-    
-    height: fit-content;
-    border-radius: 1rem;
-    min-height: 100px;
-    box-shadow:  5px 5px 5px rgba(0, 0, 0, 0.2);
-    
-}
-
-.brickinfo .imgbox {
-    height: 100%;
-    position: absolute;
-    right: 0;
-    
-}
-
-.brickinfo img{
-    border-left: solid black;
-    justify-self: end;
-    height: 100%;
-    max-width: 200px;
-    
-    border-radius: 0rem 0.7rem 0.7rem 0rem;
-}
-
-.brickinfo section{
-    text-align: center;
-    padding: 5%;
-    font-size: calc(15px + 2vh);
-}
-
-.brickinfo section a{
-    color: black;
-}
-
-.brickinfo section a:link{
-    text-decoration: none;
-}
-
-/* from w3schools */
+/* Från w3schools */
 #topBtn {
     display: none; /* Hidden by default */
     position: fixed; /* Fixed/sticky position */
@@ -364,6 +275,93 @@ button:active{
     border: solid var(--textgrey);
 }
 
+
+/* --- Forms --- */
+#search_bar{
+    min-width: 300px;
+    height: 3vh;
+    width: 25vw;
+    border: solid rgb(0, 0, 0);
+    border-width: 2px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-right: 0;
+    box-shadow:  5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Skicka till höger */
+.headform{
+    margin-left: auto;
+    align-self: center;
+    margin-right: 2%;
+    display: flex;
+    padding: 2%;
+    right:0;
+    position: absolute;
+    height: 3vh;
+}
+
+.headform input{
+    padding: 0.5rem;
+}
+
+
+/* --- Info --- */
+.titleText{
+    padding-top: 3vh;
+    text-align: center;
+    font-size: calc(20px + 5vh);
+}
+
+.subTitleText{
+    text-align: center;
+    font-size: calc(5px + 2vh);
+}
+
+.brickinfo{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    margin: 5%;
+    border: solid black;
+    background-color: var(--tourqoise);
+    height: 20vw;
+    position: relative;
+    height: fit-content;
+    border-radius: 1rem;
+    min-height: 100px;
+    box-shadow:  5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.noResults{
+    font-size: larger;
+    padding: 10%;
+}
+.noResults p{
+    padding-top: 1%;
+}
+
+.brickinfo section{
+    text-align: center;
+    padding: 5%;
+    font-size: calc(15px + 2vh);
+}
+
+.brickinfo section a{
+    color: black;
+}
+
+.brickinfo section a:link{
+    text-decoration: none;
+}
+
 .container{
     display: flex;
 }
@@ -375,32 +373,36 @@ button:active{
 }
 
 
-
-
+/* --- Skalning --- */
 @media only screen and (max-width: 850px) {
     #how_to_use_btn{
         display: none;
     }
+
     #how_to_use_btn_min{
         display: block;
         left: 20%;
     }
+
     header{
         justify-content: space-between;
     }
+
     .headform{
         position: relative;
     }
+
     #logo_header{
         position: relative; 
         width: 10vh;
-
         height: 80%;
         padding: 0.75vw;
     }
+
     .popuptext{
     margin:12%;
     }
+
     #brick_left{
         display: none;
     }
@@ -408,15 +410,4 @@ button:active{
     #brick_right{
         display: none;
     }
- 
 }
-
-.noResults{
-    font-size: larger;
-    padding: 10%;
-}
-.noResults p{
-    padding-top: 1%;
-
-}
-
