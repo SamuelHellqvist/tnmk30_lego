@@ -84,16 +84,16 @@ if($color === '-1'){
 
         $setID = $row['SetID'];
 
+        if($jpg){
+            $filename = 'S' . '/' . $setID . '.jpg';
+        }
+        else if($gif){
+            $filename = 'S' . '/' . $setID . '.gif';
+        }
         if($largejpg){
             $filename = 'S' . '/' . $setID . '.jpg';
         }
         else if($largegif){
-            $filename = 'S' . '/' . $setID . '.gif';
-        }
-        else if($jpg){
-            $filename = 'S' . '/' . $setID . '.jpg';
-        }
-        else if($gif){
             $filename = 'S' . '/' . $setID . '.gif';
         }
 
