@@ -124,11 +124,13 @@ max-width: 65vw;
 #brick_left{
     position: absolute;
     left: -50px;
+    height: 100%;
 }
 
 #brick_right{
     position: absolute;
     right: -50px;
+    height: 100%;
 }
 
 /* Sökruta på search sidan*/
