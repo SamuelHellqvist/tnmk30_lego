@@ -38,8 +38,7 @@ else{
 }
 
 if($color === '-1'){
-
-    $searchKey = "SELECT inventory.SetID, sets.Setname, sets.SetID, images.has_gif, images.has_jpg FROM inventory, sets, images WHERE inventory.ItemID='$parts' 
+    $searchKey = "SELECT inventory.SetID, sets.Setname, sets.SetID, images.has_gif, images.has_jpg, images.has_largegif, images.has_largejpg FROM inventory, sets, images WHERE inventory.ItemID='$parts' 
     AND sets.SetID = inventory.SetID 
     AND images.ColorID=inventory.ColorID
     AND images.ItemtypeID=inventory.ItemtypeID
@@ -62,16 +61,30 @@ if($color === '-1'){
     while($row = mysqli_fetch_array($contents)){
 
         $alt = '"images/image.jpg"';
+
         $setName = $row['Setname'];
+
         $gif = $row['has_gif'];
+
         $jpg = $row['has_jpg'];
+
         $setID = $row['SetID'];
 
-        if($gif){
-            $filename = 'S' . '/' . $row['SetID'] . '.gif';
+        $largegif = $row['has_largegif'];
+
+        $largejpg = $row['has_largejpg'];
+
+        if($largejpg){
+            $filename = 'SL' . '/' . $setID . '.jpg';
         }
-        else if ($jpg){
-            $filename = 'S' . '/' . $row['SetID'] . '.jpg';
+        else if($largegif){
+            $filename = 'SL' . '/' . $setID . '.gif';
+        }
+        else if($jpg){
+            $filename = 'S' . '/' . $setID . '.jpg';
+        }
+        else if($gif){
+            $filename = 'S' . '/' . $setID . '.gif';
         }
 
         $imglink = "http://www.itn.liu.se/~stegu76/img.bricklink.com/$filename";
@@ -94,7 +107,7 @@ if($color === '-1'){
 
 }
 else{
-    
+    /*
     $searchKey = "SELECT inventory.ColorID, inventory.ItemtypeID, inventory.ItemID, 
     images.has_gif, images.has_jpg, images.has_largegif, has_largejpg, parts.Partname, colors.Colorname, colors.ColorID,
     sets.Setname, sets.SetID, inventory.Quantity
@@ -107,7 +120,16 @@ else{
     AND images.ItemtypeID=inventory.ItemtypeID
     AND images.ItemID=inventory.ItemID
     AND images.ColorID=colors.ColorID";
-    
+    */
+
+    $searchKey ="SELECT sets.SetID, sets.Setname, inventory.ItemID, inventory.ItemtypeID, images.has_gif, images.has_jpg, images.has_largejpg, images.has_largegif, images.ItemID
+    FROM sets, inventory, images 
+    WHERE sets.SetID = inventory.SetID 
+    AND inventory.ItemID = $parts 
+    AND inventory.ColorID = $color
+    AND sets.SetID = images.ItemID 
+    AND images.ItemtypeID = 'S'";
+
     $contents = mysqli_query($connection, $searchKey);
     while($row = mysqli_fetch_array($contents)){
 
@@ -119,13 +141,23 @@ else{
 
         $jpg = $row['has_jpg'];
 
+        $largegif = $row['has_largegif'];
+
+        $largejpg = $row['has_largejpg'];
+
         
 
-        if($gif){
-            $filename = 'S' . '/' . $row['SetID'] . '.gif';
+        if($largejpg){
+            $filename = 'SL' . '/' . $setID . '.jpg';
         }
-        else{
-            $filename = 'S' . '/' . $row['SetID'] . '.jpg';
+        else if($largegif){
+            $filename = 'SL' . '/' . $setID . '.gif';
+        }
+        else if($jpg){
+            $filename = 'S' . '/' . $setID . '.jpg';
+        }
+        else if($gif){
+            $filename = 'S' . '/' . $setID . '.gif';
         }
 
         $imglink = "http://www.itn.liu.se/~stegu76/img.bricklink.com/$filename";
@@ -144,15 +176,9 @@ else{
                 "
         
             );
-            
-            $gif = NULL;
-    
-            $jpg = NULL;
 
     }
 }
-
-//include 'footer.txt';
 ?>
 
 <button id="topBtn" title="go to top">Top</button>
