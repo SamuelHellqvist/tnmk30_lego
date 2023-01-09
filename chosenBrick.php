@@ -1,16 +1,23 @@
 <?php 
+
+//Inkluderar headern
 include 'head.txt';
 
+//Hämtar partID från url
 if(isset($_GET["part"])){
     $parts = $_GET["part"];
 }
 
+//skapar connection för att kunna koppla upp mot hemisdan
 $connection = mysqli_connect("mysql.itn.liu.se","lego","","lego");
 
+//testar connection
 if (!$connection){
     die('MySQL connection error');
 }
 
+//sql fråga
+//hämtar parts.partName från det part id som vi vill ha
 $findBrick = "SELECT parts.Partname FROM parts WHERE parts.PartID = $parts";
 
 $brickContent = mysqli_query($connection, $findBrick);
@@ -18,13 +25,14 @@ $brickContent = mysqli_query($connection, $findBrick);
 $row = mysqli_fetch_array($brickContent);
 $brickName = $row['Partname'];
 
-
+//srkiver ut vilken bit som vi hämtar version av
+//det hjälper användaren att se vad den fick för resultat efter sin sökning
 print("<h1 class='titleText'>Choose color for '$brickName'</h1>");
 
 
-
+//ny sql frpga som hämtar allt annat vi behöver för att visa bilder på alla bitens olika färger
 $searchKey = "SELECT DISTINCT inventory.ColorID, inventory.ItemtypeID, inventory.ItemID, 
-images.has_gif, images.has_jpg, parts.Partname, colors.Colorname
+images.has_gif, images.has_jpg, images.has_largegif, images.has_largejpg, parts.Partname, colors.Colorname
 FROM inventory, colors, parts, images WHERE inventory.ItemID = $parts 
 AND inventory.ItemtypeID='P'
 AND inventory.ItemID=parts.PartID
@@ -42,27 +50,35 @@ $colorNametest = $test['Colorname'];
 
 $check = -1;
 
+//vissa bitar har inget specifikt colorID, om biten man har valt saknar colorID så sätts det till
+//-1 och man skickas direkt till sidan med alla sets som biten ingår i
 if($colorNametest === null){
-    echo("test");
     header("Location: setList.php?part=$parts&color=-1");
 }
 
+//skapar en while loop som skapar en klickbar ruta av varje färg för biten
 while($row = mysqli_fetch_array($contents)){
 
     $colorName = $row['Colorname'];
+
     $color = $row['ColorID'];
+
     $gif = $row['has_gif'];
+
     $jpg = $row['has_jpg'];
 
-    if($gif){
-        $filename = $row['ItemtypeID'] . '/' . $row['ColorID'] . '/' . $row['ItemID'] . '.gif';
+    //vissa bitar har jpg bilder och vissa har gif, här hittas rätt bildformat för varje bit
+    //genom att man tar vilken typ av bild som biten har och använder det i en url till bilden
+    if ($jpg){
+        $filename =  $row['ItemtypeID'] . '/' . $row['ColorID'] . '/' . $row['ItemID'] . '.jpg';
     }
-    else if ($jpg){
-        $filename = $row['ItemtypeID'] . '/' . $row['ColorID'] . '/' . $row['ItemID'] . '.jpg';
+    else if ($gif){
+        $filename =  $row['ItemtypeID'] . '/' . $row['ColorID'] . '/' . $row['ItemID'] . '.gif';
     }
 
     $imglink = "http://www.itn.liu.se/~stegu76/img.bricklink.com/$filename";
     
+    //om färgen hitta har funnits innan, så skapas en klickbar ruta för biten med den färgen
     if($color !== $check){
         
         print("
@@ -81,12 +97,13 @@ while($row = mysqli_fetch_array($contents)){
 
         ");
     }
+    //här sätts variabeln check till bitens färg för att kunna undersöka om färgen har presenterats innan eller inte
     $check = $color;
 }
 
-//include 'footer.txt';
 ?>
 
+<!-- Lägger in top knappen -->
 <button id="topBtn" title="go to top">Top</button>
 
 </body>
