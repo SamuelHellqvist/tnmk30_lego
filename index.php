@@ -10,9 +10,12 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    <img id="brick_left" src="images/bricksideLeft.png" alt="bricks left">
+    <img id="brick_right" src="images/bricksideRight.png" alt="bricks right">
+
     <!-- header -->
     <header> 
-    <a href="index.php"><img id="logo_header" src="images/image.jpg" alt="logo"></a>
+    <a href="index.php"><img id="logo_header" src="images/logoHeader.png" alt="logo"></a>
         
         <div class="popup" onclick="popupFunction(howToUsePopup)"> 
         <button id="how_to_use_btn">How to Use</button>
@@ -42,7 +45,7 @@
     ?>
 
     <div class="search_section">
-        <img id="search_image" src="images/image.jpg" alt="logo">
+        <img id="search_image" src="images/logoHomepage.png" alt="logo">
             <form action="search.php" method="get" >
             <input type="text" name="searchResult" id="search_bar" placeholder="Find your inner piece...">
 

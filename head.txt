@@ -13,7 +13,7 @@
     <!-- header -->
     <header> 
 
-        <a href="index.php"><img class="left" id="logo_header" src="images/image.jpg" alt="logo"></a>
+        <a href="index.php"><img class="left" id="logo_header" src="images/logoHeader.png" alt="logo"></a>
         
         <div class="howToSearched popup" onclick="popupFunction(howToUsePopup)"> 
             <button id="how_to_use_btn">How to Use</button>

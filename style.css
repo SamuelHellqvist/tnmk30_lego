@@ -26,6 +26,7 @@ body {
     background: linear-gradient(0deg, rgba(141,214,231,1) 35%, rgba(141,203,250,1) 100%);
 }
 
+
 /* Allt i header*/
 header {
     height: 10vh;
@@ -40,8 +41,13 @@ header {
 }
 
 #logo_header {
+    /* min-height: 40px;
+    min-width: 40px; */
     position: absolute;
     left: 0;
+    height: 80%;
+    padding: 0.75vw;
+    top:0%;
 }
 
 /* Allt i footer */
@@ -67,11 +73,6 @@ header button {
 footer button{
     align-self: center;
     white-space: nowrap;
-}
-
-#logo_header {
-    height: 100%;
-    top:0%;
 }
 
 /* Skicka till vänster */
@@ -111,8 +112,8 @@ max-width: 65vw;
 
 /*Bilder*/
 #search_image {
-    width: 20%;
-    height: 20%;
+    width: 25vw;
+    min-width: 300px;
     padding: 5vh 5vh 5vh 5vh;
 }
 
@@ -120,6 +121,17 @@ max-width: 65vw;
     height: 20vh;
 }
 
+#brick_left{
+    position: absolute;
+    left: -50px;
+    height: 100%;
+}
+
+#brick_right{
+    position: absolute;
+    right: -50px;
+    height: 100%;
+}
 
 /* Sökruta på search sidan*/
 #resultSearchbar{
@@ -213,11 +225,11 @@ button{
 
 /* Sökrutan på huvudsidan */
 #search_bar{
+    min-width: 300px;
     height: 3vh;
     width: 25vw;
     border: solid rgb(0, 0, 0);
     border-width: 2px;
-    /* padding: 0.75rem; */
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
     border-right: 0;
@@ -382,10 +394,19 @@ button:active{
     #logo_header{
         position: relative; 
         width: 10vh;
-        height: 10vh;
+
+        height: 80%;
+        padding: 0.75vw;
     }
     .popuptext{
     margin:12%;
+    }
+    #brick_left{
+        display: none;
+    }
+    
+    #brick_right{
+        display: none;
     }
  
 }
