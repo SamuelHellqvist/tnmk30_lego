@@ -2,8 +2,12 @@
 <p>Input what part you are looking for into the search bar:</p>
 <p><img src="images/input.PNG" class="howToUseImg" alt="Empty searchbar"></p>
 <p>&nbsp;</p>
-<p>For example: You are looking for all parts that matches with the term "brick 3 x 6"</p>
+<p>For example: You are looking for all parts that matches with the term "brick 2 x 2"</p>
+<p><img src="images/example.PNG" class="howToUseImg" alt="Example search: &ldquo;brick 2 x 3&rdquo;"></p>
 <p>&nbsp;</p>
-<p><img src="images/example.PNG" class="howToUseImg" alt="Example search: &ldquo;brick 3 x 6&rdquo;"></p>
+<p>You then choose the brick you are looking for</p>
+<p><img src="images/chooseBrick.png" class="howToUseImg" alt="Choose brick: &ldquo;brick 2 x 2&rdquo;"></p>
 <p>&nbsp;</p>
+<p>Choose the color of the piece</p>
+<p><img src="images/chooseColor.png" class="howToUseImg" alt="Choose color: &ldquo;brick 2 x 2&rdquo;"></p>
 <p>&nbsp;</p>
