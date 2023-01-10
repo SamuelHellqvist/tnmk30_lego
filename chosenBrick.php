@@ -25,7 +25,7 @@ $brickContent = mysqli_query($connection, $findBrick);
 $row = mysqli_fetch_array($brickContent);
 $brickName = $row['Partname'];
 
-//srkiver ut vilken bit som vi hämtar version av
+//skriver ut vilken bit som vi hämtar version av
 //det hjälper användaren att se vad den fick för resultat efter sin sökning
 print("<h1 class='titleText'>Choose color for '$brickName'</h1>");
 
@@ -84,12 +84,12 @@ while($row = mysqli_fetch_array($contents)){
         print("
         <div class='brickinfo'>
         <section>
-            <a href='setList.php?part=$parts&color=$color'><h2>$colorName</h2></a>
+            <a href='setList.php?part=$parts&color=$color&page=1'><h2>$colorName</h2></a>
             <p>ColorID: $color $colorNametest</p>
             
         </section>
         <div class='imgbox'>
-        <a href='setList.php?part=$parts&color=$color'><img src=$imglink alt=$parts></a>
+        <a href='setList.php?part=$parts&color=$color&page=1'><img src=$imglink alt=$parts></a>
         </div>
     </div>
     \n

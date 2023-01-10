@@ -21,9 +21,6 @@ print("<h1 class='titleText'>Choose type of brick</h1>");
 print("<p class='subTitleText'>Currently displaying search results for: $searchResult</p>");
 
 
-/*<?php echo "Text"; ?>*/
-
-//Make sure spaces are removed on search term and in partname from server
 $searchKey = 
 "SELECT DISTINCT inventory.ColorID, inventory.ItemtypeID, inventory.ItemID, 
 images.has_gif, images.has_jpg, images.has_largegif, images.has_largejpg, parts.Partname

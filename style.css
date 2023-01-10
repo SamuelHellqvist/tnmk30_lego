@@ -419,3 +419,32 @@ form{
         display: none;
     }
 }
+
+.pageBtns{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    background-color: var(--green);
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 1rem;
+    position: relative;
+    border: solid black;
+}
+
+.pageBtns p{
+    font-size: 3rem;
+    color: white;
+}
+
+.pageBtns a:link{
+    font-size: 2.9rem;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+
+
+.pageBtns a:link:hover{
+    text-decoration: underline;
+}

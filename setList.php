@@ -12,6 +12,11 @@ if(isset($_GET["color"])){
     $color = $_GET["color"];
 }
 
+//Hämtar page nummer från url
+if(isset($_GET["page"])){
+    $page = $_GET["page"];
+}
+
 //sammankopplar med data basen
 $connection = mysqli_connect("mysql.itn.liu.se","lego","","lego");
 
@@ -46,24 +51,26 @@ else{
     print("<h1 class='titleText'>'$colorName $brickName' can be found in these sets:</h1>");
 }
 
+$pagePlus = $page+1;
+$pageMinus = $page-1;
+
+print("
+        <div class='pageBtns'>
+            <a href='setList.php?part=$parts&color=$color&page=$pageMinus'><p>$pageMinus</p></a>
+            <p>$page</p>
+            <a href='setList.php?part=$parts&color=$color&page=$pagePlus'><p>$pagePlus</p></a>
+        </div>");
+
 if($color === '-1'){
-    $searchKey = "SELECT inventory.SetID, sets.Setname, sets.SetID, sets.Year, images.has_gif, images.has_jpg, images.has_largegif, images.has_largejpg FROM inventory, sets, images WHERE inventory.ItemID='$parts' 
+    $base =($page-1)*10;
+    
+    $searchKey = "SELECT inventory.SetID, inventory.Quantity, sets.Setname, sets.SetID, sets.Year, images.has_gif, images.has_jpg, images.has_largegif, images.has_largejpg 
+    FROM inventory, sets, images WHERE inventory.ItemID='$parts' 
     AND sets.SetID = inventory.SetID 
     AND images.ColorID=inventory.ColorID
     AND images.ItemtypeID=inventory.ItemtypeID
-    AND images.ItemID=inventory.ItemID";
-
-    /*$searchKey = "SELECT inventory.ColorID, inventory.ItemtypeID, inventory.ItemID, 
-    images.has_gif, images.has_jpg, parts.Partname, colors.ColorID,
-    sets.Setname, sets.SetID, inventory.Quantity
-    FROM inventory, parts, colors, sets, images WHERE inventory.ItemID=$parts
-    AND inventory.ItemtypeID='P'
-    AND parts.PartID=inventory.ItemID
-    AND sets.SetID=inventory.SetID
-    AND colors.ColorID=inventory.ColorID
-    AND images.ColorID=inventory.ColorID
-    AND images.ItemtypeID=inventory.ItemtypeID
-    AND images.ItemID=inventory.ItemID";*/
+    AND images.ItemID=inventory.ItemID
+    LIMIT $base, 10";
 
 
     $contents = mysqli_query($connection, $searchKey);
@@ -74,6 +81,7 @@ if($color === '-1'){
         $alt = '"images/image.jpg"';
         $setName = $row['Setname'];
         $year = $row['Year'];
+        $quantity = $row['Quantity'];
 
         $gif = $row['has_gif'];
         $jpg = $row['has_jpg'];
@@ -106,6 +114,7 @@ if($color === '-1'){
                         <h2>$setName</h2>
                         <p>SetID: $setID</p>
                         <p>Year: $year</p>
+                        <p>Quantity: $quantity</p>
                     </section>
                     <div class='imgbox'>
                     <a><img src=$imglink onerror='this.onerror=null; this.src=$alt' alt='$setID'></a>
@@ -119,28 +128,16 @@ if($color === '-1'){
 
 }
 else{
-    /*
-    $searchKey = "SELECT inventory.ColorID, inventory.ItemtypeID, inventory.ItemID, 
-    images.has_gif, images.has_jpg, images.has_largegif, has_largejpg, parts.Partname, colors.Colorname, colors.ColorID,
-    sets.Setname, sets.SetID, inventory.Quantity
-    FROM inventory, colors, parts, sets, images WHERE colors.ColorID=$color
-    AND inventory.ColorID=colors.ColorID
-    AND inventory.ItemID=$parts
-    AND inventory.ItemtypeID='P'
-    AND inventory.ItemID=parts.PartID
-    AND sets.SetID=inventory.SetID
-    AND images.ItemtypeID=inventory.ItemtypeID
-    AND images.ItemID=inventory.ItemID
-    AND images.ColorID=colors.ColorID";
-    */
+    $base =($page-1)*10;
 
-    $searchKey ="SELECT sets.SetID, sets.Setname, sets.Year, inventory.ItemID, inventory.ItemtypeID, images.has_gif, images.has_jpg, images.has_largejpg, images.has_largegif, images.ItemID
+    $searchKey ="SELECT sets.SetID, sets.Setname, sets.Year, inventory.ItemID, inventory.ItemtypeID, inventory.Quantity, images.has_gif, images.has_jpg, images.has_largejpg, images.has_largegif, images.ItemID
     FROM sets, inventory, images 
     WHERE sets.SetID = inventory.SetID 
     AND inventory.ItemID = $parts 
     AND inventory.ColorID = $color
     AND sets.SetID = images.ItemID 
-    AND images.ItemtypeID = 'S'";
+    AND images.ItemtypeID = 'S'
+    LIMIT $base, 10";
 
     $contents = mysqli_query($connection, $searchKey);
     
@@ -150,8 +147,8 @@ else{
         $alt = '"images/image.jpg"';
         $setName = $row['Setname'];
         $setID = $row['SetID'];
-
         $year = $row['Year'];
+        $quantity = $row['Quantity'];
 
         $gif = $row['has_gif'];
 
@@ -186,6 +183,17 @@ else{
                         <h2>$setName</h2>
                         <p>SetID: $setID</p>
                         <p>Year: $year<p>
+                        <p>Quantity: </p>
+                        <table>
+                            <tr>
+                                <td>$colorName: </td>
+                                <td>$quantity</td>
+                            </tr>
+                            <tr>
+                                <td>All colors: </td>
+                                <td>Siffra </td>
+                            </tr>
+                        </table>
                     </section>
                     <div class='imgbox'>
                     <a><img src=$imglink onerror='this.onerror=null; this.src=$alt' alt='$setID'></a>
