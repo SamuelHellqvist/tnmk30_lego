@@ -4,6 +4,6 @@
 <p>&nbsp;</p>
 <p>There were multiple project tasks which allowed for varied difficulty, our group chose:</p>
 <p>&nbsp;</p>
-<p><strong>PROJECT TASK 3</strong><br>"Create an interface where you can specify a list of different pieces and see which sets contain one or more of these pieces, sorted by how many pieces are included.</p>
-<p>Enter a list of bits in a form, or enter a sequence of search terms that accumulate and gradually narrow down the search until the right one is found.</p>
-<p>Intended user: collectors and sellers who bought a mixed pile of pieces without instructions, and want to sort out as many complete sets as possible from the pile. This is done by first identifying unusual pieces and seeing which batches they can conceivably come from.</p>
+<p><strong>PROJECT TASK 3</strong><br>Create an interface where you can search for a piece, find the right one and see in which sets it is included.</p>
+<p>Search for a piece by name or number. </p>
+<p><br> The intended user: collectors and sellers who want to know where a certain piece comes from or where you can find one in a new or used set</p>
