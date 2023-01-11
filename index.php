@@ -56,7 +56,7 @@
             </form> 
         </div>
     
-    <button id="topBtn" title="go to top">Top</button>
+    <button id="topBtn" title="go to top">➜</button>
 
         <footer>
             <div class="popup" onclick="popupFunction(aboutUsPopup)"> 

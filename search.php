@@ -101,7 +101,7 @@ if($count === 0){
     print("
         <div class='noResults'>
             <h2>Your search '$searchResult' did not match any of the bricks in our database</h2>
-            <p>Sorry buddie :( </p>
+            <p>Sorry buddie :c </p>
             <p>Suggestions to find results:</p>
             <ul>
                 <li>Make sure that all words are spelled correctly</li>
@@ -114,7 +114,6 @@ if($count === 0){
                 <li>Hinge brick</li>
             </ul>
         </div>
-    
     ");
 }
 

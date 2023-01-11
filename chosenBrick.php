@@ -104,7 +104,7 @@ while($row = mysqli_fetch_array($contents)){
 ?>
 
 <!-- Lägger in top knappen -->
-<button id="topBtn" title="go to top">Top</button>
+<button id="topBtn" title="go to top">➜</button>
 
 </body>
 </html>
