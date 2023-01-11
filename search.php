@@ -4,6 +4,7 @@
 ?>
 
 <?php
+
 //skapar connection för att kunna koppla upp mot hemisdan
 $connection = mysqli_connect("mysql.itn.liu.se","lego","","lego");
 
@@ -20,7 +21,6 @@ print("<h1 class='titleText'>Choose type of brick</h1>");
 
 print("<p class='subTitleText'>Currently displaying search results for: $searchResult</p>");
 
-
 $searchKey = 
 "SELECT DISTINCT inventory.ColorID, inventory.ItemtypeID, inventory.ItemID, 
 images.has_gif, images.has_jpg, images.has_largegif, images.has_largejpg, parts.Partname
@@ -32,7 +32,6 @@ AND images.ItemtypeID=inventory.ItemtypeID
 AND images.ItemID=inventory.ItemID
 AND images.ColorID=colors.ColorID
 ";
-
 
 $contents = mysqli_query($connection, $searchKey);
 
@@ -76,20 +75,22 @@ while($row = mysqli_fetch_array($contents)){
     print(
         "<div class='brickinfo'>
             <section>
-                <a href='chosenBrick.php?part=$brickId'><h2>$brickName</h2></a>
+                <a href='chosenBrick.php?part=$brickId&page=1'><h2>$brickName</h2></a>
                 <p>
                    PartID: $brickId
                 </p>
                 
             </section>
             <div class='imgbox'>
-            <a href='chosenBrick.php?part=$brickId'><img src=$imglink alt='$brickId'></a>
+            <a href='chosenBrick.php?part=$brickId&page=1'><img src=$imglink alt='$brickId'></a>
             </div>
         </div>
         \n
         "
 
     );
+
+    $pageCounter++;
     //sätter check till det nuvarande partID för att säkerställa att en bit aldrig kan visas två gånger
     $check = $brickId;
     }

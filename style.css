@@ -447,6 +447,7 @@ form{
     border-radius: 1rem;
     position: relative;
     border: solid black;
+    margin-bottom: 5%;
 }
 
 .pageBtns p{
@@ -455,13 +456,35 @@ form{
 }
 
 .pageBtns a:link{
-    font-size: 2.9rem;
-    font-family: sans-serif;
+    font-size: 3rem;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-decoration: none;
+    color: white;
 }
 
+.pageBtns a:visited{
+    color: white;
+}
 
-
-.pageBtns a:link:hover{
+.pageBtns a:hover{
     text-decoration: underline;
+    color: black;
+}
+
+.pageBtns a:active{
+    color: var(--blueAccent);
+}
+
+.pageDisplay{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-bottom: auto;
+    margin-top: 5%;
+}  
+
+#first{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
 }
