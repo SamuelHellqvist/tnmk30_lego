@@ -120,7 +120,7 @@ if($count === 0){
 
 ?>
 <!-- lägger till top-knappen -->
-<button id="topBtn" title="go to top">Top</button>
+<button id="topBtn" title="go to top">➜</button>
 
 </body>
 

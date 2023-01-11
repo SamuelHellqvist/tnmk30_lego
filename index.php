@@ -6,7 +6,8 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Huvudsida</title>
+        <title>Baseplate</title>
+        <link rel="icon" href="images/logoIcon.ico"/>
         <link rel="stylesheet" href="style.css">
         <script src="script.js" defer></script>
     </head>
@@ -29,7 +30,6 @@
                 <button onclick="closePopup(howToUsePopup)" class="closeBtn">+</button>
                 <?php include("howToUse.txt"); ?>
             </article>
-
             <article class="popuptext" id="aboutUsPopup">
                 <button onclick="closePopup(aboutUsPopup)" class="closeBtn">+</button>
                 <?php include("aboutUs.txt"); ?>
@@ -55,6 +55,8 @@
                 alt="magnifying glass" onmouseout="this.src='images/magnifyingGlass.png'" src="images/magnifyingGlass.png">
             </form> 
         </div>
+    
+    <button id="topBtn" title="go to top">Top</button>
 
         <footer>
             <div class="popup" onclick="popupFunction(aboutUsPopup)"> 
