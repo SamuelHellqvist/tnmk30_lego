@@ -393,7 +393,7 @@ form{
     height: fit-content;
     border-radius: 1rem;
     min-height: 100px;
-    box-shadow:  5px 5px 5px rgba(0, 0, 0, 0.2);
+    box-shadow:  11px 11px 11px rgba(0, 0, 0, 0.6);
 }
 
 .brickinfo section a:link:hover{
