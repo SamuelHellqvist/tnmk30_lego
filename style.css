@@ -65,18 +65,18 @@ footer{
 
 
 /* --- Bilder --- */
-.howToUseImg{
-    width: 500px;
-    max-width: 100%;
-    
+.mySlides{
+    max-width: 90%;
+    justify-self: center;
 }
     
 #logo_header {
     position: absolute;
     left: 0;
-    height: 80%;
-    padding: 0.75vw;
-    top:0%;
+    height: 4rem;
+    padding: 0.5rem;
+    top:0.5rem;
+    width: 5rem;
 }
 
 #search_image {
@@ -150,12 +150,18 @@ input{
     z-index: 1;
     background-color: white;
     position: absolute;
-    top: 10vw;
+    top: 8vw;
     justify-self: center;
     padding: 2%;
     box-shadow:  5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
+#slideSection{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+
+}
 
 /* --- Alla knappar --- */
 /* Centrar knapp vertikalt i header*/
@@ -199,6 +205,23 @@ button{
     margin-right: 5vw;
     font-weight: bold;
     padding: 0%;
+}
+.slide-button{
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0%;
+    width: 1rem;
+    height: 1rem;
+}
+#slide-buttons{
+    text-align: center;
+}
+
+.slide-button:hover{
+    border: none;
+    box-shadow: none;
+    color: var(--tourqoise);
 }
 
 #about {
@@ -280,12 +303,16 @@ button:active{
     background-color: tomato; /* Set a background color */
     color: black; /* Text color */
     cursor: pointer; /* Add a mouse pointer on hover */
-    font-size: 1.5rem;
+    font-size: 2rem;
     display: none;
-    padding: 0.5%  1% 0.5% 1%;
+    padding: 0%;
     border-radius: 20rem;
     border: solid tomato;
-    font-weight: bold;
+    font-weight: bolder;
+    height: 2rem;
+    width: 3rem;
+    transform: rotate(-90deg);
+    line-height: 0.5rem;
   }
 
 #topBtn:hover{
@@ -419,9 +446,11 @@ form{
 
     #logo_header{
         position: relative; 
-        width: 10vh;
-        height: 80%;
-        padding: 0.75vw;
+        left: 0;
+        width: 5rem;
+        height: 4rem;
+        padding: 0.5rem;
+        top:0%;
     }
 
     .popuptext{
