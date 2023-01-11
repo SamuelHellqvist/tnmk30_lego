@@ -20,7 +20,9 @@ Setsida
 -------
 Filter för antal bitar i färg/antal totalt
 
+göra snyggare pilar mellan sidorna!
 
+fixa sista sidorna i setList
 
 
 
