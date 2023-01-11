@@ -21,6 +21,29 @@ print("<h1 class='titleText'>Choose type of brick</h1>");
 
 print("<p class='subTitleText'>Currently displaying search results for: $searchResult</p>");
 
+//Hämtar page nummer från url
+if(isset($_GET["page"])){
+    $page = $_GET["page"];   
+}
+
+if($page === NULL){
+    $page = 1;
+}
+
+if($page == 1){
+    print("
+    <div class='pageDisplay pageBtns' id='first'>
+        <p>Currenty displaying page: $page </p>
+    </div>");
+}
+else{
+    print("
+    <div class='pageDisplay pageBtns'>
+        <p>Currenty displaying page: $page </p>
+        <a href='search.php?searchResult=$searchResult&page=1'>Go to page 1</a>
+    </div>");
+}
+
 $searchKey = 
 "SELECT DISTINCT inventory.ColorID, inventory.ItemtypeID, inventory.ItemID, 
 images.has_gif, images.has_jpg, images.has_largegif, images.has_largejpg, parts.Partname
@@ -39,6 +62,15 @@ $check = -1;
 
 //sätter en varianle count till 0
 $count = 0;
+
+$pagePlus = $page+1;
+$pageMinus = $page-1;
+$pageCounter = 0;
+
+$top = ($page)*10;
+$min = ($page-1)*10;
+$minCounter = 0;
+$moreBricks = 0;
 
 while($row = mysqli_fetch_array($contents)){
 
@@ -71,7 +103,12 @@ while($row = mysqli_fetch_array($contents)){
     $imglink = "http://www.itn.liu.se/~stegu76/img.bricklink.com/$filename";
 
     //sätter att biten bara ska visas om den är skilt från check
-    if($brickId !== $check){
+    if($brickId !== $check && $pageCounter >= 10){
+        $moreBricks++;
+    }
+
+    if($brickId !== $check && $minCounter >= $min){
+    if($brickId !== $check && $pageCounter < 10){
     print(
         "<div class='brickinfo'>
             <section>
@@ -91,9 +128,14 @@ while($row = mysqli_fetch_array($contents)){
     );
 
     $pageCounter++;
+    }
+    }
+    else if($brickId !== $check){
+        $minCounter++;
+    }
+
     //sätter check till det nuvarande partID för att säkerställa att en bit aldrig kan visas två gånger
     $check = $brickId;
-    }
 }
 
 //om count förblir 0 så har inga biter hittats och ett meddelande visas för användaren för att ge tips på hur man kan söka 
@@ -117,6 +159,40 @@ if($count === 0){
         </div>
     ");
 }
+
+if($page == 1 && $pageCounter > 9 && $moreBricks > 0){
+    print("
+    <div class='pageBtns'>
+        <p> - </p>
+        <p>Page $page</p>
+        <a href='search.php?searchResult=$searchResult&page=$pagePlus'> >></a>
+    </div>");
+}
+elseif($page !== 1 && $pageCounter != 10 || $moreBricks === 0 && $page !== 1){
+    print("
+    <div class='pageBtns'>
+        <a href='search.php?searchResult=$searchResult&page=$pageMinus'><< </a>
+        <p>Page $page</p>
+        <p> - </p>
+    </div>");
+}
+elseif($page == 1 && $pageCounter < 10){
+    print("
+    <div class='pageBtns'>
+        <p> - </p>
+        <p>Page $page</p>
+        <p> - </p>
+    </div>");
+}
+else if($moreBricks > 0){
+    print("
+    <div class='pageBtns'>
+        <a href='search.php?searchResult=$searchResult&page=$pageMinus'><< </a>
+        <p>Page $page</p>
+        <a href='search.php?searchResult=$searchResult&page=$pagePlus'> >></a>
+    </div>");
+}
+
 
 ?>
 <!-- lägger till top-knappen -->

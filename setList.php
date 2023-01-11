@@ -54,6 +54,7 @@ else{
 $pagePlus = $page+1;
 $pageMinus = $page-1;
 $pageCounter = 0;
+$moreBricks = 0;
 
 if($page === '1'){
     print("
@@ -101,16 +102,16 @@ if($color === '-1'){
 
         $setID = $row['SetID'];
 
-        if($jpg){
+        if($largejpg){
+            $filename = 'SL' . '/' . $setID . '.jpg';
+        }
+        else if($largegif){
+            $filename = 'SL' . '/' . $setID . '.gif';
+        }
+        else if($jpg){
             $filename = 'S' . '/' . $setID . '.jpg';
         }
         else if($gif){
-            $filename = 'S' . '/' . $setID . '.gif';
-        }
-        if($largejpg){
-            $filename = 'S' . '/' . $setID . '.jpg';
-        }
-        else if($largegif){
             $filename = 'S' . '/' . $setID . '.gif';
         }
 
@@ -207,7 +208,13 @@ else{
 
     }
 }
-if($page === '1' && $pageCounter > '9'){
+
+if($pageCounter == 0){
+    print(
+        "<div id='noSets'><h1>No more sets to show</h1></div>");
+}
+
+if($page == 1 && $pageCounter > 9 && $moreBricks > 0){
     print("
     <div class='pageBtns'>
         <p> - </p>

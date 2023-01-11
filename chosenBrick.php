@@ -34,10 +34,6 @@ $brickName = $row['Partname'];
 //det hjälper användaren att se vad den fick för resultat efter sin sökning
 print("<h1 class='titleText'>Choose color for '$brickName'</h1>");
 
-$pagePlus = $page+1;
-$pageMinus = $page-1;
-$pageCounter = 0;
-
 if($page === '1'){
     print("
     <div class='pageDisplay pageBtns' id='first'>
@@ -52,8 +48,6 @@ else{
     </div>");
 }
 
-$base =($page-1)*10;
-
 //ny sql frpga som hämtar allt annat vi behöver för att visa bilder på alla bitens olika färger
 $searchKey = "SELECT DISTINCT inventory.ColorID, inventory.ItemtypeID, inventory.ItemID, 
 images.has_gif, images.has_jpg, images.has_largegif, images.has_largejpg, parts.Partname, colors.Colorname
@@ -63,8 +57,7 @@ AND inventory.ItemID=parts.PartID
 AND colors.ColorID LIKE inventory.ColorID
 AND images.ItemtypeID=inventory.ItemtypeID
 AND images.ItemID=inventory.ItemID
-AND images.ColorID=colors.ColorID ORDER BY colors.Colorname
-LIMIT $base, 11";
+AND images.ColorID=colors.ColorID ORDER BY colors.Colorname";
 
 $contents = mysqli_query($connection, $searchKey);
 
@@ -79,6 +72,14 @@ $check = -1;
 if($colorNametest === null){
     header("Location: setList.php?part=$parts&color=-1&page=1");
 }
+
+$pagePlus = $page+1;
+$pageMinus = $page-1;
+$pageCounter = 0;
+
+$top = ($page)*10;
+$min = ($page-1)*10;
+$minCounter = 0;
 
 //skapar en while loop som skapar en klickbar ruta av varje färg för biten
 while($row = mysqli_fetch_array($contents)){
@@ -103,30 +104,38 @@ while($row = mysqli_fetch_array($contents)){
     $imglink = "http://www.itn.liu.se/~stegu76/img.bricklink.com/$filename";
     
     //om färgen hitta har funnits innan, så skapas en klickbar ruta för biten med den färgen
-    if($color !== $check){
-        
+    if($color !== $check && $pageCounter >= 10){
+        $moreBricks++;
+    }
+    
+    if($color !== $check && $minCounter >= $min){
+    if($color !== $check && $pageCounter < 10){
         print("
         <div class='brickinfo'>
         <section>
             <a href='setList.php?part=$parts&color=$color&page=1'><h2>$colorName</h2></a>
-            <p>ColorID: $color $colorNametest</p>
+            <p>ColorID: $color</p>
             
         </section>
         <div class='imgbox'>
         <a href='setList.php?part=$parts&color=$color&page=1'><img src=$imglink alt=$parts></a>
         </div>
-    </div>
-    \n
+        </div>
+        \n
+        ");
+        $pageCounter++;
+    }
+    }
+    else if($color !== $check){
+        $minCounter++;
+    }
     
 
-        ");
-    }
-    $pageCounter++;
     //här sätts variabeln check till bitens färg för att kunna undersöka om färgen har presenterats innan eller inte
     $check = $color;
 }
 
-if($page === '1' && $pageCounter > '9'){
+if($page == 1 && $pageCounter > 9 && $moreBricks > 0){
     print("
     <div class='pageBtns'>
         <p> - </p>
@@ -134,7 +143,7 @@ if($page === '1' && $pageCounter > '9'){
         <a href='chosenBrick.php?part=$parts&page=$pagePlus'> >></a>
     </div>");
 }
-elseif($page !== '1' && $pageCounter != '10'){
+else if($page != 1 && $pageCounter != 10 || ($moreBricks === 0 && $page != 1)){
     print("
     <div class='pageBtns'>
         <a href='chosenBrick.php?part=$parts&page=$pageMinus'><< </a>
@@ -142,7 +151,7 @@ elseif($page !== '1' && $pageCounter != '10'){
         <p> - </p>
     </div>");
 }
-elseif($page === '1' && $pageCounter < '10'){
+else if($page == 1 && $pageCounter < 10 || ($moreBricks == 0 && $page == 1)){
     print("
     <div class='pageBtns'>
         <p> - </p>
@@ -150,7 +159,7 @@ elseif($page === '1' && $pageCounter < '10'){
         <p> - </p>
     </div>");
 }
-else{
+else if($moreBricks > 0){
     print("
     <div class='pageBtns'>
         <a href='chosenBrick.php?part=$parts&page=$pageMinus'><< </a>

@@ -517,3 +517,17 @@ form{
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
 }
+
+#noSets{
+    background-color: var(--tourqoise);
+    border-radius: 1rem;
+    text-align: center;
+    color: black;
+    border: solid black;
+    margin: 2% 15% 2% 15%;
+    padding: 2%;
+}
+
+#noSets h1{
+        font-size: 3.5rem;
+}
