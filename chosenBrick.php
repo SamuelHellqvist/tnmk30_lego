@@ -8,6 +8,11 @@ if(isset($_GET["part"])){
     $parts = $_GET["part"];
 }
 
+//Hämtar page nummer från url
+if(isset($_GET["page"])){
+    $page = $_GET["page"];
+}
+
 //skapar connection för att kunna koppla upp mot hemisdan
 $connection = mysqli_connect("mysql.itn.liu.se","lego","","lego");
 
@@ -29,6 +34,25 @@ $brickName = $row['Partname'];
 //det hjälper användaren att se vad den fick för resultat efter sin sökning
 print("<h1 class='titleText'>Choose color for '$brickName'</h1>");
 
+$pagePlus = $page+1;
+$pageMinus = $page-1;
+$pageCounter = 0;
+
+if($page === '1'){
+    print("
+    <div class='pageDisplay pageBtns' id='first'>
+        <p>Currenty displaying page: $page </p>
+    </div>");
+}
+else{
+    print("
+    <div class='pageDisplay pageBtns'>
+        <p>Currenty displaying page: $page </p>
+        <a href='chosenBrick.php?part=$parts&page=1'>Go to page 1</a>
+    </div>");
+}
+
+$base =($page-1)*10;
 
 //ny sql frpga som hämtar allt annat vi behöver för att visa bilder på alla bitens olika färger
 $searchKey = "SELECT DISTINCT inventory.ColorID, inventory.ItemtypeID, inventory.ItemID, 
@@ -39,8 +63,8 @@ AND inventory.ItemID=parts.PartID
 AND colors.ColorID LIKE inventory.ColorID
 AND images.ItemtypeID=inventory.ItemtypeID
 AND images.ItemID=inventory.ItemID
-AND images.ColorID=colors.ColorID ORDER BY colors.Colorname";
-
+AND images.ColorID=colors.ColorID ORDER BY colors.Colorname
+LIMIT $base, 11";
 
 $contents = mysqli_query($connection, $searchKey);
 
@@ -53,12 +77,12 @@ $check = -1;
 //vissa bitar har inget specifikt colorID, om biten man har valt saknar colorID så sätts det till
 //-1 och man skickas direkt till sidan med alla sets som biten ingår i
 if($colorNametest === null){
-    header("Location: setList.php?part=$parts&color=-1");
+    header("Location: setList.php?part=$parts&color=-1&page=1");
 }
 
 //skapar en while loop som skapar en klickbar ruta av varje färg för biten
 while($row = mysqli_fetch_array($contents)){
-
+    
     $colorName = $row['Colorname'];
 
     $color = $row['ColorID'];
@@ -97,8 +121,42 @@ while($row = mysqli_fetch_array($contents)){
 
         ");
     }
+    $pageCounter++;
     //här sätts variabeln check till bitens färg för att kunna undersöka om färgen har presenterats innan eller inte
     $check = $color;
+}
+
+if($page === '1' && $pageCounter > '9'){
+    print("
+    <div class='pageBtns'>
+        <p> - </p>
+        <p>Page $page</p>
+        <a href='chosenBrick.php?part=$parts&page=$pagePlus'> >></a>
+    </div>");
+}
+elseif($page !== '1' && $pageCounter != '10'){
+    print("
+    <div class='pageBtns'>
+        <a href='chosenBrick.php?part=$parts&page=$pageMinus'><< </a>
+        <p>Page $page</p>
+        <p> - </p>
+    </div>");
+}
+elseif($page === '1' && $pageCounter < '10'){
+    print("
+    <div class='pageBtns'>
+        <p> - </p>
+        <p>Page $page</p>
+        <p> - </p>
+    </div>");
+}
+else{
+    print("
+    <div class='pageBtns'>
+        <a href='chosenBrick.php?part=$parts&page=$pageMinus'><< </a>
+        <p>Page $page</p>
+        <a href='chosenBrick.php?part=$parts&page=$pagePlus'> >></a>
+    </div>");
 }
 
 ?>

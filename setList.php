@@ -53,13 +53,22 @@ else{
 
 $pagePlus = $page+1;
 $pageMinus = $page-1;
+$pageCounter = 0;
 
-print("
-        <div class='pageBtns'>
-            <a href='setList.php?part=$parts&color=$color&page=$pageMinus'><p>$pageMinus</p></a>
-            <p>$page</p>
-            <a href='setList.php?part=$parts&color=$color&page=$pagePlus'><p>$pagePlus</p></a>
-        </div>");
+if($page === '1'){
+    print("
+    <div class='pageDisplay pageBtns' id='first'>
+        <p>Currenty displaying page: $page </p>
+    </div>");
+}
+else{
+    print("
+    <div class='pageDisplay pageBtns'>
+        <p>Currenty displaying page: $page </p>
+        <a href='setList.php?part=$parts&color=$color&page=1'>Go to page 1</a>
+    </div>");
+}
+
 
 if($color === '-1'){
     $base =($page-1)*10;
@@ -114,7 +123,7 @@ if($color === '-1'){
                         <h2>$setName</h2>
                         <p>SetID: $setID</p>
                         <p>Year: $year</p>
-                        <p>Quantity: $quantity</p>
+                        <p>Quantity of part in set: $quantity</p>
                     </section>
                     <div class='imgbox'>
                     <a><img src=$imglink onerror='this.onerror=null; this.src=$alt' alt='$setID'></a>
@@ -124,6 +133,7 @@ if($color === '-1'){
                 "
         
             );
+        $pageCounter++;
     }
 
 }
@@ -183,17 +193,7 @@ else{
                         <h2>$setName</h2>
                         <p>SetID: $setID</p>
                         <p>Year: $year<p>
-                        <p>Quantity: </p>
-                        <table>
-                            <tr>
-                                <td>$colorName: </td>
-                                <td>$quantity</td>
-                            </tr>
-                            <tr>
-                                <td>All colors: </td>
-                                <td>Siffra </td>
-                            </tr>
-                        </table>
+                        <p>Quantity of part in set: $quantity</p>
                     </section>
                     <div class='imgbox'>
                     <a><img src=$imglink onerror='this.onerror=null; this.src=$alt' alt='$setID'></a>
@@ -203,8 +203,41 @@ else{
                 "
         
             );
+        $pageCounter++;
 
     }
+}
+if($page === '1' && $pageCounter > '9'){
+    print("
+    <div class='pageBtns'>
+        <p> - </p>
+        <p>Page $page</p>
+        <a href='setList.php?part=$parts&color=$color&page=$pagePlus'> >></a>
+    </div>");
+}
+elseif($page !== '1' && $pageCounter != '10'){
+    print("
+    <div class='pageBtns'>
+        <a href='setList.php?part=$parts&color=$color&page=$pageMinus'><< </a>
+        <p>Page $page</p>
+        <p> - </p>
+    </div>");
+}
+elseif($page === '1' && $pageCounter < '10'){
+    print("
+    <div class='pageBtns'>
+        <p> - </p>
+        <p>Page $page</p>
+        <p> - </p>
+    </div>");
+}
+else{
+    print("
+    <div class='pageBtns'>
+        <a href='setList.php?part=$parts&color=$color&page=$pageMinus'><< </a>
+        <p>Page $page</p>
+        <a href='setList.php?part=$parts&color=$color&page=$pagePlus'> >></a>
+    </div>");
 }
 ?>
 
