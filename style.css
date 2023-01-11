@@ -20,7 +20,7 @@ body {
     min-height: 100vh;
     width: 100%;
     overflow-x: hidden;
-    background: rgb(141,214,231);
+    background-color: rgb(141,214,231);
     background: linear-gradient(0deg, rgba(141,214,231,1) 35%, rgba(141,203,250,1) 100%);
 }
 
@@ -88,6 +88,8 @@ footer{
 .cookiesImg{
     height: 20vh;
 }
+
+
 
 #brick_left{
     position: absolute;
@@ -313,7 +315,13 @@ button:active{
     width: 3rem;
     transform: rotate(-90deg);
     line-height: 0.5rem;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.2);
   }
+
+#topBtn:active{
+    box-shadow: none;
+    transition: ease-in-out 0.1s;
+}
 
 #topBtn:hover{
     border: solid var(--tourqoise);
