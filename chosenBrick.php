@@ -3,6 +3,11 @@
 //Inkluderar headern
 include 'head.txt';
 
+//Hämtar sökt term från url
+if(isset($_GET["search"])){
+    $searchResult = $_GET["search"];
+}
+
 //Hämtar partID från url
 if(isset($_GET["part"])){
     $parts = $_GET["part"];
@@ -29,6 +34,13 @@ $brickContent = mysqli_query($connection, $findBrick);
 
 $row = mysqli_fetch_array($brickContent);
 $brickName = $row['Partname'];
+
+print("
+<div class='breadCrumbs'>
+<a href='index.php'>Start</a> / <a href='search.php?searchResult=$searchResult'>$searchResult</a> / $brickName
+
+</div>
+");
 
 //skriver ut vilken bit som vi hämtar version av
 //det hjälper användaren att se vad den fick för resultat efter sin sökning
@@ -70,7 +82,7 @@ $check = -1;
 //vissa bitar har inget specifikt colorID, om biten man har valt saknar colorID så sätts det till
 //-1 och man skickas direkt till sidan med alla sets som biten ingår i
 if($colorNametest === null){
-    header("Location: setList.php?part=$parts&color=-1&page=1");
+    header("Location: setList.php?search=$searchResult&part=$parts&color=-1&page=1");
 }
 
 $pagePlus = $page+1;
@@ -113,12 +125,12 @@ while($row = mysqli_fetch_array($contents)){
         print("
         <div class='brickinfo'>
         <section>
-            <a href='setList.php?part=$parts&color=$color&page=1'><h2>$colorName</h2></a>
+            <a href='setList.php?search=$searchResult&part=$parts&color=$color&page=1'><h2>$colorName</h2></a>
             <p>ColorID: $color</p>
             
         </section>
         <div class='imgbox'>
-        <a href='setList.php?part=$parts&color=$color&page=1'><img src=$imglink alt=$parts></a>
+        <a href='setList.php?search=$searchResult&part=$parts&color=$color&page=1'><img src=$imglink alt=$parts></a>
         </div>
         </div>
         \n
@@ -140,13 +152,13 @@ if($page == 1 && $pageCounter > 9 && $moreBricks > 0){
     <div class='pageBtns'>
         <p> - </p>
         <p>Page $page</p>
-        <a href='chosenBrick.php?part=$parts&page=$pagePlus'> >></a>
+        <a href='chosenBrick.php?search=$searchResult&part=$parts&page=$pagePlus'> >></a>
     </div>");
 }
 else if($page != 1 && $pageCounter != 10 || ($moreBricks === 0 && $page != 1)){
     print("
     <div class='pageBtns'>
-        <a href='chosenBrick.php?part=$parts&page=$pageMinus'><< </a>
+        <a href='chosenBrick.php?search=$searchResult&part=$parts&page=$pageMinus'><< </a>
         <p>Page $page</p>
         <p> - </p>
     </div>");
@@ -162,9 +174,9 @@ else if($page == 1 && $pageCounter < 10 || ($moreBricks == 0 && $page == 1)){
 else if($moreBricks > 0){
     print("
     <div class='pageBtns'>
-        <a href='chosenBrick.php?part=$parts&page=$pageMinus'><< </a>
+        <a href='chosenBrick.php?search=$searchResult&part=$parts&page=$pageMinus'><< </a>
         <p>Page $page</p>
-        <a href='chosenBrick.php?part=$parts&page=$pagePlus'> >></a>
+        <a href='chosenBrick.php?search=$searchResult&part=$parts&page=$pagePlus'> >></a>
     </div>");
 }
 

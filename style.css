@@ -526,16 +526,23 @@ form{
     grid-template-rows: 1fr;
 }
 
-#noSets{
-    background-color: var(--tourqoise);
-    border-radius: 1rem;
-    text-align: center;
-    color: black;
-    border: solid black;
-    margin: 2% 15% 2% 15%;
-    padding: 2%;
+.breadCrumbs{
+    padding: 1%;
+    font-size: calc(5px + 1.5vh);
+    background-color: var(--green);
+    border-top: solid var(--darkBlue);
+    width: fit-content;
+    border-radius: 0 0 2em 0;
 }
 
-#noSets h1{
-        font-size: 3.5rem;
+.breadCrumbs a:visited{
+    color: black;
+}
+
+.breadCrumbs a:hover{
+    color: white;
+}
+
+.breadCrumbs a:active{
+    color: var(--tourqoise);
 }

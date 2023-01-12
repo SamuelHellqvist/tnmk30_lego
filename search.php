@@ -17,6 +17,13 @@ $searchResult = htmlspecialchars($_GET['searchResult']);
 //ta bort alla whitespaces
 // $searchResult = str_replace(' ', '', $searchResult);
 
+print("
+<div class='breadCrumbs'>
+<a href='index.php'>Start</a> / $searchResult
+
+</div>
+");
+
 print("<h1 class='titleText'>Choose type of brick</h1>");
 
 print("<p class='subTitleText'>Currently displaying search results for: $searchResult</p>");
@@ -112,14 +119,14 @@ while($row = mysqli_fetch_array($contents)){
     print(
         "<div class='brickinfo'>
             <section>
-                <a href='chosenBrick.php?part=$brickId&page=1'><h2>$brickName</h2></a>
+                <a href='chosenBrick.php?search=$searchResult&part=$brickId&page=1'><h2>$brickName</h2></a>
                 <p>
                    PartID: $brickId
                 </p>
                 
             </section>
             <div class='imgbox'>
-            <a href='chosenBrick.php?part=$brickId&page=1'><img src=$imglink alt='$brickId'></a>
+            <a href='chosenBrick.php?search=$searchResult&part=$brickId&page=1'><img src=$imglink alt='$brickId'></a>
             </div>
         </div>
         \n

@@ -2,6 +2,11 @@
 //inkluderar header
 include 'head.txt';
 
+//Hämtar sökt term från url
+if(isset($_GET["search"])){
+    $searchResult = $_GET["search"];
+}
+
 //Hämtar partID från url
 if(isset($_GET["part"])){
     $parts = $_GET["part"];
@@ -34,6 +39,13 @@ if($color === '-1'){
 
     $brickName = $nameRow['Partname'];
 
+    print("
+    <div class='breadCrumbs'>
+    <a href='index.php'>Start</a> / <a href='search.php?searchResult=$searchResult&page=1'>$searchResult</a> / $brickName 
+    
+    </div>
+    ");
+
     //skriver ut för vilken bit som vi visar resultat för så att det blir lätt att veta det för användaren
     print("<h1 class='titleText'>'$brickName' can be found in these sets:</h1>");
 }
@@ -47,6 +59,13 @@ else{
 
     $brickName = $nameRow['Partname'];
     $colorName = $nameRow['Colorname'];
+
+    print("
+    <div class='breadCrumbs'>
+    <a href='index.php'>Start</a> / <a href='search.php?searchResult=$searchResult'>$searchResult</a> / <a href='chosenBrick.php?search=$searchResult&part=$parts&page=1'>$brickName</a> / $colorName 
+    
+    </div>
+    ");
 
     print("<h1 class='titleText'>'$colorName $brickName' can be found in these sets:</h1>");
 }
@@ -70,17 +89,23 @@ else{
     </div>");
 }
 
+$pagePlus = $page+1;
+$pageMinus = $page-1;
+$pageCounter = 0;
+
+$top = ($page)*10;
+$min = ($page-1)*10;
+$minCounter = 0;
+$moreBricks = 0;
 
 if($color === '-1'){
-    $base =($page-1)*10;
     
     $searchKey = "SELECT inventory.SetID, inventory.Quantity, sets.Setname, sets.SetID, sets.Year, images.has_gif, images.has_jpg, images.has_largegif, images.has_largejpg 
     FROM inventory, sets, images WHERE inventory.ItemID='$parts' 
     AND sets.SetID = inventory.SetID 
     AND images.ColorID=inventory.ColorID
     AND images.ItemtypeID=inventory.ItemtypeID
-    AND images.ItemID=inventory.ItemID
-    LIMIT $base, 10";
+    AND images.ItemID=inventory.ItemID";
 
 
     $contents = mysqli_query($connection, $searchKey);
@@ -116,6 +141,13 @@ if($color === '-1'){
         }
 
         //en ruta med information om setet
+        if($pageCounter >= 10){
+            $moreBricks++;
+        }
+    
+        if($minCounter >= $min){
+        if($pageCounter < 10){
+        
         $imglink = "http://www.itn.liu.se/~stegu76/img.bricklink.com/$filename";
 
             print(
@@ -135,11 +167,15 @@ if($color === '-1'){
         
             );
         $pageCounter++;
+        }
+        }
+        else{
+            $minCounter++;
+        }
     }
 
 }
 else{
-    $base =($page-1)*10;
 
     $searchKey ="SELECT sets.SetID, sets.Setname, sets.Year, inventory.ItemID, inventory.ItemtypeID, inventory.Quantity, images.has_gif, images.has_jpg, images.has_largejpg, images.has_largegif, images.ItemID
     FROM sets, inventory, images 
@@ -147,8 +183,7 @@ else{
     AND inventory.ItemID = $parts 
     AND inventory.ColorID = $color
     AND sets.SetID = images.ItemID 
-    AND images.ItemtypeID = 'S'
-    LIMIT $base, 10";
+    AND images.ItemtypeID = 'S'";
 
     $contents = mysqli_query($connection, $searchKey);
     
@@ -188,6 +223,12 @@ else{
         $imglink = "http://www.itn.liu.se/~stegu76/img.bricklink.com/$filename";
 
             //en ruta med info om setet
+            if($pageCounter >= 10){
+                $moreBricks++;
+            }
+        
+            if($minCounter >= $min){
+            if($pageCounter < 10){
             print(
                 "<div class='brickinfo'>
                     <section>
@@ -205,13 +246,12 @@ else{
         
             );
         $pageCounter++;
-
+        }
+        }
+        else{
+            $minCounter++;
+        }
     }
-}
-
-if($pageCounter == 0){
-    print(
-        "<div id='noSets'><h1>No more sets to show</h1></div>");
 }
 
 if($page == 1 && $pageCounter > 9 && $moreBricks > 0){
@@ -219,13 +259,13 @@ if($page == 1 && $pageCounter > 9 && $moreBricks > 0){
     <div class='pageBtns'>
         <p> - </p>
         <p>Page $page</p>
-        <a href='setList.php?part=$parts&color=$color&page=$pagePlus'> >></a>
+        <a href='setList.php?search=$searchResult&part=$parts&color=$color&page=$pagePlus'> >></a>
     </div>");
 }
-elseif($page !== '1' && $pageCounter != '10'){
+elseif($page != 1 && $pageCounter != 10 || $moreBricks === 0 && $page != 1){
     print("
     <div class='pageBtns'>
-        <a href='setList.php?part=$parts&color=$color&page=$pageMinus'><< </a>
+        <a href='setList.php?search=$searchResult&part=$parts&color=$color&page=$pageMinus'><< </a>
         <p>Page $page</p>
         <p> - </p>
     </div>");
@@ -238,12 +278,12 @@ elseif($page === '1' && $pageCounter < '10'){
         <p> - </p>
     </div>");
 }
-else{
+else if($moreBricks > 0){
     print("
     <div class='pageBtns'>
-        <a href='setList.php?part=$parts&color=$color&page=$pageMinus'><< </a>
+        <a href='setList.php?search=$searchResult&part=$parts&color=$color&page=$pageMinus'><< </a>
         <p>Page $page</p>
-        <a href='setList.php?part=$parts&color=$color&page=$pagePlus'> >></a>
+        <a href='setList.php?search=$searchResult&part=$parts&color=$color&page=$pagePlus'> >></a>
     </div>");
 }
 ?>
