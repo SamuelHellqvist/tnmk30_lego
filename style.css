@@ -115,7 +115,7 @@ footer{
     border-left: solid black;
     justify-self: end;
     height: 100%;
-    /* max-width: 125px; */
+    max-width: 400px;
     border-radius: 0rem 0.7rem 0.7rem 0rem;
 }
 
