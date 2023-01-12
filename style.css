@@ -115,7 +115,7 @@ footer{
     border-left: solid black;
     justify-self: end;
     height: 100%;
-    max-width: 125px;
+    /* max-width: 125px; */
     border-radius: 0rem 0.7rem 0.7rem 0rem;
 }
 
@@ -633,15 +633,9 @@ form{
         overflow-y: hidden;
     }
 
-    #extra_bottom{
-        width: 100vw;
-        position: absolute;
-        bottom: -100px;
-        background-color: var(--green);
-        height: 100px;
-        z-index: -1;
+    .brickinfo img{
+        max-width: 125px;
     }
-
 }
 
 

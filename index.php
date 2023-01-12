@@ -69,7 +69,6 @@
             </div>    
         </footer>
     </body>
-    <div id="extra_bottom"></div>
 </html>
 
 <?php
