@@ -1,6 +1,7 @@
 <h2><strong><u>How to Use</u></strong></h2>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
+ <!-- Från W3 School -->
 <div id="slideSection">
     <button class="slide-button" onclick="plusDivs(-1)">&#10094;</button>
 
