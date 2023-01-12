@@ -5,11 +5,11 @@
 <div id="slideSection">
     <button class="slide-button" onclick="plusDivs(-1)">&#10094;</button>
 
-    <img class="mySlides" src="images/oneInput.PNG">
+    <img class="mySlides" src="images/oneInput.PNG" alt="Input part you want to search for for example brick 2 x 2">
     <p>&nbsp;</p>
-    <img class="mySlides" src="images/twoChoosePart.PNG">
+    <img class="mySlides" src="images/twoChoosePart.PNG" alt="Choose the brick you are looking for">
     <p>&nbsp;</p>
-    <img class="mySlides" src="images/threeChooseColor.PNG">
+    <img class="mySlides" src="images/threeChooseColor.PNG" alt="Choose the color of the piece">
 
     <button class="slide-button" onclick="plusDivs(+1)">&#10095;</button>
 </div>
