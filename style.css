@@ -82,7 +82,7 @@ footer{
 #search_image {
     width: 25vw;
     min-width: 300px;
-    padding: 5vh 5vh 5vh 5vh;
+    padding: 5vh 0vh 5vh 0vh;
 }
 
 .cookiesImg{
@@ -339,7 +339,7 @@ button:active{
 
 /* --- Forms --- */
 #search_bar{
-    min-width: 300px;
+    min-width: 260px;
     min-height: 2rem;
     height: 3vh;
     width: 25vw;
@@ -627,9 +627,11 @@ form{
     #set_img{
         max-width: 125px;
     }
+    
     #start{
         overflow-y: hidden;
     }
+
 }
 
 
