@@ -614,11 +614,15 @@ form{
         color: rgb(0, 0, 0);
         font-weight: bold;
     }
+  
+    .pageBtns a:link{
+        font-size: 1.5rem;
+    }
     
     #page_a{
         font-size: 1.5rem;
     }
-   
+
     #page_s{
         line-height: 4rem;
     }
@@ -641,7 +645,3 @@ form{
         max-width: 125px;
     }
 }
-
-
-
-
