@@ -3,7 +3,6 @@
 Main 
 ----
 Lägg till att man kan få veta att man kan kopiera länkar från urlen
-Skriva source på cookies-sidan
 Resultatsida
 ------------
 Breadcrumbs
@@ -20,7 +19,6 @@ Setsida
 -------
 Filter för antal bitar i färg/antal totalt
 
-göra snyggare pilar mellan sidorna!
 
 fixa sista sidorna i setList
 
