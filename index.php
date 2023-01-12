@@ -21,15 +21,19 @@
         <header> 
             <a href="index.php"><img id="logo_header" src="images/logoHeader.png" alt="logo"></a>
 
+            <!-- how to use knappen -->
+            <!-- tillkallar funktionen popupFunction -->
             <div class="popup" onclick="popupFunction(howToUsePopup)"> 
                 <button id="how_to_use_btn">How to Use</button>
                 <button id="how_to_use_btn_min">?</button>
             </div>
-
+            
+            <!-- tillkallar funktionen closePopup-->
             <article class="popuptext" id="howToUsePopup">
                 <button onclick="closePopup(howToUsePopup)" class="closeBtn">+</button>
                 <?php include("howToUse.txt"); ?>
             </article>
+            
             <article class="popuptext" id="aboutUsPopup">
                 <button onclick="closePopup(aboutUsPopup)" class="closeBtn">+</button>
                 <?php include("aboutUs.txt"); ?>
@@ -48,6 +52,7 @@
         <div class="search_section">
             <img id="search_image" src="images/logoHomepage.png" alt="logo">
 
+            <!-- sökrutan, skickar en till nästa sida -->
             <form action="search.php" method="get" >
                 <input type="text" name="searchResult" id="search_bar" placeholder="Find your inner piece...">
 
@@ -59,9 +64,11 @@
     <button id="topBtn" title="go to top">➜</button>
 
         <footer>
+            <!-- about us knappen -->
             <div class="popup" onclick="popupFunction(aboutUsPopup)"> 
                 <button id="about" >About us</button>
             
+            <!-- cookies knappen -->
             </div>
             <div class="popup" onclick="popupFunction(cookiesPopup)"> 
                 <button id="cookies" >Cookies</button>
