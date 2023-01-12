@@ -219,13 +219,13 @@ if($page == 1 && $pageCounter > 9 && $moreBricks > 0){
     <div class='pageBtns'>
         <p> - </p>
         <p>Page $page</p>
-        <a href='setList.php?part=$parts&color=$color&page=$pagePlus'> >></a>
+        <a href='setList.php?part=$parts&color=$color&page=$pagePlus'> &#10095;</a>
     </div>");
 }
 elseif($page !== '1' && $pageCounter != '10'){
     print("
     <div class='pageBtns'>
-        <a href='setList.php?part=$parts&color=$color&page=$pageMinus'><< </a>
+        <a href='setList.php?part=$parts&color=$color&page=$pageMinus'>&#10094; </a>
         <p>Page $page</p>
         <p> - </p>
     </div>");
@@ -241,9 +241,9 @@ elseif($page === '1' && $pageCounter < '10'){
 else{
     print("
     <div class='pageBtns'>
-        <a href='setList.php?part=$parts&color=$color&page=$pageMinus'><< </a>
+        <a href='setList.php?part=$parts&color=$color&page=$pageMinus'>&#10094; </a>
         <p>Page $page</p>
-        <a href='setList.php?part=$parts&color=$color&page=$pagePlus'> >></a>
+        <a href='setList.php?part=$parts&color=$color&page=$pagePlus'> &#10095;</a>
     </div>");
 }
 ?>

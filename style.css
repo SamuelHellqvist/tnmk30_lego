@@ -373,7 +373,7 @@ form{
 .titleText{
     padding-top: 3vh;
     text-align: center;
-    font-size: calc(20px + 5vh);
+    font-size: calc(20px + 4vw);
 }
 
 .subTitleText{
@@ -541,11 +541,14 @@ form{
         display: none;
     }
 }
+
+
  /* Mobil enhet */
 @media only screen and (max-width: 480px){
     h2{
         font-size: medium;
     }
+    
     p{
         font-size: medium;
         bottom: 0%;
@@ -560,9 +563,17 @@ form{
     #page_a{
         font-size: 1.5rem;
     }
+   
     #page_s{
         line-height: 4rem;
     }
+    .headform{
+    max-width: 30%;
+    }
+    #resultSearchbar{
+        width:3.5rem;
+    }
+    
 }
 
 

@@ -140,13 +140,13 @@ if($page == 1 && $pageCounter > 9 && $moreBricks > 0){
     <div class='pageBtns'>
         <p> - </p>
         <p>Page $page</p>
-        <a href='chosenBrick.php?part=$parts&page=$pagePlus'> >></a>
+        <a href='chosenBrick.php?part=$parts&page=$pagePlus'> &#10095;</a>
     </div>");
 }
 else if($page != 1 && $pageCounter != 10 || ($moreBricks === 0 && $page != 1)){
     print("
     <div class='pageBtns'>
-        <a href='chosenBrick.php?part=$parts&page=$pageMinus'><< </a>
+        <a href='chosenBrick.php?part=$parts&page=$pageMinus'>&#10094; </a>
         <p>Page $page</p>
         <p> - </p>
     </div>");
@@ -162,9 +162,9 @@ else if($page == 1 && $pageCounter < 10 || ($moreBricks == 0 && $page == 1)){
 else if($moreBricks > 0){
     print("
     <div class='pageBtns'>
-        <a href='chosenBrick.php?part=$parts&page=$pageMinus'><< </a>
+        <a href='chosenBrick.php?part=$parts&page=$pageMinus'>&#10094; </a>
         <p>Page $page</p>
-        <a href='chosenBrick.php?part=$parts&page=$pagePlus'> >></a>
+        <a href='chosenBrick.php?part=$parts&page=$pagePlus'> &#10095;</a>
     </div>");
 }
 
