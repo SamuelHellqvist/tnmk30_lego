@@ -14,6 +14,9 @@ if (!$connection){
 //form validation, blir inte körbar kod utan html format
 $searchResult = htmlspecialchars($_GET['searchResult']);
 
+//tar bort whitespaces i sökningen
+$searchResult = str_replace(' ', '', $searchResult);
+
 //skriver ut breadcrumbs
 print("
     <div class='breadCrumbs'>
@@ -61,7 +64,7 @@ else{
 $searchKey = 
 "SELECT DISTINCT inventory.ColorID, inventory.ItemtypeID, inventory.ItemID, 
 images.has_gif, images.has_jpg, images.has_largegif, images.has_largejpg, parts.Partname
-FROM inventory, colors, parts, images WHERE parts.Partname LIKE '%$searchResult%' 
+FROM inventory, colors, parts, images WHERE REPLACE(parts.Partname, ' ', '') LIKE '%$searchResult%'
 AND inventory.ItemtypeID='P'
 AND inventory.ItemID=parts.PartID
 AND colors.ColorID=inventory.ColorID

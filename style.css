@@ -117,7 +117,7 @@ footer{
     border-radius: 0rem 0.7rem 0.7rem 0rem;
 }
 
-#set_img{
+.set_img{
     max-width: 400px;
 }
 
@@ -625,7 +625,7 @@ input{
         width:3.5rem;
     }
     
-    #set_img{
+    .set_img{
         max-width: 125px;
     }
     

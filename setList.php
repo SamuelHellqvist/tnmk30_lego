@@ -180,7 +180,7 @@ if($color === '-1' || $color === '-2'){
                                 <p>Quantity of part in set: $prevQuantity</p>
                             </section>
                             <div class='imgbox'>
-                                <a><img id='set_img' src=$imglink onerror='this.onerror=null; this.src=$alt' alt='$setID'></a>
+                                <a><img class='set_img' src=$imglink onerror='this.onerror=null; this.src=$alt' alt='$setID'></a>
                             </div>
                         </div>\n
                     ");
@@ -221,7 +221,7 @@ if($color === '-1' || $color === '-2'){
                     <p>Quantity of part in set: $prevQuantity</p>
                 </section>
                 <div class='imgbox'>
-                    <a><img id='set_img' src=$imglink onerror='this.onerror=null; this.src=$alt' alt='$setID'></a>
+                    <a><img class='set_img' src=$imglink onerror='this.onerror=null; this.src=$alt' alt='$setID'></a>
                 </div>
             </div>\n
         ");
@@ -289,7 +289,7 @@ else{
                         <p>Quantity of part in set: $quantity</p>
                     </section>
                     <div class='imgbox'>
-                        <a><img id='set_img' src=$imglink onerror='this.onerror=null; this.src=$alt' alt='$setID'></a>
+                        <a><img class='set_img' src=$imglink onerror='this.onerror=null; this.src=$alt' alt='$setID'></a>
                     </div>
                 </div>\n
             ");
