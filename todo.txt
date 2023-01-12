@@ -2,7 +2,7 @@
 
 Main 
 ----
-Lägg till att man kan få veta att man kan kopiera länkar från urlen
+
 Resultatsida
 ------------
 Breadcrumbs
