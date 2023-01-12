@@ -47,6 +47,7 @@ footer{
     min-height: 5rem;
 }
 
+
 /* Objekt i mitten på startsidan */
 .search_section{
     display: flex;
@@ -82,7 +83,7 @@ footer{
 #search_image {
     width: 25vw;
     min-width: 300px;
-    padding: 5vh 5vh 5vh 5vh;
+    padding: 5vh 0vh 5vh 0vh;
 }
 
 .cookiesImg{
@@ -114,7 +115,7 @@ footer{
     border-left: solid black;
     justify-self: end;
     height: 100%;
-    max-width: 125px;
+    /* max-width: 125px; */
     border-radius: 0rem 0.7rem 0.7rem 0rem;
 }
 
@@ -339,7 +340,7 @@ button:active{
 
 /* --- Forms --- */
 #search_bar{
-    min-width: 300px;
+    min-width: 260px;
     min-height: 2rem;
     height: 3vh;
     width: 25vw;
@@ -631,8 +632,13 @@ form{
     #set_img{
         max-width: 125px;
     }
+    
     #start{
         overflow-y: hidden;
+    }
+
+    .brickinfo img{
+        max-width: 125px;
     }
 }
 
