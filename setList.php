@@ -238,7 +238,7 @@ else{
                         <p>Quantity of part in set: $quantity</p>
                     </section>
                     <div class='imgbox'>
-                    <a><img src=$imglink onerror='this.onerror=null; this.src=$alt' alt='$setID'></a>
+                    <a><img id='set_img' src=$imglink onerror='this.onerror=null; this.src=$alt' alt='$setID'></a>
                     </div>
                 </div>
                 \n

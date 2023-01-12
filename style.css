@@ -117,6 +117,11 @@ footer{
     border-radius: 0rem 0.7rem 0.7rem 0rem;
 }
 
+#set_img{
+    max-width: 400px;
+}
+
+
 /* Sökruta på search sidan*/
 #resultSearchbar{
     border: solid black;
@@ -546,7 +551,7 @@ form{
 }
 
 /* --- Skalning --- */
-/* Minde desktop skärm */
+/* Minde desktop skärm och Mobil enhet */
 @media only screen and (max-width: 850px){
     #how_to_use_btn{
         display: none;
@@ -585,11 +590,8 @@ form{
     #brick_right{
         display: none;
     }
-}
 
-
- /* Mobil enhet */
-@media only screen and (max-width: 480px){
+    
     h2{
         font-size: medium;
     }
@@ -619,7 +621,12 @@ form{
         width:3.5rem;
     }
     
+    #set_img{
+        max-width: 125px;
+    }
+
 }
+
 
 
 
