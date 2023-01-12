@@ -500,6 +500,51 @@ form{
         font-size: 3.5rem;
 }
 
+
+.pageBtns a:hover{
+    text-decoration: underline;
+    color: black;
+}
+
+.pageBtns a:active{
+    color: var(--blueAccent);
+}
+
+.pageDisplay{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-bottom: auto;
+    margin-top: 5%;
+}  
+
+#first{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.breadCrumbs{
+    padding: 1%;
+    font-size: calc(5px + 1.5vh);
+    background-color: var(--green);
+    border-top: solid var(--darkBlue);
+    width: fit-content;
+    border-radius: 0 0 2em 0;
+}
+
+.breadCrumbs a:visited{
+    color: black;
+}
+
+.breadCrumbs a:hover{
+    color: white;
+}
+
+.breadCrumbs a:active{
+    color: var(--tourqoise);
+}
+
 /* --- Skalning --- */
 /* Minde desktop skärm */
 @media only screen and (max-width: 850px){
@@ -551,7 +596,7 @@ form{
     
     p{
         font-size: medium;
-        bottom: 0%;
+        bottom: 10%;
     }
 
     .pageBtns p {
@@ -568,7 +613,7 @@ form{
         line-height: 4rem;
     }
     .headform{
-    max-width: 30%;
+        max-width: 30%;
     }
     #resultSearchbar{
         width:3.5rem;
@@ -578,47 +623,3 @@ form{
 
 
 
-
-.pageBtns a:hover{
-    text-decoration: underline;
-    color: black;
-}
-
-.pageBtns a:active{
-    color: var(--blueAccent);
-}
-
-.pageDisplay{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    margin-bottom: auto;
-    margin-top: 5%;
-}  
-
-#first{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-}
-
-.breadCrumbs{
-    padding: 1%;
-    font-size: calc(5px + 1.5vh);
-    background-color: var(--green);
-    border-top: solid var(--darkBlue);
-    width: fit-content;
-    border-radius: 0 0 2em 0;
-}
-
-.breadCrumbs a:visited{
-    color: black;
-}
-
-.breadCrumbs a:hover{
-    color: white;
-}
-
-.breadCrumbs a:active{
-    color: var(--tourqoise);
-}

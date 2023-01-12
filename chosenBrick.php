@@ -149,23 +149,23 @@ while($row = mysqli_fetch_array($contents)){
 
 if($page == 1 && $pageCounter > 9 && $moreBricks > 0){
     print("
-    <div class='pageBtns'>
+    <div class='pageBtns' id='page_s'>
         <p> - </p>
         <p>Page $page</p>
-        <a href='chosenBrick.php?search=$searchResult&part=$parts&page=$pagePlus'> >></a>
+        <a href='chosenBrick.php?search=$searchResult&part=$parts&page=$pagePlus'> &#10095;</a>
     </div>");
 }
 else if($page != 1 && $pageCounter != 10 || ($moreBricks === 0 && $page != 1)){
     print("
-    <div class='pageBtns'>
-        <a href='chosenBrick.php?search=$searchResult&part=$parts&page=$pageMinus'><< </a>
+    <div class='pageBtns' id='page_s'>
+        <a href='chosenBrick.php?search=$searchResult&part=$parts&page=$pageMinus'>&#10094; </a>
         <p>Page $page</p>
         <p> - </p>
     </div>");
 }
 else if($page == 1 && $pageCounter < 10 || ($moreBricks == 0 && $page == 1)){
     print("
-    <div class='pageBtns'>
+    <div class='pageBtns' id='page_s'>
         <p> - </p>
         <p>Page $page</p>
         <p> - </p>
@@ -173,10 +173,10 @@ else if($page == 1 && $pageCounter < 10 || ($moreBricks == 0 && $page == 1)){
 }
 else if($moreBricks > 0){
     print("
-    <div class='pageBtns'>
-        <a href='chosenBrick.php?search=$searchResult&part=$parts&page=$pageMinus'><< </a>
+    <div class='pageBtns' id='page_s'>
+        <a href='chosenBrick.php?search=$searchResult&part=$parts&page=$pageMinus'>&#10094; </a>
         <p>Page $page</p>
-        <a href='chosenBrick.php?search=$searchResult&part=$parts&page=$pagePlus'> >></a>
+        <a href='chosenBrick.php?search=$searchResult&part=$parts&page=$pagePlus'> &#10095;</a>
     </div>");
 }
 

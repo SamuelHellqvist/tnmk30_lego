@@ -256,23 +256,23 @@ else{
 
 if($page == 1 && $pageCounter > 9 && $moreBricks > 0){
     print("
-    <div class='pageBtns'>
+    <div class='pageBtns' id='page_s'>
         <p> - </p>
         <p>Page $page</p>
-        <a href='setList.php?search=$searchResult&part=$parts&color=$color&page=$pagePlus'> >></a>
+        <a href='setList.php?search=$searchResult&part=$parts&color=$color&page=$pagePlus'> &#10095;</a>
     </div>");
 }
 elseif($page != 1 && $pageCounter != 10 || $moreBricks === 0 && $page != 1){
     print("
-    <div class='pageBtns'>
-        <a href='setList.php?search=$searchResult&part=$parts&color=$color&page=$pageMinus'><< </a>
+    <div class='pageBtns' id='page_s'>
+        <a href='setList.php?search=$searchResult&part=$parts&color=$color&page=$pageMinus'>&#10094; </a>
         <p>Page $page</p>
         <p> - </p>
     </div>");
 }
 elseif($page === '1' && $pageCounter < '10'){
     print("
-    <div class='pageBtns'>
+    <div class='pageBtns' id='page_s'>
         <p> - </p>
         <p>Page $page</p>
         <p> - </p>
@@ -280,10 +280,10 @@ elseif($page === '1' && $pageCounter < '10'){
 }
 else if($moreBricks > 0){
     print("
-    <div class='pageBtns'>
-        <a href='setList.php?search=$searchResult&part=$parts&color=$color&page=$pageMinus'><< </a>
+    <div class='pageBtns' id='page_s'>
+        <a href='setList.php?search=$searchResult&part=$parts&color=$color&page=$pageMinus'>&#10094; </a>
         <p>Page $page</p>
-        <a href='setList.php?search=$searchResult&part=$parts&color=$color&page=$pagePlus'> >></a>
+        <a href='setList.php?search=$searchResult&part=$parts&color=$color&page=$pagePlus'> &#10095;</a>
     </div>");
 }
 ?>
