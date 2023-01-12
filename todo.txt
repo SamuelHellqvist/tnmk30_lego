@@ -29,4 +29,3 @@ Filter för antal bitar i färg/antal totalt
 Fråga handledare
 ----------------
 om valideringen är korrekt
-ta bort mellanslag i sökning?
