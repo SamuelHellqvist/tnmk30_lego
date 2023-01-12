@@ -87,6 +87,7 @@ footer{
 
 .cookiesImg{
     height: 20vh;
+    max-width: 65vw;
 }
 
 
@@ -580,7 +581,8 @@ form{
     }
 
     .popuptext{
-    margin:12%;
+        margin:12%;
+        padding: 10px;
     }
 
     #brick_left{
