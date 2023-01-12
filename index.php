@@ -12,7 +12,7 @@
         <script src="script.js" defer></script>
     </head>
 
-    <body>
+    <body id="start">
         <!-- Bakgrundsbilder -->
         <img id="brick_left" src="images/bricksideLeft.png" alt="bricks left">
         <img id="brick_right" src="images/bricksideRight.png" alt="bricks right">

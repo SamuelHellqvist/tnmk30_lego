@@ -87,6 +87,7 @@ footer{
 
 .cookiesImg{
     height: 20vh;
+    max-width: 65vw;
 }
 
 
@@ -113,9 +114,14 @@ footer{
     border-left: solid black;
     justify-self: end;
     height: 100%;
-    max-width: 200px;
+    max-width: 125px;
     border-radius: 0rem 0.7rem 0.7rem 0rem;
 }
+
+#set_img{
+    max-width: 400px;
+}
+
 
 /* Sökruta på search sidan*/
 #resultSearchbar{
@@ -500,84 +506,6 @@ form{
         font-size: 3.5rem;
 }
 
-/* --- Skalning --- */
-/* Minde desktop skärm */
-@media only screen and (max-width: 850px){
-    #how_to_use_btn{
-        display: none;
-    }
-
-    #how_to_use_btn_min{
-        display: block;
-        left: 20%;
-    }
-
-    header{
-        justify-content: space-between;
-    }
-
-    .headform{
-        position: relative;
-    }
-
-    #logo_header{
-        position: relative; 
-        left: 0;
-        width: 5rem;
-        height: 4rem;
-        padding: 0.5rem;
-        top:0%;
-    }
-
-    .popuptext{
-    margin:12%;
-    }
-
-    #brick_left{
-        display: none;
-    }
-    
-    #brick_right{
-        display: none;
-    }
-}
-
-
- /* Mobil enhet */
-@media only screen and (max-width: 480px){
-    h2{
-        font-size: medium;
-    }
-    
-    p{
-        font-size: medium;
-        bottom: 0%;
-    }
-
-    .pageBtns p {
-        font-size: 1.5rem;
-        color: rgb(0, 0, 0);
-        font-weight: bold;
-    }
-    
-    #page_a{
-        font-size: 1.5rem;
-    }
-   
-    #page_s{
-        line-height: 4rem;
-    }
-    .headform{
-    max-width: 30%;
-    }
-    #resultSearchbar{
-        width:3.5rem;
-    }
-    
-}
-
-
-
 
 .pageBtns a:hover{
     text-decoration: underline;
@@ -623,3 +551,87 @@ form{
 .breadCrumbs a:active{
     color: var(--tourqoise);
 }
+
+/* --- Skalning --- */
+/* Minde desktop skärm och Mobil enhet */
+@media only screen and (max-width: 850px){
+    #how_to_use_btn{
+        display: none;
+    }
+
+    #how_to_use_btn_min{
+        display: block;
+        left: 20%;
+    }
+
+    header{
+        justify-content: space-between;
+    }
+
+    .headform{
+        position: relative;
+    }
+
+    #logo_header{
+        position: relative; 
+        left: 0;
+        width: 5rem;
+        height: 4rem;
+        padding: 0.5rem;
+        top:0%;
+    }
+
+    .popuptext{
+        margin:12%;
+        padding: 10px;
+    }
+
+    #brick_left{
+        display: none;
+    }
+    
+    #brick_right{
+        display: none;
+    }
+
+    
+    h2{
+        font-size: medium;
+    }
+    
+    p{
+        font-size: medium;
+        bottom: 10%;
+    }
+
+    .pageBtns p {
+        font-size: 1.5rem;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+    }
+    
+    #page_a{
+        font-size: 1.5rem;
+    }
+   
+    #page_s{
+        line-height: 4rem;
+    }
+    .headform{
+        max-width: 30%;
+    }
+    #resultSearchbar{
+        width:3.5rem;
+    }
+    
+    #set_img{
+        max-width: 125px;
+    }
+    #start{
+        overflow-y: hidden;
+    }
+}
+
+
+
+
