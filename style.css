@@ -91,8 +91,6 @@ footer{
     max-width: 65vw;
 }
 
-
-
 #brick_left{
     position: absolute;
     left: -50px;
@@ -115,34 +113,12 @@ footer{
     border-left: solid black;
     justify-self: end;
     height: 100%;
-    /* max-width: 125px; */
+    max-width: 400px;
     border-radius: 0rem 0.7rem 0.7rem 0rem;
 }
 
 #set_img{
     max-width: 400px;
-}
-
-
-/* Sökruta på search sidan*/
-#resultSearchbar{
-    border: solid black;
-    border-width: 2px;
-    height: 3vh;
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
-    border-right: 0;
-    box-shadow:  5px 5px 5px rgba(0, 0, 0, 0.2);
-    min-height: 2rem;
-}
-
-/* Ruta för text */
-input{
-    font-size: 1rem;
-    border-radius: 2rem;
-    padding: 0.5%;
-    padding-left: 1%;
-    color: var(--textgrey);
 }
 
 /* --- Alla popups --- */
@@ -276,7 +252,6 @@ button{
     box-shadow:  5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* När alla knappar svävas över */
 button:hover{
     cursor: pointer;
     color: white;
@@ -288,7 +263,7 @@ button:active{
     box-shadow: none;
 }
 
-/*När searchBtn svävas över*/
+
 #searchBtnHover{
     display: none;
     height: 3vh;
@@ -335,6 +310,33 @@ button:active{
     color: white;
 }
 
+.pageBtns{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    background-color: var(--green);
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 1rem;
+    position: relative;
+    border: solid black;
+    margin-bottom: 5%;
+}
+
+.pageBtns a:visited{
+    color: rgb(0, 0, 0);
+}
+
+.pageBtns a:hover{
+    text-decoration: underline;
+    color: white;
+}
+
+.pageBtns a:active{
+    color: var(--blueAccent);
+}
+
+
 /* --- Forms --- */
 #search_bar{
     min-width: 260px;
@@ -372,6 +374,26 @@ form{
     padding: 0.5rem;
 }
 
+/* Sökruta på search sidan*/
+#resultSearchbar{
+    border: solid black;
+    border-width: 2px;
+    height: 3vh;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-right: 0;
+    box-shadow:  5px 5px 5px rgba(0, 0, 0, 0.2);
+    min-height: 2rem;
+}
+
+/* Ruta för text */
+input{
+    font-size: 1rem;
+    border-radius: 2rem;
+    padding: 0.5%;
+    padding-left: 1%;
+    color: var(--textgrey);
+}
 
 /* --- Info --- */
 .titleText{
@@ -441,20 +463,6 @@ form{
     margin: 5%;
 }
 
-
-.pageBtns{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    text-align: center;
-    background-color: var(--green);
-    margin-left: 20%;
-    margin-right: 20%;
-    border-radius: 1rem;
-    position: relative;
-    border: solid black;
-    margin-bottom: 5%;
-}
-
 .pageBtns p{
     font-size: 3rem;
     color: rgb(0, 0, 0);
@@ -466,19 +474,6 @@ form{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-decoration: none;
     color: rgb(0, 0, 0);
-}
-
-.pageBtns a:visited{
-    color: rgb(0, 0, 0);
-}
-
-.pageBtns a:hover{
-    text-decoration: underline;
-    color: white;
-}
-
-.pageBtns a:active{
-    color: var(--blueAccent);
 }
 
 .pageDisplay{
@@ -527,12 +522,7 @@ form{
     margin-top: 5%;
 }  
 
-#first{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-}
-
+ /* --- breadcrumbs --- */
 .breadCrumbs{
     padding: 1%;
     font-size: calc(5px + 1.5vh);
@@ -616,11 +606,15 @@ form{
         color: rgb(0, 0, 0);
         font-weight: bold;
     }
+  
+    .pageBtns a:link{
+        font-size: 1.5rem;
+    }
     
     #page_a{
         font-size: 1.5rem;
     }
-   
+
     #page_s{
         line-height: 4rem;
     }
@@ -643,7 +637,3 @@ form{
         max-width: 125px;
     }
 }
-
-
-
-
