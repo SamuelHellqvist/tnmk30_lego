@@ -540,6 +540,10 @@ form{
     padding-right: calc(5px + 1.5vh);
 }
 
+.breadCrumbs a:link{
+    color: black;
+}
+
 .breadCrumbs a:visited{
     color: black;
 }
