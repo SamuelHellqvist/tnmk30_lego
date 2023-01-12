@@ -47,6 +47,7 @@ footer{
     min-height: 5rem;
 }
 
+
 /* Objekt i mitten på startsidan */
 .search_section{
     display: flex;
@@ -630,6 +631,15 @@ form{
     
     #start{
         overflow-y: hidden;
+    }
+
+    #extra_bottom{
+        width: 100vw;
+        position: absolute;
+        bottom: -100px;
+        background-color: var(--green);
+        height: 100px;
+        z-index: -1;
     }
 
 }
