@@ -47,7 +47,7 @@ else{
     print("
     <div class='pageDisplay pageBtns'>
         <p>Currenty displaying page: $page </p>
-        <a href='search.php?searchResult=$searchResult&page=1'>Go to page 1</a>
+        <a id='page_a' href='search.php?searchResult=$searchResult&page=1'>Go to page 1</a>
     </div>");
 }
 
@@ -169,23 +169,23 @@ if($count === 0){
 
 if($page == 1 && $pageCounter > 9 && $moreBricks > 0){
     print("
-    <div class='pageBtns'>
+    <div class='pageBtns' id='page_s'>
         <p> - </p>
         <p>Page $page</p>
-        <a href='search.php?searchResult=$searchResult&page=$pagePlus'> >></a>
+        <a href='search.php?searchResult=$searchResult&page=$pagePlus'> &#10095;</a>
     </div>");
 }
 elseif($page !== 1 && $pageCounter != 10 || $moreBricks === 0 && $page !== 1){
     print("
-    <div class='pageBtns'>
-        <a href='search.php?searchResult=$searchResult&page=$pageMinus'><< </a>
+    <div class='pageBtns' id='page_s'>
+        <a href='search.php?searchResult=$searchResult&page=$pageMinus'>&#10094; </a>
         <p>Page $page</p>
         <p> - </p>
     </div>");
 }
 elseif($page == 1 && $pageCounter < 10){
     print("
-    <div class='pageBtns'>
+    <div class='pageBtns' id='page_s'>
         <p> - </p>
         <p>Page $page</p>
         <p> - </p>
@@ -193,10 +193,10 @@ elseif($page == 1 && $pageCounter < 10){
 }
 else if($moreBricks > 0){
     print("
-    <div class='pageBtns'>
-        <a href='search.php?searchResult=$searchResult&page=$pageMinus'><< </a>
+    <div class='pageBtns' id='page_s'>
+        <a href='search.php?searchResult=$searchResult&page=$pageMinus'>&#10094; </a>
         <p>Page $page</p>
-        <a href='search.php?searchResult=$searchResult&page=$pagePlus'> >></a>
+        <a href='search.php?searchResult=$searchResult&page=$pagePlus'> &#10095;</a>
     </div>");
 }
 
