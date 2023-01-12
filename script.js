@@ -52,6 +52,7 @@ topbutton.addEventListener("click", topFunction);
 
 
 /*NOTE This scirpt originates from w3schools.com NOTE*/
+// För slides funktion på how to use
 var slideIndex = 1;
 showDivs(slideIndex);
 
