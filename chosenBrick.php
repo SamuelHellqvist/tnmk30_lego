@@ -45,6 +45,7 @@ print("
     <h1 class='titleText'>Choose color for '$brickName'</h1>
 ");
 
+//skriver till användaren vilken som är den aktuella sidan
 if($page === '1'){
     print("
         <div class='pageDisplay pageBtns' id='first'>
@@ -61,7 +62,7 @@ else{
     ");
 }
 
-//ny sql frpga som hämtar allt annat vi behöver för att visa bilder på alla bitens olika färger
+//ny sql fråga som hämtar allt annat vi behöver för att visa bilder på alla bitens olika färger
 $searchKey = "SELECT DISTINCT inventory.ColorID, inventory.ItemtypeID, inventory.ItemID, 
 images.has_gif, images.has_jpg, images.has_largegif, images.has_largejpg, parts.Partname, colors.Colorname
 FROM inventory, colors, parts, images WHERE inventory.ItemID = $parts 
@@ -76,12 +77,12 @@ $contents = mysqli_query($connection, $searchKey);
 $test= mysqli_fetch_array($contents);
 $colorNametest = $test['Colorname'];
 
-//vissa bitar har inget specifikt colorID, om biten man har valt saknar colorID så sätts det till
-//-1 och man skickas direkt till sidan med alla sets som biten ingår i
+//vissa bitar har inget specifikt colorID, om biten man har valt saknar colorID så skickas användaren direkt till setsen
 if($colorNametest === null){
     header("Location: setList.php?search=$searchResult&part=$parts&color=-2&page=1");
 }
 
+//variabler för att kontrollera antalet resultat per sida
 $check = -1;
 $pagePlus = $page+1;
 $pageMinus = $page-1;
@@ -90,7 +91,7 @@ $top = ($page)*10;
 $min = ($page-1)*10;
 $minCounter = 0;
 
-//skapar en while loop som skapar en klickbar ruta av varje färg för biten
+//skapar en while loop som skapar en klickbar ruta för varje färg för biten
 while($row = mysqli_fetch_array($contents)){
     
     $colorName = $row['Colorname'];
@@ -99,8 +100,7 @@ while($row = mysqli_fetch_array($contents)){
     $gif = $row['has_gif'];
     $jpg = $row['has_jpg'];
 
-    //vissa bitar har jpg bilder och vissa har gif, här hittas rätt bildformat för varje bit
-    //genom att man tar vilken typ av bild som biten har och använder det i en url till bilden
+    //hittar rätt bild beroende på vilken typ av bild biten ha
     if ($jpg){
         $filename =  $row['ItemtypeID'] . '/' . $row['ColorID'] . '/' . $row['ItemID'] . '.jpg';
     }
@@ -115,22 +115,20 @@ while($row = mysqli_fetch_array($contents)){
         $moreBricks++;
     }
     
+    //skriver ut resultat för alla färger
     if($page == 1 && $minCounter == 0){
         print("
-            <div class='brickinfo'>
+            <div class='brickinfo' id='allColors'>
                 <section>
-                    <a href='setList.php?search=$searchResult&part=$parts&color=-1&page=1'><h2>All Colors</h2></a>
-                    <p>All sets that include $brickName</p>
+                    <a href='setList.php?search=$searchResult&part=$parts&color=-1&page=1'><h2>All Colors</h2><p>View all sets that include $brickName</p></a>
                 </section>
-                <div class='imgbox'>
-                    <a href='setList.php?search=$searchResult&part=$parts&color=-1&page=1'><img src=$imglink alt=$parts></a>
-                </div>
             </div>
         ");
         $pageCounter++;
         $minCounter++;
     }
 
+    //kollar så att en färg som redan har visats inte visas igen och skriver ut nya färger
     if($color !== $check && $minCounter >= $min){
         if($color !== $check && $pageCounter < 10){
             print("
@@ -147,6 +145,7 @@ while($row = mysqli_fetch_array($contents)){
             $pageCounter++;
         }
     }
+    //om färgen redan visats på en tidigare sida skrivs ingenting ut
     else if($color !== $check){
         $minCounter++;
     }
@@ -155,6 +154,7 @@ while($row = mysqli_fetch_array($contents)){
     $check = $color;
 }
 
+//skriver ut navigation mellan sidorna
 if($page == 1 && $pageCounter > 9 && $moreBricks > 0){
     print("
         <div class='pageBtns' id='page_s'>
@@ -191,10 +191,8 @@ else if($moreBricks > 0){
         </div>
     ");
 }
-
 ?>
 
-<!-- Lägger in top knappen -->
 <button id="topBtn" title="go to top">➜</button>
 
 </body>

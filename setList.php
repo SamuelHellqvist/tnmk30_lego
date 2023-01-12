@@ -30,7 +30,7 @@ if (!$connection){
     die('MySQL connection error');
 }
 
-//om inget colorID har angetts kommer inte färg att användas och behöver därför inte skrivas ut
+//skriver ut breadcrumbs och vilken bit som det det visas resultat för, obereonde av färg
 if($color === '-1' || $color === '-2'){
     
     $findName = "SELECT Partname FROM parts WHERE PartID = '$parts'";
@@ -38,6 +38,7 @@ if($color === '-1' || $color === '-2'){
     $nameRow = mysqli_fetch_array($nameContent);
     $brickName = $nameRow['Partname'];
 
+    //skriver ut breadcrumbs
     if($color === '-1'){
         print("
             <div class='breadCrumbs'>
@@ -53,13 +54,13 @@ if($color === '-1' || $color === '-2'){
             </div>
         ");
     }
-    //skriver ut för vilken bit som vi visar resultat för så att det blir lätt att veta det för användaren
+
+    //skriver ut bitnamn
     print("
         <h1 class='titleText'>'$brickName' can be found in these sets:</h1>
     ");
 }
-
-//om en färg har angetss
+//skriver ut breadcrumbs och vilken bit som det det visas resultat för, bereonde på färg
 else{
     
     $findName = "SELECT parts.Partname, colors.Colorname FROM parts, colors WHERE parts.PartID = $parts AND colors.ColorID = $color";
@@ -68,6 +69,7 @@ else{
     $brickName = $nameRow['Partname'];
     $colorName = $nameRow['Colorname'];
 
+    //skriver ut breadcrumbs
     print("
         <div class='breadCrumbs'>
             <a href='index.php'>Start</a> / <a href='search.php?searchResult=$searchResult'>$searchResult</a> 
@@ -75,11 +77,13 @@ else{
         </div>
     ");
 
+    //skriver ut bitnamn
     print("
         <h1 class='titleText'>'$colorName $brickName' can be found in these sets:</h1>
     ");
 }
 
+//skriver till användaren vilken som är den aktuella sidan
 if($page === '1'){
     print("
         <div class='pageDisplay pageBtns' id='first'>
@@ -96,6 +100,7 @@ else{
     ");
 }
 
+//variabler för att kontrollera antalet resultat per sida
 $pagePlus = $page+1;
 $pageMinus = $page-1;
 $pageCounter = 0;
@@ -105,6 +110,7 @@ $min = ($page-1)*10;
 $minCounter = 0;
 $moreBricks = 0;
 
+//variabler som sparar information om föregående resultat
 $prevQuantity = 0;
 $setCheck = -1;
 $prevSetName = -1;
@@ -112,6 +118,7 @@ $prevYear = -1;
 $prevSetID = -1;
 $prevFilename = -1;
 
+//skapar en while loop som skapar en klickbar ruta för varje färg för biten, oberonde av färg
 if($color === '-1' || $color === '-2'){
 
     $searchKey = "SELECT inventory.SetID, inventory.Quantity, sets.Setname, sets.SetID, 
@@ -138,6 +145,7 @@ if($color === '-1' || $color === '-2'){
         $largegif = $row['has_largegif'];
         $largejpg = $row['has_largejpg'];
 
+        //hittar rätt bild beroende på vilken typ av bild setet har
         if($largejpg){
             $filename = 'SL' . '/' . $setID . '.jpg';
         }
@@ -151,11 +159,12 @@ if($color === '-1' || $color === '-2'){
             $filename = 'S' . '/' . $setID . '.gif';
         }
 
-        //en ruta med information om setet
+        //kontrollerar om det finns fler resultat att visa
         if($pageCounter >= 10){
             $moreBricks++;
         }
 
+        //skirver ut resultaten och lägger ihop antalet bitar som finns, oberoende av färg, i varje set
         if ($setCheck != -1 && $setID != $setCheck){
             if($minCounter >= $min){
                 if($pageCounter < 10){
@@ -176,16 +185,19 @@ if($color === '-1' || $color === '-2'){
                         </div>\n
                     ");
 
+                    //räknar resultat som skrivits ut och nollställer quantity-värdet
                     $prevQuantity=0;
                     $pageCounter++;
                 }
             }
+            //om resutltaten redan har skrivits ut på en tidigare sida så händer ingenting
             else{
                 $minCounter++;
                 $prevQuantity=0;
             }
         }
 
+        //sparar information om resultatet för att jämföra med nästa resultat
         $setCheck = $setID;
         $prevQuantity += $quantity;
         $prevSetName = $setName;
@@ -195,6 +207,7 @@ if($color === '-1' || $color === '-2'){
 
     }
 
+    //om det bara finns ett resultat så skrivs det ut
     if($setCheck != -1 && $pageCounter === 0 && $page == 1){
         
         $imglink = "http://www.itn.liu.se/~stegu76/img.bricklink.com/$prevFilename";
@@ -215,6 +228,7 @@ if($color === '-1' || $color === '-2'){
     }
 
 }
+//skapar en while loop som skapar en klickbar ruta för varje färg för biten, beronde på färg
 else{
 
     $searchKey ="SELECT sets.SetID, sets.Setname, sets.Year, inventory.ItemID, inventory.ItemtypeID, 
@@ -242,8 +256,7 @@ else{
         $largegif = $row['has_largegif'];
         $largejpg = $row['has_largejpg'];
         
-        //hittar rätt bild beroende på vad som finns
-        //här är det skillnad på stor och liten bild
+        //hittar rätt bild beroende på vilken typ av bild biten har
         if($largejpg){
             $filename = 'SL' . '/' . $setID . '.jpg';
         }
@@ -259,11 +272,12 @@ else{
 
         $imglink = "http://www.itn.liu.se/~stegu76/img.bricklink.com/$filename";
 
-            //en ruta med info om setet
+        //kontrollerar om det finns fler resultat att visa
         if($pageCounter >= 10){
             $moreBricks++;
         }
-    
+        
+        //skirver ut resultaten
         if($minCounter >= $min){
             if($pageCounter < 10){
             print(
@@ -282,12 +296,14 @@ else{
             $pageCounter++;
             }
         }
+        //om resutltaten redan har skrivits ut på en tidigare sida så händer ingenting
         else{
             $minCounter++;
         }
     }
 }
 
+//skriver ut navigation mellan sidorna
 if($page == 1 && $pageCounter > 9 && $moreBricks > 0){
     print("
     <div class='pageBtns' id='page_s'>
@@ -322,7 +338,6 @@ else if($moreBricks > 0){
 }
 ?>
 
-<!-- lägger till top-knappen -->
 <button id="topBtn" title="go to top">➜</button>
 
 </body>

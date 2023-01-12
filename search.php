@@ -14,6 +14,7 @@ if (!$connection){
 //form validation, blir inte körbar kod utan html format
 $searchResult = htmlspecialchars($_GET['searchResult']);
 
+//skriver ut breadcrumbs
 print("
     <div class='breadCrumbs'>
     <a href='index.php'>Start</a> / $searchResult
@@ -34,10 +35,12 @@ if(isset($_GET["page"])){
     $page = $_GET["page"];   
 }
 
+//om ingen sida fås så sätts sidan till 1
 if($page === NULL){
     $page = 1;
 }
 
+//skriver till användaren vilken som är den aktuella sidan
 if($page == 1){
     print("
         <div class='pageDisplay pageBtns' id='first'>
@@ -54,6 +57,7 @@ else{
     ");
 }
 
+//skapar en sql fråga
 $searchKey = 
 "SELECT DISTINCT inventory.ColorID, inventory.ItemtypeID, inventory.ItemID, 
 images.has_gif, images.has_jpg, images.has_largegif, images.has_largejpg, parts.Partname
@@ -68,7 +72,7 @@ AND images.ColorID=colors.ColorID
 
 $contents = mysqli_query($connection, $searchKey);
 
-$count = 0;
+//variabler för att kontrollera antalet resultat per sida
 $check = -1;
 $pagePlus = $page+1;
 $pageMinus = $page-1;
@@ -79,10 +83,10 @@ $min = ($page-1)*10;
 $minCounter = 0;
 $moreBricks = 0;
 
+//en loop för att skriva ut alla resultat
 while($row = mysqli_fetch_array($contents)){
 
-    //lägger till ett på count varje gång en ny bit som matchar sökordet visas
-    $count++;
+    //hämtar värden från sql-frågan och sätter dessa till variabler
     $color = $row['Colorname'];
     $colorID = $row['ColorID'];
     $brickName = $row['Partname'];
@@ -139,9 +143,8 @@ while($row = mysqli_fetch_array($contents)){
     $check = $brickId;
 }
 
-//om count förblir 0 så har inga biter hittats och ett meddelande visas för användaren för att ge tips på hur man kan söka 
-//för att få bra resultat. Detta är till för att öka användarvönligheten
-if($count === 0){
+//om sökningen inte ger något resultat så ges alternativ/tips på hur man ska söka för att få bra resultat
+if($pageCounter === 0){
     print("
         <div class='noResults'>
             <h2>Your search '$searchResult' did not match any of the bricks in our database</h2>
@@ -161,6 +164,7 @@ if($count === 0){
     ");
 }
 
+//skriver ut navigation mellan sidorna
 if($page == 1 && $pageCounter > 9 && $moreBricks > 0){
     print("
     <div class='pageBtns' id='page_s'>
@@ -197,7 +201,7 @@ else if($moreBricks > 0){
     ");
 }
 ?>
-<!-- lägger till top-knappen -->
+
 <button id="topBtn" title="go to top">➜</button>
 
 </body>

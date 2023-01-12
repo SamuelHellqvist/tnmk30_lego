@@ -335,9 +335,6 @@ button:active{
     color: white;
 }
 
-
-
-
 /* --- Forms --- */
 #search_bar{
     min-width: 260px;
@@ -427,6 +424,11 @@ form{
 
 .brickinfo section a:link{
     text-decoration: none;
+}
+
+#allColors{
+    grid-template-columns: 1fr;
+    height: fit-content;
 }
 
 .container{
