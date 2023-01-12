@@ -624,7 +624,9 @@ form{
     #set_img{
         max-width: 125px;
     }
-
+    body{
+        overflow-y: hidden;
+    }
 }
 
 
