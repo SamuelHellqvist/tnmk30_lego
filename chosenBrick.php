@@ -115,11 +115,30 @@ while($row = mysqli_fetch_array($contents)){
 
     $imglink = "http://www.itn.liu.se/~stegu76/img.bricklink.com/$filename";
     
+    
     //om färgen hitta har funnits innan, så skapas en klickbar ruta för biten med den färgen
     if($color !== $check && $pageCounter >= 10){
         $moreBricks++;
     }
     
+    if($page == 1 && $minCounter == 0){
+
+        print("
+        <div class='brickinfo'>
+        <section>
+            <a href='setList.php?search=$searchResult&part=$parts&color=-1&page=1'><h2>All Colors</h2></a>
+            <p>All sets that include $brickName</p>
+
+        </section>
+        <div class='imgbox'>
+        <a href='setList.php?search=$searchResult&part=$parts&color=-1&page=1'><img src=$imglink alt=$parts></a>
+        </div>
+        </div>
+        ");
+        $pageCounter++;
+        $minCounter++;
+    }
+
     if($color !== $check && $minCounter >= $min){
     if($color !== $check && $pageCounter < 10){
         print("
@@ -141,7 +160,6 @@ while($row = mysqli_fetch_array($contents)){
     else if($color !== $check){
         $minCounter++;
     }
-    
 
     //här sätts variabeln check till bitens färg för att kunna undersöka om färgen har presenterats innan eller inte
     $check = $color;

@@ -609,6 +609,7 @@ form{
     border-top: solid var(--darkBlue);
     width: fit-content;
     border-radius: 0 0 2em 0;
+    padding-right: calc(5px + 1.5vh);
 }
 
 .breadCrumbs a:visited{

@@ -70,11 +70,6 @@ else{
     print("<h1 class='titleText'>'$colorName $brickName' can be found in these sets:</h1>");
 }
 
-$pagePlus = $page+1;
-$pageMinus = $page-1;
-$pageCounter = 0;
-$moreBricks = 0;
-
 if($page === '1'){
     print("
     <div class='pageDisplay pageBtns' id='first'>
@@ -85,7 +80,7 @@ else{
     print("
     <div class='pageDisplay pageBtns'>
         <p>Currenty displaying page: $page </p>
-        <a href='setList.php?part=$parts&color=$color&page=1'>Go to page 1</a>
+        <a href='setList.php?search=$searchResult&part=$parts&color=$color&page=1'>Go to page 1</a>
     </div>");
 }
 
@@ -98,17 +93,20 @@ $min = ($page-1)*10;
 $minCounter = 0;
 $moreBricks = 0;
 
+$prevQunatity = 0;
+
 if($color === '-1'){
-    
+
     $searchKey = "SELECT inventory.SetID, inventory.Quantity, sets.Setname, sets.SetID, sets.Year, images.has_gif, images.has_jpg, images.has_largegif, images.has_largejpg 
     FROM inventory, sets, images WHERE inventory.ItemID='$parts' 
-    AND sets.SetID = inventory.SetID 
+    AND sets.SetID=inventory.SetID
     AND images.ColorID=inventory.ColorID
     AND images.ItemtypeID=inventory.ItemtypeID
     AND images.ItemID=inventory.ItemID";
 
-
     $contents = mysqli_query($connection, $searchKey);
+
+    $setCheck = -1;
 
     //skapar en loop som skriver ut alla sets som hittas, tills det inte finns några kvar att visa
     while($row = mysqli_fetch_array($contents)){
@@ -144,19 +142,20 @@ if($color === '-1'){
         if($pageCounter >= 10){
             $moreBricks++;
         }
-    
+
+        if ($setCheck != -1 && $setID != $setCheck){
         if($minCounter >= $min){
         if($pageCounter < 10){
-        
-        $imglink = "http://www.itn.liu.se/~stegu76/img.bricklink.com/$filename";
 
-            print(
+        $imglink = "http://www.itn.liu.se/~stegu76/img.bricklink.com/$prevFilename";
+
+             print(
                 "<div class='brickinfo'>
                     <section>
-                        <h2>$setName</h2>
-                        <p>SetID: $setID</p>
-                        <p>Year: $year</p>
-                        <p>Quantity of part in set: $quantity</p>
+                        <h2>$prevSetName</h2>
+                        <p>SetID: $setCheck</p>
+                        <p>Year: $prevYear</p>
+                        <p>Quantity of part in set: $prevQuantity</p>
                     </section>
                     <div class='imgbox'>
                     <a><img src=$imglink onerror='this.onerror=null; this.src=$alt' alt='$setID'></a>
@@ -166,12 +165,22 @@ if($color === '-1'){
                 "
         
             );
-        $pageCounter++;
+            $prevQuantity=0;
+            $pageCounter++;
         }
         }
         else{
             $minCounter++;
+            $prevQuantity=0;
         }
+        }
+        $setCheck = $setID;
+        $prevQuantity += $quantity;
+        $prevSetName = $setName;
+        $prevYear = $year;
+        $prevSetID = $setID;
+        $prevFilename = $filename;
+
     }
 
 }
@@ -253,6 +262,8 @@ else{
         }
     }
 }
+
+print("$pageCounter");
 
 if($page == 1 && $pageCounter > 9 && $moreBricks > 0){
     print("
