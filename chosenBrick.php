@@ -3,27 +3,27 @@
 //Inkluderar headern
 include 'head.txt';
 
-//Hämtar sökt term från url
-if(isset($_GET["search"])){
-    $searchResult = $_GET["search"];
-}
-
-//Hämtar partID från url
-if(isset($_GET["part"])){
-    $parts = $_GET["part"];
-}
-
-//Hämtar page nummer från url
-if(isset($_GET["page"])){
-    $page = $_GET["page"];
-}
-
 //skapar connection för att kunna koppla upp mot hemisdan
 $connection = mysqli_connect("mysql.itn.liu.se","lego","","lego");
 
 //testar connection
 if (!$connection){
     die('MySQL connection error');
+}
+
+//Hämtar sökt term från url
+if(isset($_GET["search"])){
+    $searchResult = mysqli_real_escape_string($connection, $_GET["search"]);
+}
+
+//Hämtar partID från url
+if(isset($_GET["part"])){
+    $parts = mysqli_real_escape_string($connection, $_GET["part"]);
+}
+
+//Hämtar page nummer från url
+if(isset($_GET["page"])){
+    $page = mysqli_real_escape_string($connection, $_GET["page"]);
 }
 
 //sql fråga

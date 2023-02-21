@@ -12,7 +12,7 @@ if (!$connection){
 }
 
 //form validation, blir inte körbar kod utan html format
-$searchResult = htmlspecialchars($_GET['searchResult']);
+$searchResult = mysqli_real_escape_string($connection, $_GET['searchResult']);
 
 //tar bort whitespaces i sökningen
 $searchResult = str_replace(' ', '', $searchResult);
@@ -35,7 +35,7 @@ print("
 
 //Hämtar page nummer från url
 if(isset($_GET["page"])){
-    $page = $_GET["page"];   
+    $page = mysqli_real_escape_string($connection, $_GET["page"]);   
 }
 
 //om ingen sida fås så sätts sidan till 1

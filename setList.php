@@ -2,32 +2,32 @@
 //inkluderar header
 include 'head.txt';
 
-//Hämtar sökt term från url
-if(isset($_GET["search"])){
-    $searchResult = $_GET["search"];
-}
-
-//Hämtar partID från url
-if(isset($_GET["part"])){
-    $parts = $_GET["part"];
-}
-
-//Hämtar colorID från url
-if(isset($_GET["color"])){
-    $color = $_GET["color"];
-}
-
-//Hämtar page nummer från url
-if(isset($_GET["page"])){
-    $page = $_GET["page"];
-}
-
 //sammankopplar med data basen
 $connection = mysqli_connect("mysql.itn.liu.se","lego","","lego");
 
 //om sammankopplingen inte funkar så får användaren reda på det
 if (!$connection){
     die('MySQL connection error');
+}
+
+//Hämtar sökt term från url
+if(isset($_GET["search"])){
+    $searchResult = mysqli_real_escape_string($connection, $_GET["search"]);
+}
+
+//Hämtar partID från url
+if(isset($_GET["part"])){
+    $parts = mysqli_real_escape_string($connection, $_GET["part"]);
+}
+
+//Hämtar colorID från url
+if(isset($_GET["color"])){
+    $color = mysqli_real_escape_string($connection, $_GET["color"]);
+}
+
+//Hämtar page nummer från url
+if(isset($_GET["page"])){
+    $page = mysqli_real_escape_string($connection, $_GET["page"]);
 }
 
 //skriver ut breadcrumbs och vilken bit som det det visas resultat för, obereonde av färg
