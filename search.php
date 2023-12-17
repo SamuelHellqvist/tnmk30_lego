@@ -4,6 +4,7 @@
 ?>
 
 <?php
+
 //skapar connection för att kunna koppla upp mot hemisdan
 $connection = mysqli_connect("mysql.itn.liu.se","lego","","lego");
 
@@ -43,8 +44,79 @@ if($page === NULL){
     $page = 1;
 }
 
+//Calculate number of items/pages to use in navigation
+$partNumberSearchKey =
+"SELECT COUNT(DISTINCT PartID) AS numberOfParts FROM parts WHERE REPLACE(Partname, ' ', '') LIKE '%$searchResult%'";
+$numberContent = mysqli_query($connection, $partNumberSearchKey);
+$numberRow = mysqli_fetch_array($numberContent);
+$numberOfItems = $numberRow['numberOfParts'];
+$maxPages = ceil($numberOfItems / 10);
+
+$nextPage = $page + 1;
+$prevPage = $page - 1;
+$displayedItemsStart = $numberOfItems - ($numberOfItems - ($prevPage * 10));
+$displayedItemsStop = $numberOfItems - ($numberOfItems - ($Page * 10));
+
+if($page == 1 && $maxPages == 1){
+    print("
+        <div class='pageDisplay pageBtns' id='first'>
+            <p>Currenty displaying page: $page of $maxPages</p>
+            <br></br>
+            <p>Showing bricks: $displayedItemsStart - $numberOfItems of $numberOfItems</p>
+        </div>
+    ");
+}
+elseif($page == 1 && $maxPages != 1){
+    print("
+        <div class='pageDisplay pageBtns' id='first'>
+            <p>Currenty displaying page: $page of $maxPages</p>
+            <br></br>
+            <p>Showing bricks: $displayedItemsStart - $displayedItemsStop of $numberOfItems</p>
+        </div>
+
+        <div class='pageBtns' id='page_s'>
+            <p> - </p>
+            <p>Page $page</p>
+            <a href='search.php?searchResult=$searchResult&page=$nextPage'> &#10095;</a>
+        </div>
+    ");
+}
+elseif($page > 1 && $page < $maxPages){
+    print("
+        <div class='pageDisplay pageBtns'>
+            <p>Currenty displaying page: $page of $maxPages</p>
+            <a id='page_a' href='search.php?searchResult=$searchResult&page=1'>Go to page 1</a>
+            <br></br>
+            <p>Showing bricks: $displayedItemsStart - $displayedItemsStop of $numberOfItems</p>
+        </div>
+
+        <div class='pageBtns' id='page_s'>
+            <a href='search.php?searchResult=$searchResult&page=$prevPage'> &#10094;</a>
+            <p>Page $page</p>
+            <a href='search.php?searchResult=$searchResult&page=$nextPage'> &#10095;</a>
+        </div>
+    ");
+}
+else{
+    print("
+        <div class='pageDisplay pageBtns'>
+            <p>Currenty displaying page: $page of $maxPages</p>
+            <a id='page_a' href='search.php?searchResult=$searchResult&page=1'>Go to page 1</a>
+            <br></br>
+            <p>Showing bricks: $displayedItemsStart - $numberOfItems of $numberOfItems</p>
+        </div>
+
+        <div class='pageBtns' id='page_s'>
+            <a href='search.php?searchResult=$searchResult&page=$prevPage'> &#10094;</a>
+            <p>Page $page</p>
+            <p> - </p>
+        </div>
+    ");
+}
+
+//Tidigare implementation av sidräkning
 //skriver till användaren vilken som är den aktuella sidan
-if($page == 1){
+/*if($page == 1){
     print("
         <div class='pageDisplay pageBtns' id='first'>
             <p>Currenty displaying page: $page </p>
@@ -58,7 +130,7 @@ else{
             <a id='page_a' href='search.php?searchResult=$searchResult&page=1'>Go to page 1</a>
         </div>
     ");
-}
+}*/
 
 //skapar en sql fråga
 $searchKey = 

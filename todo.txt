@@ -29,22 +29,73 @@ https://validator.w3.org/
 https://jigsaw.w3.org/css-validator/
 
 
-"Ni har gjort en godkänd lösning av uppgiften, men när ni tar emot en sträng i php så bör ni använda mysqli_real_escape_string för att ta bort möjliga kommandon till databasen som öppnar upp för sårbarheter."
+"Ni har gjort en godkänd lösning av uppgiften, 
+men när ni tar emot en sträng i php så bör ni 
+använda mysqli_real_escape_string för att ta bort 
+möjliga kommandon till databasen som öppnar upp för sårbarheter."
 
  
 
-Det var inte så mycket info, så här kommer mer. För att höja från betyg 4 till betyg 5 vill jag att du gör följande:
+Det var inte så mycket info, så här kommer mer. 
+För att höja från betyg 4 till betyg 5 vill jag att du gör följande:
 
-1. Fixa mysqli_real_escape_string. Det är enkelt löst, och oerhört viktigt för säkerheten.
+1. Fixa mysqli_real_escape_string. Det är enkelt löst, och oerhört 
+   viktigt för säkerheten.
+
+       Se till att samtliga inputs hanteras
+       
+           Samtliga input från client side går genom mysqli_real_escape_string
+
+
+           Exempel från search.php:
+
+           $connection = mysqli_connect("mysql.itn.liu.se","lego","","lego");
+
+           if (!$connection){
+               die('MySQL connection error');
+           }
+
+           $searchResult = mysqli_real_escape_string($connection, $_GET['searchResult']);
+
 
 2. Se över hur svaren från databasen sorteras/visas/väljs:
 
-                2a Söker jag på "brick 2 x 2" så får jag träffar på "Brick 2 x 2" i "Any Color" och så visas några Legoset men också "2 x 2 Black Bricks" och "2 X 2 Brown Bricks" osv... denna sortering är ganska förvirrande för användaren.
+                2a Söker jag på "brick 2 x 2" så får jag träffar på 
+                "Brick 2 x 2" i "Any Color" och så visas några Legoset 
+                men också "2 x 2 Black Bricks" och "2 X 2 Brown Bricks" 
+                osv... denna sortering är ganska förvirrande för användaren.
 
-                2b Om jag sedan väljer färgen "Blue" så är det inte alltid att något händer, och ingen ny information visas och det finns inget i gränssnittet som visar användaren att webbsidan arbetar. Jag klickar igen på färgen "Blue" hoppar processen igång (oftast) och jag får ett antal svar. Så, det hela funkar, men det är något som är lite skumt... se över koden här så att det inte är något fel som gör att det strular. Kanske är frågan till databasen lite klumpig?
+                    Se över vilka bitar som renderas, eventuellt excludera
+                    Saknade setList ItemtypeID för set?
 
-                2c När man sedan har fått svar så är det svårt för användaren att veta hur många svar, och på hur många sidor svaren finns på. Navigationsknapparna där nere visar bara aktuell sida och att man kan bläddra framåt och bakåt.
+                    Utgå ifrån parts istället för inventory, skicka in partname och plocka
+                    ut PartID som kan matchas med korresponderande inventory
+
+                2b Om jag sedan väljer färgen "Blue" så är det inte alltid 
+                att något händer, och ingen ny information visas och det 
+                finns inget i gränssnittet som visar användaren att webbsidan 
+                arbetar. Jag klickar igen på färgen "Blue" hoppar processen 
+                igång (oftast) och jag får ett antal svar. Så, det hela 
+                funkar, men det är något som är lite skumt... se över koden 
+                här så att det inte är något fel som gör att det strular. 
+                Kanske är frågan till databasen lite klumpig?
+
+                    Dela upp fråga till databasen i separata frågor med mindre
+                    argument, använd bara nycklar som är relevanta
+
+                2c När man sedan har fått svar så är det svårt för användaren 
+                att veta hur många svar, och på hur många sidor svaren finns på. 
+                Navigationsknapparna där nere visar bara aktuell sida och att 
+                man kan bläddra framåt och bakåt.
+
+                    Använd count för att läsa av antal svar och rendera dessa
+                    Rendera bara antal som ska finnas på sida
+
+                    Implementerat på search.php på linje 46-114 med huvudsiktlig del
+                    på linje 47-51 (plocka ut antal delar)
 
                  
 
-När du åtgärdat dessa saker kan jag ge dig ett högre betyg. Försök att hinna klart detta innan jul, eventuella datum på kurswebben struntar vi i eftersom det är jag och LiU IT som gjort att det tagit så lång tid.
+När du åtgärdat dessa saker kan jag ge dig ett högre betyg. Försök att 
+hinna klart detta innan jul, eventuella datum på kurswebben struntar vi 
+i eftersom det är jag och LiU IT som gjort att det tagit så lång tid.

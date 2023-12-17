@@ -128,6 +128,7 @@ if($color === '-1' || $color === '-2'){
     AND images.ColorID=inventory.ColorID
     AND images.ItemtypeID=inventory.ItemtypeID
     AND images.ItemID=inventory.ItemID";
+    //AND inventory.ItemtypeID='S';
 
     $contents = mysqli_query($connection, $searchKey);
 
